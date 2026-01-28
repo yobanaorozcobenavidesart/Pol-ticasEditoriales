@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Políticas Editoriales | Fundación Artes Multicap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: "Times New Roman", serif;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.2);
+    }
+
+    p.intro {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .accordion {
+      border: 1px solid #555;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(255,255,255,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .accordion:hover {
+      box-shadow: 0 6px 12px rgba(255,255,255,0.15);
+    }
+
+    /* HEADER FLEX PARA TEXTO + LOGO IZQUIERDO */
+    .accordion-header {
+      display: flex;
+      align-items: center; /* centra verticalmente */
+      background-color: #111;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #333;
+      color: #ffffff;
+    }
+
+    .accordion-header:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .accordion-logo {
+      margin-right: 20px; /* espacio entre logo y texto */
+      flex-shrink: 0;
+    }
+
+    .accordion-logo img {
+      width: 230px; /* tamaño más grande */
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .accordion-header div.texto-titulo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .accordion-header h2,
+    .accordion-header span {
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .accordion-header h2 {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .accordion-header span {
+      display: block;
+      font-size: 14px;
+      margin-top: 6px;
+      color: #ccc;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 30px;
+      background-color: #111;
+      text-align: left;
+      line-height: 1.7;
+    }
+
+    .accordion-content h3 {
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .accordion-content p,
+    .accordion-content ul {
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    .accordion-content ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  </style>
+
+  <script>
+    function toggleAccordion(id) {
+      const contents = document.querySelectorAll('.accordion-content');
+      contents.forEach(content => {
+        if (content.id !== id) {
+          content.style.display = 'none';
+        }
+      });
+      const element = document.getElementById(id);
+      element.style.display = element.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Políticas Editoriales</h1>
+
+  <p class="intro">
+    En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas
+    gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto,
+    respeto por la autoría y ética editorial.
+  </p>
+
+  <!-- REVISTA ARTE Y CULTURA -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-arte')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-(1).jpg" alt="Logo Arte y Cultura">
+      </div>
+      <div class="texto-titulo">
+        <h2>Revista Explorando Arte y Cultura de Latinoamérica</h2>
+        <span>ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad</span>
+      </div>
+    </div>
+    <div class="accordion-content" id="politica-arte">
+      <h3>1. Identidad de la revista</h3>
+      <p>Publicación digital de acceso abierto enfocada en la difusión de arte y cultura latinoamericana. Se reconocen artistas invitados y museos destacados con entrevistas y ediciones especiales.</p>
+
+      <h3>2. Política de Acceso Abierto</h3>
+      <p>Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican en el sitio web oficial y en plataformas académicas y culturales para mayor visibilidad.</p>
+
+      <h3>3. Participación de Autores</h3>
+      <ul>
+        <li>Certificado digital de participación para todos los autores.</li>
+        <li>Entrega de revista en PDF.</li>
+        <li>Formulario de autoría obligatorio.</li>
+        <li>Derechos de autor conservados por los autores.</li>
+        <li>Obras inéditas, originales y con fines educativos y culturales.</li>
+      </ul>
+
+      <h3>4. Licenciamiento</h3>
+      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+
+      <h3>5. Convocatorias y Eventos Especiales</h3>
+      <ul>
+        <li>Convocatorias abiertas con instrucciones claras, formularios y cronogramas.</li>
+        <li>Posibilidad de artistas invitados especiales y museos participantes con entrevistas y ediciones curatoriales.</li>
+      </ul>
+
+      <h3>6. Tipos de Contenidos</h3>
+      <ul>
+        <li>Artes visuales: pintura, dibujo, escultura, murales, fotografía, collage, arte digital y mixto.</li>
+        <li>Literatura: poesía, cuentos, relatos breves, artículos, ensayos, fragmentos y textos críticos.</li>
+        <li>Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.</li>
+      </ul>
+
+      <h3>7. Ética Editorial</h3>
+      <p>Prohibido el plagio. Se respeta la diversidad cultural, la autoría y la integridad de las obras.</p>
+
+      <h3>8. Comité Editorial</h3>
+      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+    </div>
+  </div>
+
+  <!-- REVISTA MUSEOS NACIONALES -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-museos')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg" alt="Logo Museos Nacionales">
+      </div>
+      <div class="texto-titulo">
+        <h2>Revista Explorando Museos Nacionales de Colombia</h2>
+        <span>ISSN 3114-9243 · Periodicidad Cuatrimestral</span>
+      </div>
+    </div>
+    <div class="accordion-content" id="politica-museos">
+      <h3>1. Identidad de la revista</h3>
+      <p>Revista digital enfocada en museos, patrimonio y cultura colombiana. Contenidos con base en visitas, entrevistas y documentación institucional.</p>
+
+      <h3>2. Política de Acceso Abierto</h3>
+      <p>Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.</p>
+
+      <h3>3. Participación de Autores e Instituciones</h3>
+      <ul>
+        <li>Autores y museos conservan derechos de autor.</li>
+        <li>Certificados de participación para colaboradores y autores.</li>
+        <li>Autorización institucional para museos requerida.</li>
+        <li>Difusión con fines educativos y culturales, no comerciales.</li>
+      </ul>
+
+      <h3>4. Licenciamiento</h3>
+      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+
+      <h3>5. Convocatorias y Eventos Especiales</h3>
+      <ul>
+        <li>Visitas y entrevistas a museos y colecciones institucionales.</li>
+        <li>Ediciones especiales para museos invitados y artistas destacados.</li>
+      </ul>
+
+      <h3>6. Tipos de Contenidos</h3>
+      <ul>
+        <li>Artículos sobre museos, patrimonio y colecciones.</li>
+        <li>Ensayos educativos y reflexiones curatoriales.</li>
+        <li>Proyectos culturales y pedagógicos.</li>
+      </ul>
+
+      <h3>7. Comité Editorial</h3>
+      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+    </div>
+  </div>
+
+  <!-- REVISTA JÓVENES CREADORES -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-jovenes')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/6qnBHMPr/Whats-App-Image-2025-06-27-at-9-(1)-(1).png" alt="Logo Jóvenes Creadores">
+      </div>
+      <div class="texto-titulo">
+        <h2>Revistas Jóvenes Creadores de Latinoamérica (Internacional)</h2>
+        <span>ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años</span>
+      </div>
+    </div>
+    <div class="accordion-content" id="politica-jovenes">
+      <h3>1. Identidad de la revista</h3>
+      <p>Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multica.</p>
+
+      <h3>2. Política de Acceso Abierto</h3>
+      <p>Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.</p>
+
+      <h3>3. Participación de Autores y Menores</h3>
+      <ul>
+        <li>Certificado digital de participación emitido por la Fundación Artes Multicap.</li>
+        <li>Autorización de padres o tutores obligatoria para menores de edad.</li>
+        <li>Formulario de autoría obligatorio.</li>
+        <li>Derechos de autor conservados por los menores y respetados.</li>
+        <li>Reconocimiento de acompañantes: docentes, familias y organizaciones.</li>
+      </ul>
+
+      <h3>4. Licenciamiento</h3>
+      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+
+      <h3>5. Convocatorias y Eventos Especiales</h3>
+      <ul>
+        <li>Convocatorias con instrucciones, cronogramas y formularios.</li>
+        <li>Publicación de obras seleccionadas en la revista y en plataformas digitales.</li>
+        <li>Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.</li>
+        <li>Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.</li>
+        <li>Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.</li>
+      </ul>
+
+      <h3>6. Tipos de Contenidos</h3>
+      <ul>
+        <li>Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.</li>
+        <li>Literatura: poesía, cuento, relato breve, artículo, ensayo.</li>
+        <li>Proyectos culturales, creativos y reflexiones pedagógicas.</li>
+      </ul>
+
+      <h3>7. Ética Editorial</h3>
+      <p>Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.</p>
+
+      <h3>8. Comité Editorial</h3>
+      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+    </div>
+  </div>
+
+ <footer style="
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 30px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
+">
+
+  <!-- Imagen / Logo a la izquierda -->
+  <img 
+    src="https://i.postimg.cc/jjZ7mqJB/480702220-618041787505911-8280549859336367380-n.jpg"
+    alt="Fundación Artes Multicap"
+    style="
+      width: 120px;
+      height: auto;
+      max-width: 100%;
+    "
+  >
+
+  <!-- Texto del footer -->
+  <div style="text-align: left; line-height: 1.5;">
+    © Fundación Artes Multicap<br>
+    Proyectos editoriales artísticos, culturales y educativos
+  </div>
+
+</footer>
+
+
+</div>
+
+</body>
+</html>
