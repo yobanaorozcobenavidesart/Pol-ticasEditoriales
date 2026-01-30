@@ -2,391 +2,399 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Políticas Editoriales | Fundación Artes Multicap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convocatoria Nº 2 – Voces que Habitan el Territorio</title>
 
   <style>
     body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Times New Roman', serif;
       margin: 0;
       padding: 0;
-      background-color: #000000;
-      color: #ffffff;
-      font-family: "Times New Roman", serif;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px rgba(255,255,255,0.2);
-    }
-
-    p.intro {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-      text-align: center;
-    }
-
-    .accordion {
-      border: 1px solid #555;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(255,255,255,0.05);
-      transition: box-shadow 0.3s ease;
-    }
-
-    .accordion:hover {
-      box-shadow: 0 6px 12px rgba(255,255,255,0.15);
-    }
-
-    /* HEADER FLEX PARA TEXTO + LOGO IZQUIERDO */
-    .accordion-header {
-      display: flex;
-      align-items: center; /* centra verticalmente */
-      background-color: #111;
-      padding: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid #333;
-      color: #ffffff;
-    }
-
-    .accordion-header:hover {
-      background-color: #ffffff;
-      color: #000000;
-    }
-
-    .accordion-logo {
-      margin-right: 20px; /* espacio entre logo y texto */
-      flex-shrink: 0;
-    }
-
-    .accordion-logo img {
-      width: 230px; /* tamaño más grande */
-      height: auto;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
-    }
-
-    .accordion-logo img:hover {
-      transform: scale(1.1);
-    }
-
-    .accordion-header div.texto-titulo {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .accordion-header h2,
-    .accordion-header span {
-      margin: 0;
-      transition: color 0.3s ease;
-    }
-
-    .accordion-header h2 {
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .accordion-header span {
-      display: block;
-      font-size: 14px;
-      margin-top: 6px;
-      color: #ccc;
-    }
-
-    .accordion-content {
-      display: none;
-      padding: 30px;
-      background-color: #111;
+    .seccion-convocatoria {
+      margin-top: 30px;
       text-align: left;
-      line-height: 1.7;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .accordion-content h3 {
-      margin-top: 24px;
+    .titulo-seccion {
+      background-color: #000;
+      padding: 10px 18px;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 18px;
+      text-transform: uppercase;
+      box-shadow: 0 0 15px #ffffffaa;
+      display: inline-block;
+      margin: 25px 0 15px;
+    }
+
+    .tabla-cronograma {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      box-shadow: 0 0 20px #ffffff33;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .tabla-cronograma th,
+    .tabla-cronograma td {
+      padding: 12px;
+      border: 1px solid #555;
+      background-color: #111;
+      color: #ffffff;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .tabla-cronograma thead th {
+      background-color: #ffffff11;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .boton-elegante {
+      background: #000;
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      display: inline-block;
+      box-shadow: 0 0 12px #ffffffaa;
+      margin: 10px 0;
+    }
+
+    .boton-elegante:hover {
+      background: #fff;
+      color: #000;
+      border-color: #000;
+      box-shadow: 0 0 20px #ffffff;
+    }
+
+    .issn {
+      text-align: center;
       font-size: 20px;
       font-weight: bold;
+      margin: 30px 0;
+      letter-spacing: 3px;
       color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    }
-
-    .accordion-content p,
-    .accordion-content ul {
-      font-size: 16px;
-      color: #ffffff;
-    }
-
-    .accordion-content ul {
-      padding-left: 20px;
-    }
-
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 14px;
-      opacity: 0.8;
+      text-shadow: 0 0 18px #ffffffaa;
     }
   </style>
-
-  <script>
-    function toggleAccordion(id) {
-      const contents = document.querySelectorAll('.accordion-content');
-      contents.forEach(content => {
-        if (content.id !== id) {
-          content.style.display = 'none';
-        }
-      });
-      const element = document.getElementById(id);
-      element.style.display = element.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </head>
 
 <body>
 
-<div class="container">
+<div id="convocatoria2" class="seccion-convocatoria">
 
-  <h1>Políticas Editoriales</h1>
+  <!-- IMAGEN PRINCIPAL -->
+  <img src="https://i.postimg.cc/QN42VmrB/Chat-GPT-Image-8-ene-2026-11-18-29-a-m-YYTR.png"
+       alt="Convocatoria 2 Voces que Habitan el Territorio"
+       style="display:block; margin: 0 auto; max-width: 400px; width: 100%; border-radius: 8px;">
 
-  <p class="intro">
-    En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas
-    gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto,
-    respeto por la autoría y ética editorial.
+  <p style="font-size: 15px; margin-top: 20px; text-align:center;">
+    <strong>Convocatoria N.º 2</strong><br>
+    <strong>Recepción de obras:</strong> 8 de enero al 8 de febrero de 2026<br>
+    <strong>Publicación:</strong> 18 de febrero de 2026
   </p>
 
- <!-- REVISTA ARTE Y CULTURA -->
-<div class="accordion">
-  <div class="accordion-header" onclick="toggleAccordion('politica-arte')">
-    <div class="accordion-logo">
-      <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-(1).jpg" alt="Logo Arte y Cultura">
-    </div>
-    <div class="texto-titulo">
-      <h2>Revista Explorando Arte y Cultura de Latinoamérica</h2>
-      <span>ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad</span>
-    </div>
-  </div>
+  <!-- ISSN -->
+  <div class="issn">ISSN 3114-9871</div>
 
-  <div class="accordion-content" id="politica-arte">
+  <hr style="margin: 25px 0; border-color: #888;">
 
-    <h3>1. Identidad de la revista</h3>
-    <p>
-      Publicación digital de acceso abierto enfocada en la difusión de arte y cultura
-      latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas,
-      ediciones especiales y contenidos curatoriales.
+  <!-- TEMÁTICA -->
+  <h3 class="titulo-seccion">Temática de esta edición</h3>
+  <p>
+    <strong>“Voces que Habitan el Territorio”</strong><br><br>
+    La segunda edición de la revista <em>Explorando Arte y Cultura de Latinoamérica</em>
+    invita a artistas y escritores mayores de edad a participar con obras que exploren
+    la relación entre identidad, memoria, cuerpo, emoción y espacio desde una mirada
+    latinoamericana.
+  </p>
+
+  <!-- PARTICIPANTES -->
+<h3 class="titulo-seccion">¿Quiénes pueden participar?</h3>
+
+<p>
+Artistas emergentes y con trayectoria, docentes-artistas y docentes-creadores/as,
+cultores, escritores y creadoras/es mayores de edad de <strong>Latinoamérica</strong>,
+con obras originales e inéditas.
+</p>
+
+<p style="margin-top:10px;">
+Asimismo, están invitados a participar
+<strong>museos, archivos, centros culturales y colecciones institucionales</strong>
+interesados en compartir su patrimonio, investigaciones o procesos curatoriales.
+</p>
+
+<p style="margin-top:10px;">
+La convocatoria está abierta tanto a quienes inician su camino artístico
+como a artistas con trayectoria consolidada. La participación de
+docentes de literatura, escritura creativa y crítica, ciencias sociales y áreas afines
+es especialmente valorada, en tanto su práctica creadora contribuye a la
+formación cultural y constituye un <strong>referente para estudiantes y comunidades educativas</strong>.
+</p>
+  
+  <p style="margin-top:10px;">
+De manera excepcional, la convocatoria también está abierta a
+<strong>artistas e instituciones de otros países</strong>, siempre que las obras propuestas
+<strong>aborden de forma explícita la temática, los procesos artísticos y las realidades
+culturales y territoriales de Latinoamérica</strong>, en coherencia con el enfoque
+editorial de esta edición.
+</p>
+
+
+
+
+ <!-- CATEGORÍAS -->
+<h3 class="titulo-seccion">Categorías y requisitos de participación</h3>
+
+<ul>
+  <li>
+    <strong>🎨 Artes visuales:</strong>
+    dibujo, pintura, escultura, fotografía, grabado, collage,
+    arte textil, arte conceptual y técnicas mixtas.<br>
+    <em>Máximo 3 obras artísticas por participante.</em>
+
+    <p style="margin-top:10px;">
+      <strong>Información obligatoria por cada obra:</strong>
     </p>
-
-    <h3>2. Política de Acceso Abierto</h3>
-    <p>
-      Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican
-      en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.
-    </p>
-
-    <h3>3. Participación de Autores</h3>
     <ul>
-      <li>Certificado digital de participación para todos los autores.</li>
-      <li>Entrega de la revista en formato PDF.</li>
-      <li>Formulario de autoría obligatorio.</li>
-      <li>Los derechos de autor son conservados por los autores.</li>
-      <li>Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.</li>
+      <li><strong>Título de la obra</strong> (en español e inglés)</li>
+      <li>
+        <strong>Resumen de la obra</strong> (máx. 150 palabras), donde se exponga
+        su enfoque, temática central y aporte artístico, cultural o pedagógico
+        (en español e inglés)
+      </li>
+      <li>
+        <strong>Palabras clave:</strong> entre 3 y 5 palabras que permitan identificar
+        el tema de la obra (en español e inglés)
+      </li>
+      <li>
+        <strong>Ficha técnica:</strong>
+        <ul>
+          <li>Título de la obra</li>
+          <li>Autor/a: nombre completo</li>
+          <li>Año de creación</li>
+          <li>
+            Técnica y materiales
+            (ej.: “Acrílico sobre lienzo”, “Técnica mixta sobre madera”,
+            “Impresión digital sobre papel fotográfico”)
+          </li>
+          <li>Dimensiones: alto × ancho × profundidad (en centímetros)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Archivo de la obra:</strong>
+        imagen en formato JPG o PNG.<br>
+        <em>(Subida de archivo habilitada solo para usuarios con cuenta de Google)</em>
+      </li>
+    </ul>
+  </li>
+
+  <li style="margin-top:20px;">
+    <strong>✍️ Literatura:</strong>
+    poesía (libre, visual, experimental, haiku, poema en prosa),
+    relato corto o microrrelato, ensayo, crónica,
+    prosa poética, entrevistas, texto autobiográfico o reflexivo.<br>
+    <em>Se permite postular una (1) obra literaria por participante.</em>
+
+    <p style="margin-top:10px;">
+      <strong>Información obligatoria:</strong>
+    </p>
+    <ul>
+      <li><strong>Título de la obra</strong> (en español e inglés)</li>
+      <li>
+        <strong>Resumen de la obra</strong> (máx. 150 palabras), que indique su enfoque,
+        temática central y aporte artístico, cultural o pedagógico
+        (en español e inglés)
+      </li>
+      <li>
+        <strong>Palabras clave:</strong> entre 3 y 5 palabras
+        (en español e inglés)
+      </li>
+      <li>
+        <strong>Archivo del texto:</strong> formato DOC o DOCX
+      </li>
     </ul>
 
-    <h3>4. Licenciamiento</h3>
-    <p>
-      Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).
+    <p style="margin-top:10px;">
+      <strong>Requisitos de formato del documento:</strong>
     </p>
-
-    <h3>5. Convocatorias y Eventos Especiales</h3>
     <ul>
-      <li>Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.</li>
-      <li>Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.</li>
+      <li>Papel tamaño carta</li>
+      <li>Márgenes de 2,54 cm</li>
+      <li>Interlineado doble</li>
+      <li>Fuente Times New Roman, tamaño 12</li>
+      <li>Extensión aproximada: 600 a 1.500 palabras (1 a 3 páginas)</li>
+      <li>
+        El texto debe cumplir con las normas
+        <strong>APA 7.ª edición (vigente)</strong>.
+        En caso de incluir referencias (incluso en textos creativos),
+        estas deben presentarse al final del documento.
+      </li>
     </ul>
 
-    <h3>6. Tipos de Contenidos</h3>
-    <ul>
-      <li>Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.</li>
-      <li>Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.</li>
-      <li>Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.</li>
-    </ul>
 
-    <h3>7. Proceso de Evaluación y Selección</h3>
-    <p>
-      Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática,
-      calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.
-    </p>
+  <!-- CRONOGRAMA -->
+  <h3 class="titulo-seccion">📅 Cronograma</h3>
+  <table class="tabla-cronograma">
+    <thead>
+      <tr>
+        <th>Fase</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Recepción de obras</td>
+        <td>8 de enero – 8 de febrero de 2026</td>
+      </tr>
+      <tr>
+        <td>Selección y curaduría</td>
+        <td>9 al 15 de febrero de 2026</td>
+      </tr>
+      <tr>
+        <td>Publicación digital</td>
+        <td>18 de febrero de 2026</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <h3>8. Originalidad y Ética Editorial</h3>
-    <p>
-      Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría,
-      la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.
-    </p>
+<!-- POSTULACIÓN -->
+<h3 class="titulo-seccion">📩 ¿Cómo postular?</h3>
+<p>Completa el formulario en línea y adjunta tus obras.</p>
 
-    <h3>9. Política de Aceptación Automática</h3>
-    <p>
-      El diligenciamiento y envío de los formularios de participación implica la aceptación plena
-      de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación
-      de la revista.
-    </p>
+<p style="font-size:17px; margin-top:10px; opacity:0.9;">
+Antes de enviar su postulación, se recomienda leer las
+<a href="https://pol-ticaseditoriales.netlify.app/"
+   target="_blank"
+   style="
+     color:#ffd966;
+     font-weight:bold;
+     text-decoration:underline;
+     text-shadow: 0 0 8px rgba(255, 217, 102, 0.8);
+   ">
+Políticas Editoriales de la Revista Explorando Arte y Cultura de Latinoamérica
+</a>.
+Al diligenciar y enviar el formulario de participación,
+el/la autor/a declara haber leído, comprendido y aceptado dichas políticas.
+</p>
 
-    <h3>10. Uso de Datos y Comunicaciones Editoriales</h3>
-    <p>
-      Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos
-      y culturales. La revista podrá enviar comunicaciones institucionales y editoriales,
-      sin cesión de información a terceros ni uso comercial.
-    </p>
+<a href="https://forms.gle/c55dwfGuiiHFdKyYA" target="_blank" class="boton-elegante">
+  📝 Formulario de inscripción
+</a>
 
-    <h3>11. Comité Editorial</h3>
-    <p>
-      Editora y coordinadora editorial:
-      <strong>Yobana Orozco Benavides</strong>
-    </p>
 
+
+<!-- DERECHOS -->
+<h3 class="titulo-seccion">
+  ⚠️ Derechos de autor —
+  <a href="https://drive.google.com/file/d/19FCm6gSclT65Mi5iq_kyVAj1luP_iEVZ/view"
+     target="_blank"
+     style="color:#ffffff; text-decoration:underline;">
+    Documento obligatorio
+  </a>
+</h3>
+
+<ul>
+  <li>Las obras deben ser originales e inéditas</li>
+  <li>El autor o autora conserva todos sus derechos</li>
+  <li>Al participar autoriza únicamente la publicación digital con créditos</li>
+  <li>Es obligatorio leer, diligenciar y subir firmado el documento de derechos de autor</li>
+  <li>Los datos serán usados solo para fines editoriales</li>
+</ul>
+
+
+
+  <p>
+    📄 <strong>Documento de derechos de autor (descarga obligatoria):</strong><br>
+    <a href="https://drive.google.com/file/d/19FCm6gSclT65Mi5iq_kyVAj1luP_iEVZ/view?usp=sharing"
+       target="_blank" style="color:#fff; text-decoration:underline;">
+      Descargar documento de derechos de autor
+    </a>
+  </p>
+  
+  <!-- SECCIÓN MUSEOS -->
+<h3 class="titulo-seccion">🏛️ Participación institucional · Museos</h3>
+
+<p>
+La revista <em>Explorando Arte y Cultura de Latinoamérica</em> invita a
+<strong>museos, archivos, centros culturales y colecciones institucionales</strong>
+a participar como <strong>museos invitados</strong> en esta edición.
+</p>
+
+<p>
+La participación permite visibilizar su labor curatorial, educativa y patrimonial
+dentro de una publicación cultural con <strong>ISSN internacional</strong>,
+de circulación latinoamericana y sin ánimo de lucro.
+</p>
+
+<h4 style="margin-top:15px;">Material solicitado (proceso ágil)</h4>
+<ul>
+  <li>Selección libre de obras (una o varias)</li>
+  <li>Imágenes en buena resolución</li>
+  <li>Ficha técnica básica y texto breve por obra</li>
+  <li>Documento de autorización institucional firmado</li>
+</ul>
+
+<h4 style="margin-top:15px;">📝 Formulario institucional para museos</h4>
+<p>
+El envío del material se realiza mediante un formulario práctico,
+diseñado para facilitar el proceso a las instituciones.
+</p>
+
+<a href="https://formulariomuseosrevista.netlify.app/"
+   target="_blank"
+   class="boton-elegante">
+   🏛️ Acceder al formulario para museos
+</a>
+
+<h4 style="margin-top:20px;">📄 Autorización de uso y publicación (obligatoria)</h4>
+<p>
+Para la participación institucional es obligatorio descargar,
+firmar y subir el documento de autorización de uso y publicación del material.
+</p>
+
+<p>
+<a href="https://docs.google.com/document/d/1vBtH6mFfnXPTsV9xhUzKFKquHiXAMWOQPqxYNiYwwgU/edit?usp=sharing"
+   target="_blank"
+   style="color:#ffffff; text-decoration:underline;">
+   📥 Descargar autorización para museos
+</a>
+</p>
+
+<p style="font-size:14px; opacity:0.85; margin-top:15px;">
+La revista garantiza el respeto por la autoría, los créditos institucionales
+y el uso del material exclusivamente con fines educativos, culturales y editoriales.
+</p>
+
+
+  <!-- LOGO CONVOCATORIA 2 -->
+  <img src="https://i.postimg.cc/sDP5w6DF/Chat%20GPT%20Image%208%20ene%202026%2011%2018%2029%20a%20m.png"
+       alt="Logo Convocatoria 2"
+       style="display:block; margin: 30px auto 10px; max-width: 680px; width: 100%;">
+
+  <!-- VOLVER -->
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="https://explorandomuseosyartelatinoamericano.netlify.app/" class="boton-elegante">
+      🏠 Volver a la página de inicio
+    </a>
   </div>
-</div>
-
-
-  <!-- REVISTA MUSEOS NACIONALES -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion('politica-museos')">
-      <div class="accordion-logo">
-        <img src="https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg" alt="Logo Museos Nacionales">
-      </div>
-      <div class="texto-titulo">
-        <h2>Revista Explorando Museos Nacionales de Colombia</h2>
-        <span>ISSN 3114-9243 · Periodicidad Cuatrimestral</span>
-      </div>
-    </div>
-    <div class="accordion-content" id="politica-museos">
-      <h3>1. Identidad de la revista</h3>
-      <p>Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.</p>
-
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.</p>
-
-      <h3>3. Participación de Autores e Instituciones</h3>
-      <ul>
-        <li>Autores y museos conservan derechos de autor.</li>
-        <li>Certificados de participación para colaboradores y autores.</li>
-        <li>Autorización institucional para museos requerida.</li>
-        <li>Difusión con fines educativos y culturales, no comerciales.</li>
-      </ul>
-
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
-
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
-        <li>Visitas y entrevistas a museos y colecciones institucionales.</li>
-        <li>Ediciones especiales para museos invitados y artistas destacados.</li>
-      </ul>
-
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
-        <li>Artículos sobre museos, patrimonio y colecciones.</li>
-        <li>Ensayos educativos y reflexiones curatoriales.</li>
-        <li>Proyectos culturales y pedagógicos.</li>
-      </ul>
-
-      <h3>7. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
-    </div>
-  </div>
-
-  <!-- REVISTA JÓVENES CREADORES -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAccordion('politica-jovenes')">
-      <div class="accordion-logo">
-        <img src="https://i.postimg.cc/6qnBHMPr/Whats-App-Image-2025-06-27-at-9-(1)-(1).png" alt="Logo Jóvenes Creadores">
-      </div>
-      <div class="texto-titulo">
-        <h2>Revistas Jóvenes Creadores de Latinoamérica (Internacional)</h2>
-        <span>ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años</span>
-      </div>
-    </div>
-    <div class="accordion-content" id="politica-jovenes">
-      <h3>1. Identidad de la revista</h3>
-      <p>Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.</p>
-
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.</p>
-
-      <h3>3. Participación de Autores y Menores</h3>
-      <ul>
-        <li>Certificado digital de participación emitido por la Fundación Artes Multicap.</li>
-        <li>Autorización de padres o tutores obligatoria para menores de edad.</li>
-        <li>Formulario de autoría obligatorio.</li>
-        <li>Derechos de autor conservados por los menores y respetados.</li>
-        <li>Reconocimiento de acompañantes: docentes, familias y organizaciones.</li>
-      </ul>
-
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
-
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
-        <li>Convocatorias con instrucciones, cronogramas y formularios.</li>
-        <li>Publicación de obras seleccionadas en la revista y en plataformas digitales.</li>
-        <li>Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.</li>
-        <li>Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.</li>
-        <li>Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.</li>
-      </ul>
-
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
-        <li>Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.</li>
-        <li>Literatura: poesía, cuento, relato breve, artículo, ensayo.</li>
-        <li>Proyectos culturales, creativos y reflexiones pedagógicas.</li>
-      </ul>
-
-      <h3>7. Ética Editorial</h3>
-      <p>Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.</p>
-
-      <h3>8. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
-    </div>
-  </div>
-
- <footer style="
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px 30px;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Times New Roman', serif;
-  font-size: 16px;
-">
-
-  <!-- Imagen / Logo a la izquierda -->
-  <img 
-    src="https://i.postimg.cc/jjZ7mqJB/480702220-618041787505911-8280549859336367380-n.jpg"
-    alt="Fundación Artes Multicap"
-    style="
-      width: 120px;
-      height: auto;
-      max-width: 100%;
-    "
-  >
-
-  <!-- Texto del footer -->
-  <div style="text-align: left; line-height: 1.5;">
-    © Fundación Artes Multicap<br>
-    Proyectos editoriales artísticos, culturales y educativos
-  </div>
-
-</footer>
-
 
 </div>
 
