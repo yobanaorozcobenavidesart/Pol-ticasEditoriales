@@ -1,259 +1,431 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Políticas Editoriales | Fundación Artes Multicap</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Políticas Editoriales | Fundación Artes Multicap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000000;
-      color: #ffffff;
-      font-family: "Times New Roman", serif;
-    }
+<!-- Fuente -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+<style>
+/* ESTILOS GENERALES */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Times New Roman", serif;
+}
 
-    h1 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 20px;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px rgba(255,255,255,0.2);
-    }
+/* BANDERAS ESTÁTICAS EN LA PARTE SUPERIOR */
+#flags {
+  background: #000;
+  border-bottom: 3px solid #fff;
+  padding: 15px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
 
-    p.intro {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-      text-align: center;
-    }
+#flags-container {
+  display: inline-flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
 
-    .accordion {
-      border: 1px solid #555;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(255,255,255,0.05);
-      transition: box-shadow 0.3s ease;
-    }
+#flags button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+}
 
-    .accordion:hover {
-      box-shadow: 0 6px 12px rgba(255,255,255,0.15);
-    }
+#flags button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
 
-    /* HEADER FLEX PARA TEXTO + LOGO IZQUIERDO */
-    .accordion-header {
-      display: flex;
-      align-items: center; /* centra verticalmente */
-      background-color: #111;
-      padding: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-bottom: 1px solid #333;
-      color: #ffffff;
-    }
+#flags button.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
 
-    .accordion-header:hover {
-      background-color: #ffffff;
-      color: #000000;
-    }
+#flags .flag-label {
+  color: white;
+  font-size: 11px;
+  margin-top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-    .accordion-logo {
-      margin-right: 20px; /* espacio entre logo y texto */
-      flex-shrink: 0;
-    }
+#flags img {
+  width: 36px;
+  height: 27px;
+  border-radius: 4px;
+  border: 1px solid #666;
+  transition: all 0.3s ease;
+}
 
-    .accordion-logo img {
-      width: 230px; /* tamaño más grande */
-      height: auto;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
-    }
+#flags button:hover img {
+  transform: scale(1.1);
+  border-color: #fff;
+}
 
-    .accordion-logo img:hover {
-      transform: scale(1.1);
-    }
+#flags button.active img {
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
-    .accordion-header div.texto-titulo {
-      display: flex;
-      flex-direction: column;
-    }
+/* HEADER */
+header {
+  background-color: #000;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  margin-top: 0;
+}
+header img {
+  max-width: 650px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #fff;
+  border: 2px solid #fff;
+}
 
-    .accordion-header h2,
-    .accordion-header span {
-      margin: 0;
-      transition: color 0.3s ease;
-    }
+/* SEPARADOR */
+.separador {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  margin: 0 auto 30px auto;
+  max-width: 800px;
+}
 
-    .accordion-header h2 {
-      font-size: 22px;
-      font-weight: bold;
-    }
+/* CONTENIDO PRINCIPAL */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    .accordion-header span {
-      display: block;
-      font-size: 14px;
-      margin-top: 6px;
-      color: #ccc;
-    }
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.2);
+}
 
-    .accordion-content {
-      display: none;
-      padding: 30px;
-      background-color: #111;
-      text-align: left;
-      line-height: 1.7;
-    }
+p.intro {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  text-align: center;
+}
 
-    .accordion-content h3 {
-      margin-top: 24px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    }
+.accordion {
+  border: 1px solid #555;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.05);
+  transition: box-shadow 0.3s ease;
+}
 
-    .accordion-content p,
-    .accordion-content ul {
-      font-size: 16px;
-      color: #ffffff;
-    }
+.accordion:hover {
+  box-shadow: 0 6px 12px rgba(255,255,255,0.15);
+}
 
-    .accordion-content ul {
-      padding-left: 20px;
-    }
+/* HEADER FLEX PARA TEXTO + LOGO IZQUIERDO */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  background-color: #111;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #333;
+  color: #ffffff;
+}
 
-    footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-  </style>
+.accordion-header:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
 
-  <script>
-    function toggleAccordion(id) {
-      const contents = document.querySelectorAll('.accordion-content');
-      contents.forEach(content => {
-        if (content.id !== id) {
-          content.style.display = 'none';
-        }
-      });
-      const element = document.getElementById(id);
-      element.style.display = element.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+.accordion-logo {
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.accordion-logo img {
+  width: 230px;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-logo img:hover {
+  transform: scale(1.1);
+}
+
+.accordion-header div.texto-titulo {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-header h2,
+.accordion-header span {
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.accordion-header h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.accordion-header span {
+  display: block;
+  font-size: 14px;
+  margin-top: 6px;
+  color: #ccc;
+}
+
+.accordion-content {
+  display: none;
+  padding: 30px;
+  background-color: #111;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.accordion-content h3 {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.accordion-content p,
+.accordion-content ul {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.accordion-content ul {
+  padding-left: 20px;
+}
+
+/* FOOTER COMPLETO */
+footer {
+  background-color: #000000;
+  padding: 40px 20px;
+  color: #f1f1f1;
+  text-align: center;
+  border-top: 3px solid #ffffff;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 50px;
+}
+
+/* Footer personalizado */
+.footer-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 30px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-custom img {
+  width: 120px;
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #flags-container {
+    gap: 15px;
+  }
+  #flags button {
+    min-width: 60px;
+    padding: 6px;
+  }
+  #flags img {
+    width: 30px;
+    height: 22px;
+  }
+  #flags .flag-label {
+    font-size: 10px;
+  }
+  .accordion-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .accordion-logo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .accordion-logo img {
+    width: 180px;
+  }
+  .footer-custom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
-
-  <h1>Políticas Editoriales</h1>
-
-  <p class="intro">
-    En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas
-    gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto,
-    respeto por la autoría y ética editorial.
-  </p>
-
- <!-- REVISTA ARTE Y CULTURA -->
-<div class="accordion">
-  <div class="accordion-header" onclick="toggleAccordion('politica-arte')">
-    <div class="accordion-logo">
-      <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-(1).jpg" alt="Logo Arte y Cultura">
-    </div>
-    <div class="texto-titulo">
-      <h2>Revista Explorando Arte y Cultura de Latinoamérica</h2>
-      <span>ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad</span>
-    </div>
-  </div>
-
-  <div class="accordion-content" id="politica-arte">
-
-    <h3>1. Identidad de la revista</h3>
-    <p>
-      Publicación digital de acceso abierto enfocada en la difusión de arte y cultura
-      latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas,
-      ediciones especiales y contenidos curatoriales.
-    </p>
-
-    <h3>2. Política de Acceso Abierto</h3>
-    <p>
-      Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican
-      en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.
-    </p>
-
-    <h3>3. Participación de Autores</h3>
-    <ul>
-      <li>Certificado digital de participación para todos los autores.</li>
-      <li>Entrega de la revista en formato PDF.</li>
-      <li>Formulario de autoría obligatorio.</li>
-      <li>Los derechos de autor son conservados por los autores.</li>
-      <li>Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.</li>
-    </ul>
-
-    <h3>4. Licenciamiento</h3>
-    <p>
-      Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).
-    </p>
-
-    <h3>5. Convocatorias y Eventos Especiales</h3>
-    <ul>
-      <li>Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.</li>
-      <li>Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.</li>
-    </ul>
-
-    <h3>6. Tipos de Contenidos</h3>
-    <ul>
-      <li>Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.</li>
-      <li>Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.</li>
-      <li>Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.</li>
-    </ul>
-
-    <h3>7. Proceso de Evaluación y Selección</h3>
-    <p>
-      Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática,
-      calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.
-    </p>
-
-    <h3>8. Originalidad y Ética Editorial</h3>
-    <p>
-      Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría,
-      la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.
-    </p>
-
-    <h3>9. Política de Aceptación Automática</h3>
-    <p>
-      El diligenciamiento y envío de los formularios de participación implica la aceptación plena
-      de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación
-      de la revista.
-    </p>
-
-    <h3>10. Uso de Datos y Comunicaciones Editoriales</h3>
-    <p>
-      Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos
-      y culturales. La revista podrá enviar comunicaciones institucionales y editoriales,
-      sin cesión de información a terceros ni uso comercial.
-    </p>
-
-    <h3>11. Comité Editorial</h3>
-    <p>
-      Editora y coordinadora editorial:
-      <strong>Yobana Orozco Benavides</strong>
-    </p>
-
+<!-- BANDERAS ESTÁTICAS EN LA PARTE SUPERIOR -->
+<div id="flags">
+  <div id="flags-container">
+    <button id="flag-es" class="active" onclick="translateToSpanish()">
+      <img src="https://flagcdn.com/w40/es.png" alt="Español">
+      <div class="flag-label">Español</div>
+    </button>
+    <button id="flag-en" onclick="translateToEnglish()">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Inglés">
+      <div class="flag-label">English</div>
+    </button>
+    <button id="flag-fr" onclick="translateToFrench()">
+      <img src="https://flagcdn.com/w40/fr.png" alt="Francés">
+      <div class="flag-label">Français</div>
+    </button>
+    <button id="flag-pt" onclick="translateToPortuguese()">
+      <img src="https://flagcdn.com/w40/br.png" alt="Portugués">
+      <div class="flag-label">Português</div>
+    </button>
   </div>
 </div>
 
+<!-- HEADER -->
+<header>
+  <img src="https://i.postimg.cc/4NjxHQ4y/Whats-App-Image-2025-06-27-at-9.jpg" alt="Logo Revista">
+</header>
+
+<!-- SEPARADOR -->
+<div class="separador"></div>
+
+<!-- CONTENIDO PRINCIPAL -->
+<div class="container">
+
+  <h1 id="titulo-politicas">Políticas Editoriales</h1>
+
+  <p class="intro" id="intro-politicas">
+    En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas
+    gestionadas por la <strong id="fundacion-nombre">Fundación Artes Multicap</strong>, bajo principios de acceso abierto,
+    respeto por la autoría y ética editorial.
+  </p>
+
+  <!-- REVISTA ARTE Y CULTURA -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-arte')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-(1).jpg" alt="Logo Arte y Cultura">
+      </div>
+      <div class="texto-titulo">
+        <h2 id="titulo-revista-arte">Revista Explorando Arte y Cultura de Latinoamérica</h2>
+        <span id="subtitulo-revista-arte">ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad</span>
+      </div>
+    </div>
+
+    <div class="accordion-content" id="politica-arte">
+      <h3 id="identidad-arte">1. Identidad de la revista</h3>
+      <p id="desc-identidad-arte">
+        Publicación digital de acceso abierto enfocada en la difusión de arte y cultura
+        latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas,
+        ediciones especiales y contenidos curatoriales.
+      </p>
+
+      <h3 id="acceso-arte">2. Política de Acceso Abierto</h3>
+      <p id="desc-acceso-arte">
+        Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican
+        en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.
+      </p>
+
+      <h3 id="participacion-arte">3. Participación de Autores</h3>
+      <ul id="lista-participacion-arte">
+        <li>Certificado digital de participación para todos los autores.</li>
+        <li>Entrega de la revista en formato PDF.</li>
+        <li>Formulario de autoría obligatorio.</li>
+        <li>Los derechos de autor son conservados por los autores.</li>
+        <li>Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.</li>
+      </ul>
+
+      <h3 id="licenciamiento-arte">4. Licenciamiento</h3>
+      <p id="desc-licenciamiento-arte">
+        Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).
+      </p>
+
+      <h3 id="convocatorias-arte">5. Convocatorias y Eventos Especiales</h3>
+      <ul id="lista-convocatorias-arte">
+        <li>Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.</li>
+        <li>Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.</li>
+      </ul>
+
+      <h3 id="contenidos-arte">6. Tipos de Contenidos</h3>
+      <ul id="lista-contenidos-arte">
+        <li>Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.</li>
+        <li>Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.</li>
+        <li>Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.</li>
+      </ul>
+
+      <h3 id="evaluacion-arte">7. Proceso de Evaluación y Selección</h3>
+      <p id="desc-evaluacion-arte">
+        Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática,
+        calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.
+      </p>
+
+      <h3 id="originalidad-arte">8. Originalidad y Ética Editorial</h3>
+      <p id="desc-originalidad-arte">
+        Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría,
+        la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.
+      </p>
+
+      <h3 id="aceptacion-arte">9. Política de Aceptación Automática</h3>
+      <p id="desc-aceptacion-arte">
+        El diligenciamiento y envío de los formularios de participación implica la aceptación plena
+        de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación
+        de la revista.
+      </p>
+
+      <h3 id="datos-arte">10. Uso de Datos y Comunicaciones Editoriales</h3>
+      <p id="desc-datos-arte">
+        Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos
+        y culturales. La revista podrá enviar comunicaciones institucionales y editoriales,
+        sin cesión de información a terceros ni uso comercial.
+      </p>
+
+      <h3 id="comite-arte">11. Comité Editorial</h3>
+      <p id="desc-comite-arte">
+        Editora y coordinadora editorial:
+        <strong id="editora-arte">Yobana Orozco Benavides</strong>
+      </p>
+    </div>
+  </div>
 
   <!-- REVISTA MUSEOS NACIONALES -->
   <div class="accordion">
@@ -262,43 +434,43 @@
         <img src="https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg" alt="Logo Museos Nacionales">
       </div>
       <div class="texto-titulo">
-        <h2>Revista Explorando Museos Nacionales de Colombia</h2>
-        <span>ISSN 3114-9243 · Periodicidad Cuatrimestral</span>
+        <h2 id="titulo-revista-museos">Revista Explorando Museos Nacionales de Colombia</h2>
+        <span id="subtitulo-revista-museos">ISSN 3114-9243 · Periodicidad Cuatrimestral</span>
       </div>
     </div>
     <div class="accordion-content" id="politica-museos">
-      <h3>1. Identidad de la revista</h3>
-      <p>Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.</p>
+      <h3 id="identidad-museos">1. Identidad de la revista</h3>
+      <p id="desc-identidad-museos">Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.</p>
 
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.</p>
+      <h3 id="acceso-museos">2. Política de Acceso Abierto</h3>
+      <p id="desc-acceso-museos">Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.</p>
 
-      <h3>3. Participación de Autores e Instituciones</h3>
-      <ul>
+      <h3 id="participacion-museos">3. Participación de Autores e Instituciones</h3>
+      <ul id="lista-participacion-museos">
         <li>Autores y museos conservan derechos de autor.</li>
         <li>Certificados de participación para colaboradores y autores.</li>
         <li>Autorización institucional para museos requerida.</li>
         <li>Difusión con fines educativos y culturales, no comerciales.</li>
       </ul>
 
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+      <h3 id="licenciamiento-museos">4. Licenciamiento</h3>
+      <p id="desc-licenciamiento-museos">Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
 
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
+      <h3 id="convocatorias-museos">5. Convocatorias y Eventos Especiales</h3>
+      <ul id="lista-convocatorias-museos">
         <li>Visitas y entrevistas a museos y colecciones institucionales.</li>
         <li>Ediciones especiales para museos invitados y artistas destacados.</li>
       </ul>
 
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
+      <h3 id="contenidos-museos">6. Tipos de Contenidos</h3>
+      <ul id="lista-contenidos-museos">
         <li>Artículos sobre museos, patrimonio y colecciones.</li>
         <li>Ensayos educativos y reflexiones curatoriales.</li>
         <li>Proyectos culturales y pedagógicos.</li>
       </ul>
 
-      <h3>7. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+      <h3 id="comite-museos">7. Comité Editorial</h3>
+      <p id="desc-comite-museos">Editora y coordinadora editorial: <strong id="editora-museos">Yobana Orozco Benavides</strong></p>
     </div>
   </div>
 
@@ -309,19 +481,19 @@
         <img src="https://i.postimg.cc/6qnBHMPr/Whats-App-Image-2025-06-27-at-9-(1)-(1).png" alt="Logo Jóvenes Creadores">
       </div>
       <div class="texto-titulo">
-        <h2>Revistas Jóvenes Creadores de Latinoamérica (Internacional)</h2>
-        <span>ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años</span>
+        <h2 id="titulo-revista-jovenes">Revistas Jóvenes Creadores de Latinoamérica (Internacional)</h2>
+        <span id="subtitulo-revista-jovenes">ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años</span>
       </div>
     </div>
     <div class="accordion-content" id="politica-jovenes">
-      <h3>1. Identidad de la revista</h3>
-      <p>Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.</p>
+      <h3 id="identidad-jovenes">1. Identidad de la revista</h3>
+      <p id="desc-identidad-jovenes">Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.</p>
 
-      <h3>2. Política de Acceso Abierto</h3>
-      <p>Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.</p>
+      <h3 id="acceso-jovenes">2. Política de Acceso Abierto</h3>
+      <p id="desc-acceso-jovenes">Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.</p>
 
-      <h3>3. Participación de Autores y Menores</h3>
-      <ul>
+      <h3 id="participacion-jovenes">3. Participación de Autores y Menores</h3>
+      <ul id="lista-participacion-jovenes">
         <li>Certificado digital de participación emitido por la Fundación Artes Multicap.</li>
         <li>Autorización de padres o tutores obligatoria para menores de edad.</li>
         <li>Formulario de autoría obligatorio.</li>
@@ -329,11 +501,11 @@
         <li>Reconocimiento de acompañantes: docentes, familias y organizaciones.</li>
       </ul>
 
-      <h3>4. Licenciamiento</h3>
-      <p>Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+      <h3 id="licenciamiento-jovenes">4. Licenciamiento</h3>
+      <p id="desc-licenciamiento-jovenes">Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
 
-      <h3>5. Convocatorias y Eventos Especiales</h3>
-      <ul>
+      <h3 id="convocatorias-jovenes">5. Convocatorias y Eventos Especiales</h3>
+      <ul id="lista-convocatorias-jovenes">
         <li>Convocatorias con instrucciones, cronogramas y formularios.</li>
         <li>Publicación de obras seleccionadas en la revista y en plataformas digitales.</li>
         <li>Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.</li>
@@ -341,54 +513,585 @@
         <li>Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.</li>
       </ul>
 
-      <h3>6. Tipos de Contenidos</h3>
-      <ul>
+      <h3 id="contenidos-jovenes">6. Tipos de Contenidos</h3>
+      <ul id="lista-contenidos-jovenes">
         <li>Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.</li>
         <li>Literatura: poesía, cuento, relato breve, artículo, ensayo.</li>
         <li>Proyectos culturales, creativos y reflexiones pedagógicas.</li>
       </ul>
 
-      <h3>7. Ética Editorial</h3>
-      <p>Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.</p>
+      <h3 id="etica-jovenes">7. Ética Editorial</h3>
+      <p id="desc-etica-jovenes">Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.</p>
 
-      <h3>8. Comité Editorial</h3>
-      <p>Editora y coordinadora editorial: <strong>Yobana Orozco Benavides</strong></p>
+      <h3 id="comite-jovenes">8. Comité Editorial</h3>
+      <p id="desc-comite-jovenes">Editora y coordinadora editorial: <strong id="editora-jovenes">Yobana Orozco Benavides</strong></p>
     </div>
   </div>
 
- <footer style="
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px 30px;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: 'Times New Roman', serif;
-  font-size: 16px;
-">
+</div>
 
-  <!-- Imagen / Logo a la izquierda -->
-  <img 
-    src="https://i.postimg.cc/jjZ7mqJB/480702220-618041787505911-8280549859336367380-n.jpg"
-    alt="Fundación Artes Multicap"
-    style="
-      width: 120px;
-      height: auto;
-      max-width: 100%;
-    "
-  >
-
-  <!-- Texto del footer -->
-  <div style="text-align: left; line-height: 1.5;">
-    © Fundación Artes Multicap<br>
-    Proyectos editoriales artísticos, culturales y educativos
+<!-- FOOTER COMPLETO -->
+<footer id="footer-content">
+  <div class="footer-custom">
+    <img src="https://i.postimg.cc/jjZ7mqJB/480702220-618041787505911-8280549859336367380-n.jpg" 
+         alt="Fundación Artes Multicap">
+    <div style="text-align: left; line-height: 1.5;">
+      <div id="footer-text1">© Fundación Artes Multicap</div>
+      <div id="footer-text2">Proyectos editoriales artísticos, culturales y educativos</div>
+    </div>
   </div>
 
+  <h3 style="font-size:15px; margin-top: 30px;" id="footer-title">© 2023 – 2026 | Explorando Museos y Arte Latinoamericano</h3>
+  
+  <p style="max-width:750px;margin:auto; margin-top: 20px;" id="footer-description">
+    Proyecto educativo y cultural <strong id="footer-strong1">creado por Yobana Orozco Benavides</strong>.
+    Iniciado en 2023 como un trabajo universitario bajo el nombre
+    <em id="footer-em1">Explorando Museos Nacionales de Colombia</em>.
+    Desde 2025, el proyecto continúa y se consolida a través de la
+    <strong id="footer-strong2">Fundación Artes Multicap</strong> como
+    <strong id="footer-strong3">Explorando Museos y Arte Latinoamericano</strong>.
+  </p>
+  
+  <div style="margin-top:24px;">
+    <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank">
+      <img src="https://co.creativecommons.net/wp-content/uploads/sites/27/2008/02/by-nc.png" 
+           style="max-width:180px;" 
+           alt="Licencia Creative Commons">
+    </a>
+    
+    <p style="font-size:12px;" id="license-text">
+      Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).
+      Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.
+    </p>
+  </div>
+  
+  <p style="margin-top:15px;" id="author-bio">
+    🌐 Bio autora:
+    <a href="https://yobanaorozcoartista.bio.link/" target="_blank" style="color:#00e6b8;">
+      yobanaorozcoartista.bio.link
+    </a>
+  </p>
+  
+  <div style="margin-top:20px;font-size:13px;">
+    <strong>Depósito Digital Legal:</strong> DD-034370 — Biblioteca Nacional de Colombia
+  </div>
 </footer>
 
+<!-- SCRIPTS PARA TRADUCCIÓN -->
+<script>
+// Textos originales en español
+const originalTexts = {
+  'title': 'Políticas Editoriales | Fundación Artes Multicap',
+  'titulo-politicas': 'Políticas Editoriales',
+  'intro-politicas': 'En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto, respeto por la autoría y ética editorial.',
+  'fundacion-nombre': 'Fundación Artes Multicap',
+  
+  // Revista Arte y Cultura
+  'titulo-revista-arte': 'Revista Explorando Arte y Cultura de Latinoamérica',
+  'subtitulo-revista-arte': 'ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad',
+  'identidad-arte': '1. Identidad de la revista',
+  'desc-identidad-arte': 'Publicación digital de acceso abierto enfocada en la difusión de arte y cultura latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas, ediciones especiales y contenidos curatoriales.',
+  'acceso-arte': '2. Política de Acceso Abierto',
+  'desc-acceso-arte': 'Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.',
+  'participacion-arte': '3. Participación de Autores',
+  'licenciamiento-arte': '4. Licenciamiento',
+  'desc-licenciamiento-arte': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+  'convocatorias-arte': '5. Convocatorias y Eventos Especiales',
+  'contenidos-arte': '6. Tipos de Contenidos',
+  'evaluacion-arte': '7. Proceso de Evaluación y Selección',
+  'desc-evaluacion-arte': 'Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática, calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.',
+  'originalidad-arte': '8. Originalidad y Ética Editorial',
+  'desc-originalidad-arte': 'Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría, la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.',
+  'aceptacion-arte': '9. Política de Aceptación Automática',
+  'desc-aceptacion-arte': 'El diligenciamiento y envío de los formularios de participación implica la aceptación plena de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación de la revista.',
+  'datos-arte': '10. Uso de Datos y Comunicaciones Editoriales',
+  'desc-datos-arte': 'Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos y culturales. La revista podrá enviar comunicaciones institucionales y editoriales, sin cesión de información a terceros ni uso comercial.',
+  'comite-arte': '11. Comité Editorial',
+  'desc-comite-arte': 'Editora y coordinadora editorial:',
+  'editora-arte': 'Yobana Orozco Benavides',
+  
+  // Listas Revista Arte y Cultura
+  'lista-participacion-arte': [
+    'Certificado digital de participación para todos los autores.',
+    'Entrega de la revista en formato PDF.',
+    'Formulario de autoría obligatorio.',
+    'Los derechos de autor son conservados por los autores.',
+    'Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.'
+  ],
+  'lista-convocatorias-arte': [
+    'Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.',
+    'Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.'
+  ],
+  'lista-contenidos-arte': [
+    'Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.',
+    'Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.',
+    'Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.'
+  ],
+  
+  // Revista Museos Nacionales
+  'titulo-revista-museos': 'Revista Explorando Museos Nacionales de Colombia',
+  'subtitulo-revista-museos': 'ISSN 3114-9243 · Periodicidad Cuatrimestral',
+  'identidad-museos': '1. Identidad de la revista',
+  'desc-identidad-museos': 'Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.',
+  'acceso-museos': '2. Política de Acceso Abierto',
+  'desc-acceso-museos': 'Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.',
+  'participacion-museos': '3. Participación de Autores e Instituciones',
+  'licenciamiento-museos': '4. Licenciamiento',
+  'desc-licenciamiento-museos': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+  'convocatorias-museos': '5. Convocatorias y Eventos Especiales',
+  'contenidos-museos': '6. Tipos de Contenidos',
+  'comite-museos': '7. Comité Editorial',
+  'desc-comite-museos': 'Editora y coordinadora editorial:',
+  'editora-museos': 'Yobana Orozco Benavides',
+  
+  // Listas Revista Museos
+  'lista-participacion-museos': [
+    'Autores y museos conservan derechos de autor.',
+    'Certificados de participación para colaboradores y autores.',
+    'Autorización institucional para museos requerida.',
+    'Difusión con fines educativos y culturales, no comerciales.'
+  ],
+  'lista-convocatorias-museos': [
+    'Visitas y entrevistas a museos y colecciones institucionales.',
+    'Ediciones especiales para museos invitados y artistas destacados.'
+  ],
+  'lista-contenidos-museos': [
+    'Artículos sobre museos, patrimonio y colecciones.',
+    'Ensayos educativos y reflexiones curatoriales.',
+    'Proyectos culturales y pedagógicos.'
+  ],
+  
+  // Revista Jóvenes Creadores
+  'titulo-revista-jovenes': 'Revistas Jóvenes Creadores de Latinoamérica (Internacional)',
+  'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años',
+  'identidad-jovenes': '1. Identidad de la revista',
+  'desc-identidad-jovenes': 'Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.',
+  'acceso-jovenes': '2. Política de Acceso Abierto',
+  'desc-acceso-jovenes': 'Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.',
+  'participacion-jovenes': '3. Participación de Autores y Menores',
+  'licenciamiento-jovenes': '4. Licenciamiento',
+  'desc-licenciamiento-jovenes': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+  'convocatorias-jovenes': '5. Convocatorias y Eventos Especiales',
+  'contenidos-jovenes': '6. Tipos de Contenidos',
+  'etica-jovenes': '7. Ética Editorial',
+  'desc-etica-jovenes': 'Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.',
+  'comite-jovenes': '8. Comité Editorial',
+  'desc-comite-jovenes': 'Editora y coordinadora editorial:',
+  'editora-jovenes': 'Yobana Orozco Benavides',
+  
+  // Listas Revista Jóvenes
+  'lista-participacion-jovenes': [
+    'Certificado digital de participación emitido por la Fundación Artes Multicap.',
+    'Autorización de padres o tutores obligatoria para menores de edad.',
+    'Formulario de autoría obligatorio.',
+    'Derechos de autor conservados por los menores y respetados.',
+    'Reconocimiento de acompañantes: docentes, familias y organizaciones.'
+  ],
+  'lista-convocatorias-jovenes': [
+    'Convocatorias con instrucciones, cronogramas y formularios.',
+    'Publicación de obras seleccionadas en la revista y en plataformas digitales.',
+    'Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.',
+    'Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.',
+    'Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.'
+  ],
+  'lista-contenidos-jovenes': [
+    'Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.',
+    'Literatura: poesía, cuento, relato breve, artículo, ensayo.',
+    'Proyectos culturales, creativos y reflexiones pedagógicas.'
+  ],
+  
+  // Footer
+  'footer-text1': '© Fundación Artes Multicap',
+  'footer-text2': 'Proyectos editoriales artísticos, culturales y educativos',
+  'footer-title': '© 2023 – 2026 | Explorando Museos y Arte Latinoamericano',
+  'footer-description': 'Proyecto educativo y cultural <strong>creado por Yobana Orozco Benavides</strong>. Iniciado en 2023 como un trabajo universitario bajo el nombre <em>Explorando Museos Nacionales de Colombia</em>. Desde 2025, el proyecto continúa y se consolida a través de la <strong>Fundación Artes Multicap</strong> como <strong>Explorando Museos y Arte Latinoamericano</strong>.',
+  'license-text': 'Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0). Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.',
+  'author-bio': '🌐 Bio autora:',
+  'footer-strong1': 'creado por Yobana Orozco Benavides',
+  'footer-em1': 'Explorando Museos Nacionales de Colombia',
+  'footer-strong2': 'Fundación Artes Multicap',
+  'footer-strong3': 'Explorando Museos y Arte Latinoamericano'
+};
 
-</div>
+// Traducciones predefinidas
+const translations = {
+  'es': {
+    'title': 'Políticas Editoriales | Fundación Artes Multicap',
+    'titulo-politicas': 'Políticas Editoriales',
+    'intro-politicas': 'En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto, respeto por la autoría y ética editorial.',
+    'fundacion-nombre': 'Fundación Artes Multicap',
+    'titulo-revista-arte': 'Revista Explorando Arte y Cultura de Latinoamérica',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad',
+    'identidad-arte': '1. Identidad de la revista',
+    'desc-identidad-arte': 'Publicación digital de acceso abierto enfocada en la difusión de arte y cultura latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas, ediciones especiales y contenidos curatoriales.',
+    'acceso-arte': '2. Política de Acceso Abierto',
+    'desc-acceso-arte': 'Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.',
+    'participacion-arte': '3. Participación de Autores',
+    'licenciamiento-arte': '4. Licenciamiento',
+    'desc-licenciamiento-arte': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Convocatorias y Eventos Especiales',
+    'contenidos-arte': '6. Tipos de Contenidos',
+    'evaluacion-arte': '7. Proceso de Evaluación y Selección',
+    'desc-evaluacion-arte': 'Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática, calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.',
+    'originalidad-arte': '8. Originalidad y Ética Editorial',
+    'desc-originalidad-arte': 'Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría, la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.',
+    'aceptacion-arte': '9. Política de Aceptación Automática',
+    'desc-aceptacion-arte': 'El diligenciamiento y envío de los formularios de participación implica la aceptación plena de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación de la revista.',
+    'datos-arte': '10. Uso de Datos y Comunicaciones Editoriales',
+    'desc-datos-arte': 'Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos y culturales. La revista podrá enviar comunicaciones institucionales y editoriales, sin cesión de información a terceros ni uso comercial.',
+    'comite-arte': '11. Comité Editorial',
+    'desc-comite-arte': 'Editora y coordinadora editorial:',
+    'editora-arte': 'Yobana Orozco Benavides',
+    'titulo-revista-museos': 'Revista Explorando Museos Nacionales de Colombia',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Periodicidad Cuatrimestral',
+    'identidad-museos': '1. Identidad de la revista',
+    'desc-identidad-museos': 'Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.',
+    'acceso-museos': '2. Política de Acceso Abierto',
+    'desc-acceso-museos': 'Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.',
+    'participacion-museos': '3. Participación de Autores e Instituciones',
+    'licenciamiento-museos': '4. Licenciamiento',
+    'desc-licenciamiento-museos': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Convocatorias y Eventos Especiales',
+    'contenidos-museos': '6. Tipos de Contenidos',
+    'comite-museos': '7. Comité Editorial',
+    'desc-comite-museos': 'Editora y coordinadora editorial:',
+    'editora-museos': 'Yobana Orozco Benavides',
+    'titulo-revista-jovenes': 'Revistas Jóvenes Creadores de Latinoamérica (Internacional)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años',
+    'identidad-jovenes': '1. Identidad de la revista',
+    'desc-identidad-jovenes': 'Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.',
+    'acceso-jovenes': '2. Política de Acceso Abierto',
+    'desc-acceso-jovenes': 'Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.',
+    'participacion-jovenes': '3. Participación de Autores y Menores',
+    'licenciamiento-jovenes': '4. Licenciamiento',
+    'desc-licenciamiento-jovenes': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Convocatorias y Eventos Especiales',
+    'contenidos-jovenes': '6. Tipos de Contenidos',
+    'etica-jovenes': '7. Ética Editorial',
+    'desc-etica-jovenes': 'Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.',
+    'comite-jovenes': '8. Comité Editorial',
+    'desc-comite-jovenes': 'Editora y coordinadora editorial:',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+    'footer-text1': '© Fundación Artes Multicap',
+    'footer-text2': 'Proyectos editoriales artísticos, culturales y educativos',
+    'footer-title': '© 2023 – 2026 | Explorando Museos y Arte Latinoamericano',
+    'footer-description': 'Proyecto educativo y cultural <strong>creado por Yobana Orozco Benavides</strong>. Iniciado en 2023 como un trabajo universitario bajo el nombre <em>Explorando Museos Nacionales de Colombia</em>. Desde 2025, el proyecto continúa y se consolida a través de la <strong>Fundación Artes Multicap</strong> como <strong>Explorando Museos y Arte Latinoamericano</strong>.',
+    'license-text': 'Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0). Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.',
+    'author-bio': '🌐 Bio autora:',
+    'footer-strong1': 'creado por Yobana Orozco Benavides',
+    'footer-em1': 'Explorando Museos Nacionales de Colombia',
+    'footer-strong2': 'Fundación Artes Multicap',
+    'footer-strong3': 'Explorando Museos y Arte Latinoamericano'
+  },
+  'en': {
+    'title': 'Editorial Policies | Artes Multicap Foundation',
+    'titulo-politicas': 'Editorial Policies',
+    'intro-politicas': 'This section presents the editorial policies of the artistic, cultural, and educational journals managed by the <strong>Artes Multicap Foundation</strong>, under principles of open access, respect for authorship, and editorial ethics.',
+    'fundacion-nombre': 'Artes Multicap Foundation',
+    'titulo-revista-arte': 'Journal Exploring Art and Culture of Latin America',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Semiannual · Adult artists',
+    'identidad-arte': '1. Journal Identity',
+    'desc-identidad-arte': 'Open access digital publication focused on disseminating Latin American art and culture. Recognizes artists, writers, and invited museums through interviews, special editions, and curatorial content.',
+    'acceso-arte': '2. Open Access Policy',
+    'desc-acceso-arte': 'Free and open access for reading, downloading, and consultation. Content is published on the official website and allied academic and cultural platforms for greater visibility.',
+    'participacion-arte': '3. Author Participation',
+    'licenciamiento-arte': '4. Licensing',
+    'desc-licenciamiento-arte': 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Calls and Special Events',
+    'contenidos-arte': '6. Content Types',
+    'evaluacion-arte': '7. Evaluation and Selection Process',
+    'desc-evaluacion-arte': 'Proposals are evaluated by the editorial team according to criteria of thematic relevance, quality, editorial coherence, and compliance with the requirements established in each call.',
+    'originalidad-arte': '8. Originality and Editorial Ethics',
+    'desc-originalidad-arte': 'Works must be original and unpublished. The author is responsible for authorship, truthfulness of information, and respect for third-party rights. Plagiarism is not allowed.',
+    'aceptacion-arte': '9. Automatic Acceptance Policy',
+    'desc-aceptacion-arte': 'Completing and submitting participation forms implies full acceptance of editorial policies, call requirements, and journal publication conditions.',
+    'datos-arte': '10. Data Use and Editorial Communications',
+    'desc-datos-arte': 'Provided data will be used exclusively for editorial, academic, and cultural purposes. The journal may send institutional and editorial communications, without transfer of information to third parties or commercial use.',
+    'comite-arte': '11. Editorial Committee',
+    'desc-comite-arte': 'Editor and editorial coordinator:',
+    'editora-arte': 'Yobana Orozco Benavides',
+    'titulo-revista-museos': 'Journal Exploring National Museums of Colombia',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Quarterly',
+    'identidad-museos': '1. Journal Identity',
+    'desc-identidad-museos': 'Digital journal focused on museums, heritage, and culture of Colombia. Content based on visits, interviews, and institutional documentation.',
+    'acceso-museos': '2. Open Access Policy',
+    'desc-acceso-museos': 'Free and open access. Publication on the official website and allied digital repositories for wide visibility.',
+    'participacion-museos': '3. Author and Institution Participation',
+    'licenciamiento-museos': '4. Licensing',
+    'desc-licenciamiento-museos': 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Calls and Special Events',
+    'contenidos-museos': '6. Content Types',
+    'comite-museos': '7. Editorial Committee',
+    'desc-comite-museos': 'Editor and editorial coordinator:',
+    'editora-museos': 'Yobana Orozco Benavides',
+    'titulo-revista-jovenes': 'Young Creators of Latin America Journals (International)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Semiannual · Youth 8-17 years',
+    'identidad-jovenes': '1. Journal Identity',
+    'desc-identidad-jovenes': 'Open access digital publication that disseminates creative processes of children and youth. Managed by the Artes Multicap Foundation.',
+    'acceso-jovenes': '2. Open Access Policy',
+    'desc-acceso-jovenes': 'Free and open content. Publication on the official website and artistic, educational, and cultural digital platforms for greater visibility.',
+    'participacion-jovenes': '3. Author and Minor Participation',
+    'licenciamiento-jovenes': '4. Licensing',
+    'desc-licenciamiento-jovenes': 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Calls and Special Events',
+    'contenidos-jovenes': '6. Content Types',
+    'etica-jovenes': '7. Editorial Ethics',
+    'desc-etica-jovenes': 'Protection of minors, respect for authorship, prohibition of plagiarism, and ethical dissemination of content.',
+    'comite-jovenes': '8. Editorial Committee',
+    'desc-comite-jovenes': 'Editor and editorial coordinator:',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+    'footer-text1': '© Artes Multicap Foundation',
+    'footer-text2': 'Artistic, cultural and educational editorial projects',
+    'footer-title': '© 2023 – 2026 | Exploring Museums and Latin American Art',
+    'footer-description': 'Educational and cultural project <strong>created by Yobana Orozco Benavides</strong>. Started in 2023 as a university work under the name <em>Exploring National Museums of Colombia</em>. Since 2025, the project continues and consolidates through the <strong>Artes Multicap Foundation</strong> as <strong>Exploring Museums and Latin American Art</strong>.',
+    'license-text': 'Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0). Consultation, download and dissemination are allowed with acknowledgment of authorship, for non-commercial purposes.',
+    'author-bio': '🌐 Author bio:',
+    'footer-strong1': 'created by Yobana Orozco Benavides',
+    'footer-em1': 'Exploring National Museums of Colombia',
+    'footer-strong2': 'Artes Multicap Foundation',
+    'footer-strong3': 'Exploring Museums and Latin American Art'
+  },
+  'fr': {
+    'title': 'Politiques Éditoriales | Fondation Artes Multicap',
+    'titulo-politicas': 'Politiques Éditoriales',
+    'intro-politicas': 'Cette section présente les politiques éditoriales des revues artistiques, culturelles et éducatives gérées par la <strong>Fondation Artes Multicap</strong>, selon les principes d\'accès libre, de respect de la paternité et d\'éthique éditoriale.',
+    'fundacion-nombre': 'Fondation Artes Multicap',
+    'titulo-revista-arte': 'Revue Explorant l\'Art et la Culture d\'Amérique Latine',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Semestriel · Artistes adultes',
+    'identidad-arte': '1. Identité de la revue',
+    'desc-identidad-arte': 'Publication numérique en accès libre axée sur la diffusion de l\'art et de la culture latino-américaine. Reconnaît les artistes, écrivains et musées invités par des interviews, éditions spéciales et contenus curatoriaux.',
+    'acceso-arte': '2. Politique d\'Accès Libre',
+    'desc-acceso-arte': 'Accès gratuit et libre pour la lecture, le téléchargement et la consultation. Les contenus sont publiés sur le site officiel et sur des plateformes académiques et culturelles alliées pour une plus grande visibilité.',
+    'participacion-arte': '3. Participation des Auteurs',
+    'licenciamiento-arte': '4. Licence',
+    'desc-licenciamiento-arte': 'Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Appels et Événements Spéciaux',
+    'contenidos-arte': '6. Types de Contenus',
+    'evaluacion-arte': '7. Processus d\'Évaluation et de Sélection',
+    'desc-evaluacion-arte': 'Les propositions sont évaluées par l\'équipe éditoriale selon des critères de pertinence thématique, qualité, cohérence éditoriale et respect des exigences établies dans chaque appel.',
+    'originalidad-arte': '8. Originalité et Éthique Éditoriale',
+    'desc-originalidad-arte': 'Les œuvres doivent être originales et inédites. L\'auteur est responsable de la paternité, de la véracité des informations et du respect des droits des tiers. Le plagiat n\'est pas autorisé.',
+    'aceptacion-arte': '9. Politique d\'Acceptation Automatique',
+    'desc-aceptacion-arte': 'Le remplissage et l\'envoi des formulaires de participation impliquent l\'acceptation pleine et entière des politiques éditoriales, des exigences de l\'appel et des conditions de publication de la revue.',
+    'datos-arte': '10. Utilisation des Données et Communications Éditoriales',
+    'desc-datos-arte': 'Les données fournies seront utilisées exclusivement à des fins éditoriales, académiques et culturelles. La revue pourra envoyer des communications institutionnelles et éditoriales, sans cession d\'informations à des tiers ni utilisation commerciale.',
+    'comite-arte': '11. Comité Éditorial',
+    'desc-comite-arte': 'Éditrice et coordinatrice éditoriale :',
+    'editora-arte': 'Yobana Orozco Benavides',
+    'titulo-revista-museos': 'Revue Explorant les Musées Nationaux de Colombie',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Trimestriel',
+    'identidad-museos': '1. Identité de la revue',
+    'desc-identidad-museos': 'Revue numérique axée sur les musées, le patrimoine et la culture de la Colombie. Contenu basé sur des visites, interviews et documentation institutionnelle.',
+    'acceso-museos': '2. Politique d\'Accès Libre',
+    'desc-acceso-museos': 'Accès gratuit et libre. Publication sur le site officiel et dépôts numériques alliés pour une large visibilité.',
+    'participacion-museos': '3. Participation des Auteurs et des Institutions',
+    'licenciamiento-museos': '4. Licence',
+    'desc-licenciamiento-museos': 'Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Appels et Événements Spéciaux',
+    'contenidos-museos': '6. Types de Contenus',
+    'comite-museos': '7. Comité Éditorial',
+    'desc-comite-museos': 'Éditrice et coordinatrice éditoriale :',
+    'editora-museos': 'Yobana Orozco Benavides',
+    'titulo-revista-jovenes': 'Revues Jeunes Créateurs d\'Amérique Latine (International)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Semestriel · Jeunes 8-17 ans',
+    'identidad-jovenes': '1. Identité de la revue',
+    'desc-identidad-jovenes': 'Publication numérique en accès libre qui diffuse les processus créatifs des enfants et des jeunes. Gérée par la Fondation Artes Multicap.',
+    'acceso-jovenes': '2. Politique d\'Accès Libre',
+    'desc-acceso-jovenes': 'Contenu gratuit et libre. Publication sur le site officiel et plateformes numériques artistiques, éducatives et culturelles pour une plus grande visibilité.',
+    'participacion-jovenes': '3. Participation des Auteurs et des Mineurs',
+    'licenciamiento-jovenes': '4. Licence',
+    'desc-licenciamiento-jovenes': 'Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Appels et Événements Spéciaux',
+    'contenidos-jovenes': '6. Types de Contenus',
+    'etica-jovenes': '7. Éthique Éditoriale',
+    'desc-etica-jovenes': 'Protection des mineurs, respect de la paternité, interdiction du plagiat et diffusion éthique des contenus.',
+    'comite-jovenes': '8. Comité Éditorial',
+    'desc-comite-jovenes': 'Éditrice et coordinatrice éditoriale :',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+    'footer-text1': '© Fondation Artes Multicap',
+    'footer-text2': 'Projets éditoriaux artistiques, culturels et éducatifs',
+    'footer-title': '© 2023 – 2026 | Explorant les Musées et l\'Art Latino-américain',
+    'footer-description': 'Projet éducatif et culturel <strong>créé par Yobana Orozco Benavides</strong>. Commencé en 2023 comme un travail universitaire sous le nom <em>Explorant les Musées Nationaux de Colombie</em>. Depuis 2025, le projet continue et se consolide à travers la <strong>Fondation Artes Multicap</strong> en tant que <strong>Explorant les Musées et l\'Art Latino-américain</strong>.',
+    'license-text': 'Licence Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0). Consultation, téléchargement et diffusion autorisés avec mention de paternité, à des fins non commerciales.',
+    'author-bio': '🌐 Bio de l\'auteure :',
+    'footer-strong1': 'créé par Yobana Orozco Benavides',
+    'footer-em1': 'Explorant les Musées Nationaux de Colombie',
+    'footer-strong2': 'Fondation Artes Multicap',
+    'footer-strong3': 'Explorant les Musées et l\'Art Latino-américain'
+  },
+  'pt': {
+    'title': 'Políticas Editoriais | Fundação Artes Multicap',
+    'titulo-politicas': 'Políticas Editoriais',
+    'intro-politicas': 'Nesta seção são apresentadas as políticas editoriais das revistas artísticas, culturais e educativas geridas pela <strong>Fundação Artes Multicap</strong>, sob princípios de acesso aberto, respeito pela autoria e ética editorial.',
+    'fundacion-nombre': 'Fundação Artes Multicap',
+    'titulo-revista-arte': 'Revista Explorando Arte e Cultura da América Latina',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Semestral · Artistas adultos',
+    'identidad-arte': '1. Identidade da revista',
+    'desc-identidad-arte': 'Publicação digital de acesso aberto focada na difusão da arte e cultura latino-americana. Reconhece artistas, escritores e museus convidados através de entrevistas, edições especiais e conteúdos curatoriais.',
+    'acceso-arte': '2. Política de Acesso Aberto',
+    'desc-acceso-arte': 'Acesso gratuito e aberto para leitura, download e consulta. Os conteúdos são publicados no site oficial e em plataformas acadêmicas e culturais aliadas para maior visibilidade.',
+    'participacion-arte': '3. Participação dos Autores',
+    'licenciamiento-arte': '4. Licenciamento',
+    'desc-licenciamiento-arte': 'Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Chamadas e Eventos Especiais',
+    'contenidos-arte': '6. Tipos de Conteúdo',
+    'evaluacion-arte': '7. Processo de Avaliação e Seleção',
+    'desc-evaluacion-arte': 'As propostas são avaliadas pela equipe editorial de acordo com critérios de pertinência temática, qualidade, coerência editorial e cumprimento dos requisitos estabelecidos em cada chamada.',
+    'originalidad-arte': '8. Originalidade e Ética Editorial',
+    'desc-originalidad-arte': 'As obras devem ser originais e inéditas. O/a autor/a é responsável pela autoria, veracidade da informação e respeito aos direitos de terceiros. Plágio não é admitido.',
+    'aceptacion-arte': '9. Política de Aceitação Automática',
+    'desc-aceptacion-arte': 'O preenchimento e envio dos formulários de participação implica na aceitação plena das políticas editoriais, requisitos da chamada e condições de publicação da revista.',
+    'datos-arte': '10. Uso de Dados e Comunicações Editoriais',
+    'desc-datos-arte': 'Os dados fornecidos serão utilizados exclusivamente para fins editoriais, acadêmicos e culturais. A revista poderá enviar comunicações institucionais e editoriais, sem cessão de informações a terceiros ou uso comercial.',
+    'comite-arte': '11. Comitê Editorial',
+    'desc-comite-arte': 'Editora e coordenadora editorial:',
+    'editora-arte': 'Yobana Orozco Benavides',
+    'titulo-revista-museos': 'Revista Explorando Museus Nacionais da Colômbia',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Trimestral',
+    'identidad-museos': '1. Identidade da revista',
+    'desc-identidad-museos': 'Revista digital focada em museus, patrimônio e cultura da Colômbia. Conteúdos com base em visitas, entrevistas e documentação institucional.',
+    'acceso-museos': '2. Política de Acesso Aberto',
+    'desc-acceso-museos': 'Acesso gratuito e aberto. Publicação no site oficial e repositórios digitais aliados para ampla visibilidade.',
+    'participacion-museos': '3. Participação de Autores e Instituições',
+    'licenciamiento-museos': '4. Licenciamento',
+    'desc-licenciamiento-museos': 'Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Chamadas e Eventos Especiais',
+    'contenidos-museos': '6. Tipos de Conteúdo',
+    'comite-museos': '7. Comitê Editorial',
+    'desc-comite-museos': 'Editora e coordenadora editorial:',
+    'editora-museos': 'Yobana Orozco Benavides',
+    'titulo-revista-jovenes': 'Revistas Jovens Criadores da América Latina (Internacional)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Semestral · Jovens 8-17 anos',
+    'identidad-jovenes': '1. Identidade da revista',
+    'desc-identidad-jovenes': 'Publicação digital de acesso aberto que difunde processos criativos de crianças e jovens. Gerida pela Fundação Artes Multicap.',
+    'acceso-jovenes': '2. Política de Acesso Aberto',
+    'desc-acceso-jovenes': 'Conteúdo gratuito e aberto. Publicação no site oficial e plataformas digitais artísticas, educativas e culturais para maior visibilidade.',
+    'participacion-jovenes': '3. Participação de Autores e Menores',
+    'licenciamiento-jovenes': '4. Licenciamento',
+    'desc-licenciamiento-jovenes': 'Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Chamadas e Eventos Especiais',
+    'contenidos-jovenes': '6. Tipos de Conteúdo',
+    'etica-jovenes': '7. Ética Editorial',
+    'desc-etica-jovenes': 'Proteção de menores, respeito pela autoria, proibição de plágio e difusão ética dos conteúdos.',
+    'comite-jovenes': '8. Comitê Editorial',
+    'desc-comite-jovenes': 'Editora e coordenadora editorial:',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+    'footer-text1': '© Fundação Artes Multicap',
+    'footer-text2': 'Projetos editoriais artísticos, culturais e educativos',
+    'footer-title': '© 2023 – 2026 | Explorando Museus e Arte Latino-americana',
+    'footer-description': 'Projeto educativo e cultural <strong>criado por Yobana Orozco Benavides</strong>. Iniciado em 2023 como um trabalho universitário sob o nome <em>Explorando Museus Nacionais da Colômbia</em>. Desde 2025, o projeto continua e se consolida através da <strong>Fundação Artes Multicap</strong> como <strong>Explorando Museus e Arte Latino-americana</strong>.',
+    'license-text': 'Licença Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0). Permite-se consulta, download e difusão com reconhecimento de autoria, sem fins comerciais.',
+    'author-bio': '🌐 Bio da autora:',
+    'footer-strong1': 'criado por Yobana Orozco Benavides',
+    'footer-em1': 'Explorando Museus Nacionais da Colômbia',
+    'footer-strong2': 'Fundação Artes Multicap',
+    'footer-strong3': 'Explorando Museus e Arte Latino-americana'
+  }
+};
+
+// Función para actualizar botón activo
+function setActiveFlag(language) {
+  document.querySelectorAll('#flags button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  const flagId = `flag-${language}`;
+  const flagButton = document.getElementById(flagId);
+  if (flagButton) {
+    flagButton.classList.add('active');
+  }
+}
+
+// Función para actualizar listas
+function updateList(listId, items) {
+  const listElement = document.getElementById(listId);
+  if (listElement) {
+    listElement.innerHTML = '';
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      listElement.appendChild(li);
+    });
+  }
+}
+
+// Función para traducir la página
+function translatePage(language) {
+  // Actualizar botón activo
+  setActiveFlag(language);
+  
+  // Actualizar título de la página
+  document.title = translations[language]['title'];
+  
+  // Traducir todos los elementos con ID
+  for (const key in translations[language]) {
+    const element = document.getElementById(key);
+    if (element) {
+      if (key.includes('lista-')) {
+        // Es una lista, actualizarla
+        const listItems = translations[language][key];
+        if (Array.isArray(listItems)) {
+          updateList(key, listItems);
+        }
+      } else if (key === 'footer-description' || key === 'intro-politicas') {
+        // Elementos con HTML
+        element.innerHTML = translations[language][key];
+      } else {
+        // Texto normal
+        element.textContent = translations[language][key];
+      }
+    }
+  }
+  
+  // Actualizar el nombre de la fundación en el intro (que está dentro del HTML)
+  const introElement = document.getElementById('intro-politicas');
+  if (introElement) {
+    const translatedIntro = translations[language]['intro-politicas'];
+    introElement.innerHTML = translatedIntro.replace(
+      '<strong id="fundacion-nombre">Fundación Artes Multicap</strong>',
+      `<strong id="fundacion-nombre">${translations[language]['fundacion-nombre']}</strong>`
+    );
+  }
+  
+  // Guardar preferencia de idioma
+  localStorage.setItem('preferred-language', language);
+}
+
+// Funciones específicas para cada idioma
+function translateToSpanish() {
+  translatePage('es');
+}
+
+function translateToEnglish() {
+  translatePage('en');
+}
+
+function translateToFrench() {
+  translatePage('fr');
+}
+
+function translateToPortuguese() {
+  translatePage('pt');
+}
+
+// Funciones para acordeón
+function toggleAccordion(id) {
+  const contents = document.querySelectorAll('.accordion-content');
+  contents.forEach(content => {
+    if (content.id !== id) {
+      content.style.display = 'none';
+    }
+  });
+  const element = document.getElementById(id);
+  element.style.display = element.style.display === 'block' ? 'none' : 'block';
+}
+
+// Cargar idioma preferido al iniciar
+document.addEventListener('DOMContentLoaded', function() {
+  const savedLanguage = localStorage.getItem('preferred-language') || 'es';
+  translatePage(savedLanguage);
+});
+</script>
 
 </body>
 </html>
