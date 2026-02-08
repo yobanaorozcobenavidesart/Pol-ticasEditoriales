@@ -88,6 +88,34 @@ body {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* BOTÓN ATRÁS CENTRADO */
+.boton-atras-container {
+  text-align: center;
+  margin: 20px 0 30px 0;
+}
+
+.boton-atras {
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+.boton-atras:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 20px #fff;
+  transform: translateY(-3px);
+}
+
 /* HEADER */
 header {
   background-color: #000;
@@ -96,7 +124,7 @@ header {
   margin-top: 0;
 }
 header img {
-  max-width: 650px;
+  max-width: 550px;
   width: 100%;
   border-radius: 15px;
   box-shadow: 0 0 20px #fff;
@@ -107,7 +135,7 @@ header img {
 .separador {
   height: 3px;
   background: linear-gradient(90deg, transparent, #fff, transparent);
-  margin: 0 auto 30px auto;
+  margin: 0 auto 1px auto;
   max-width: 800px;
 }
 
@@ -293,6 +321,10 @@ footer {
     text-align: center;
     gap: 15px;
   }
+  .boton-atras {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 </style>
 </head>
@@ -331,6 +363,13 @@ footer {
 
 <!-- CONTENIDO PRINCIPAL -->
 <div class="container">
+
+  <!-- BOTÓN ATRÁS CENTRADO -->
+  <div class="boton-atras-container">
+    <button class="boton-atras" onclick="window.location.href='https://explorandomuseosyartelatinoamericano.netlify.app/'">
+      <span id="texto-boton-atras">⬅ Atrás a Página Principal</span>
+    </button>
+  </div>
 
   <h1 id="titulo-politicas">Políticas Editoriales</h1>
 
@@ -582,6 +621,7 @@ footer {
 // Textos originales en español
 const originalTexts = {
   'title': 'Políticas Editoriales | Fundación Artes Multicap',
+  'texto-boton-atras': '⬅ Atrás a Página Principal',
   'titulo-politicas': 'Políticas Editoriales',
   'intro-politicas': 'En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto, respeto por la autoría y ética editorial.',
   'fundacion-nombre': 'Fundación Artes Multicap',
@@ -609,26 +649,6 @@ const originalTexts = {
   'comite-arte': '11. Comité Editorial',
   'desc-comite-arte': 'Editora y coordinadora editorial:',
   'editora-arte': 'Yobana Orozco Benavides',
-  
-  // Listas Revista Arte y Cultura
-  'lista-participacion-arte': [
-    'Certificado digital de participación para todos los autores.',
-    'Entrega de la revista en formato PDF.',
-    'Formulario de autoría obligatorio.',
-    'Los derechos de autor son conservados por los autores.',
-    'Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.'
-  ],
-  'lista-convocatorias-arte': [
-    'Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.',
-    'Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.'
-  ],
-  'lista-contenidos-arte': [
-    'Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.',
-    'Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.',
-    'Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.'
-  ],
-  
-  // Revista Museos Nacionales
   'titulo-revista-museos': 'Revista Explorando Museos Nacionales de Colombia',
   'subtitulo-revista-museos': 'ISSN 3114-9243 · Periodicidad Cuatrimestral',
   'identidad-museos': '1. Identidad de la revista',
@@ -643,25 +663,6 @@ const originalTexts = {
   'comite-museos': '7. Comité Editorial',
   'desc-comite-museos': 'Editora y coordinadora editorial:',
   'editora-museos': 'Yobana Orozco Benavides',
-  
-  // Listas Revista Museos
-  'lista-participacion-museos': [
-    'Autores y museos conservan derechos de autor.',
-    'Certificados de participación para colaboradores y autores.',
-    'Autorización institucional para museos requerida.',
-    'Difusión con fines educativos y culturales, no comerciales.'
-  ],
-  'lista-convocatorias-museos': [
-    'Visitas y entrevistas a museos y colecciones institucionales.',
-    'Ediciones especiales para museos invitados y artistas destacados.'
-  ],
-  'lista-contenidos-museos': [
-    'Artículos sobre museos, patrimonio y colecciones.',
-    'Ensayos educativos y reflexiones curatoriales.',
-    'Proyectos culturales y pedagógicos.'
-  ],
-  
-  // Revista Jóvenes Creadores
   'titulo-revista-jovenes': 'Revistas Jóvenes Creadores de Latinoamérica (Internacional)',
   'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años',
   'identidad-jovenes': '1. Identidad de la revista',
@@ -678,33 +679,10 @@ const originalTexts = {
   'comite-jovenes': '8. Comité Editorial',
   'desc-comite-jovenes': 'Editora y coordinadora editorial:',
   'editora-jovenes': 'Yobana Orozco Benavides',
-  
-  // Listas Revista Jóvenes
-  'lista-participacion-jovenes': [
-    'Certificado digital de participación emitido por la Fundación Artes Multicap.',
-    'Autorización de padres o tutores obligatoria para menores de edad.',
-    'Formulario de autoría obligatorio.',
-    'Derechos de autor conservados por los menores y respetados.',
-    'Reconocimiento de acompañantes: docentes, familias y organizaciones.'
-  ],
-  'lista-convocatorias-jovenes': [
-    'Convocatorias con instrucciones, cronogramas y formularios.',
-    'Publicación de obras seleccionadas en la revista y en plataformas digitales.',
-    'Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.',
-    'Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.',
-    'Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.'
-  ],
-  'lista-contenidos-jovenes': [
-    'Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.',
-    'Literatura: poesía, cuento, relato breve, artículo, ensayo.',
-    'Proyectos culturales, creativos y reflexiones pedagógicas.'
-  ],
-  
-  // Footer
   'footer-text1': '© Fundación Artes Multicap',
   'footer-text2': 'Proyectos editoriales artísticos, culturales y educativos',
   'footer-title': '© 2023 – 2026 | Explorando Museos y Arte Latinoamericano',
-  'footer-description': 'Proyecto educativo y cultural <strong>creado por Yobana Orozco Benavides</strong>. Iniciado en 2023 como un trabajo universitario bajo el nombre <em>Explorando Museos Nacionales de Colombia</em>. Desde 2025, el proyecto continúa y se consolida a través de la <strong>Fundación Artes Multicap</strong> como <strong>Explorando Museos y Arte Latinoamericano</strong>.',
+  'footer-description': 'Proyecto educativo y cultural <strong>creado por Yobana Orozco Benavides</strong>. Iniciado en 2023 como un trabajo universitario bajo el nome <em>Explorando Museos Nacionales de Colombia</em>. Desde 2025, el proyecto continúa y se consolida a través de la <strong>Fundación Artes Multicap</strong> como <strong>Explorando Museos y Arte Latinoamericano</strong>.',
   'license-text': 'Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0). Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.',
   'author-bio': '🌐 Bio autora:',
   'footer-strong1': 'creado por Yobana Orozco Benavides',
@@ -717,6 +695,7 @@ const originalTexts = {
 const translations = {
   'es': {
     'title': 'Políticas Editoriales | Fundación Artes Multicap',
+    'texto-boton-atras': '⬅ Atrás a Página Principal',
     'titulo-politicas': 'Políticas Editoriales',
     'intro-politicas': 'En esta sección se presentan las políticas editoriales de las revistas artísticas culturales y educativas gestionadas por la <strong>Fundación Artes Multicap</strong>, bajo principios de acceso abierto, respeto por la autoría y ética editorial.',
     'fundacion-nombre': 'Fundación Artes Multicap',
@@ -785,6 +764,7 @@ const translations = {
   },
   'en': {
     'title': 'Editorial Policies | Artes Multicap Foundation',
+    'texto-boton-atras': '⬅ Back to Main Page',
     'titulo-politicas': 'Editorial Policies',
     'intro-politicas': 'This section presents the editorial policies of the artistic, cultural, and educational journals managed by the <strong>Artes Multicap Foundation</strong>, under principles of open access, respect for authorship, and editorial ethics.',
     'fundacion-nombre': 'Artes Multicap Foundation',
@@ -853,6 +833,7 @@ const translations = {
   },
   'fr': {
     'title': 'Politiques Éditoriales | Fondation Artes Multicap',
+    'texto-boton-atras': '⬅ Retour à la Page Principale',
     'titulo-politicas': 'Politiques Éditoriales',
     'intro-politicas': 'Cette section présente les politiques éditoriales des revues artistiques, culturelles et éducatives gérées par la <strong>Fondation Artes Multicap</strong>, selon les principes d\'accès libre, de respect de la paternité et d\'éthique éditoriale.',
     'fundacion-nombre': 'Fondation Artes Multicap',
@@ -921,6 +902,7 @@ const translations = {
   },
   'pt': {
     'title': 'Políticas Editoriais | Fundação Artes Multicap',
+    'texto-boton-atras': '⬅ Voltar à Página Principal',
     'titulo-politicas': 'Políticas Editoriais',
     'intro-politicas': 'Nesta seção são apresentadas as políticas editoriais das revistas artísticas, culturais e educativas geridas pela <strong>Fundação Artes Multicap</strong>, sob princípios de acesso aberto, respeito pela autoria e ética editorial.',
     'fundacion-nombre': 'Fundação Artes Multicap',
@@ -1023,6 +1005,9 @@ function translatePage(language) {
   // Actualizar título de la página
   document.title = translations[language]['title'];
   
+  // Traducir botón atrás
+  document.getElementById('texto-boton-atras').textContent = translations[language]['texto-boton-atras'];
+  
   // Traducir todos los elementos con ID
   for (const key in translations[language]) {
     const element = document.getElementById(key);
@@ -1036,8 +1021,8 @@ function translatePage(language) {
       } else if (key === 'footer-description' || key === 'intro-politicas') {
         // Elementos con HTML
         element.innerHTML = translations[language][key];
-      } else {
-        // Texto normal
+      } else if (key !== 'texto-boton-atras' && key !== 'title') {
+        // Texto normal (excepto botón atrás y título que ya se tradujeron)
         element.textContent = translations[language][key];
       }
     }
