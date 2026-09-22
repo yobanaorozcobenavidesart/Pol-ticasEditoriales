@@ -2,2509 +2,1487 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<title>Políticas Editoriales | Fundación Artes Multicap</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artes Multicap Editorial | Publica tu libro</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
 <style>
-
-:root{
---bg:#000000;
---bg2:#0a0a0a;
---card:rgba(255,255,255,.06);
---glass:rgba(255,255,255,.08);
---gold:#e7c36b;
---gold-bright:#ffd98c;
---blue:#6aa6ff;
---text:#f4f4f4;
---muted:#b9c1d9;
---radius:22px;
---wa:#25D366;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-font-family:'Inter',sans-serif;
-background:#000000;
-color:var(--text);
-line-height:1.05;
-overflow-x:hidden;
-font-size:15px;
--webkit-font-smoothing:antialiased;
-}
-
-html{scroll-behavior:smooth;}
-
-img{max-width:100%;display:block;}
-
-/* ============ HEADER ============ */
-header{
-position:fixed;
-top:0;
-width:100%;
-backdrop-filter:blur(20px);
-background:rgba(0,0,0,.85);
-border-bottom:1px solid rgba(231,195,107,.15);
-z-index:1000;
-box-shadow:0 4px 30px rgba(0,0,0,.6);
-}
-
-nav{
-max-width:1250px;
-margin:auto;
-padding:10px 22px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:18px;
-}
-
-.logo-wrap{
-display:flex;
-align-items:center;
-gap:10px;
-flex-shrink:0;
-position:relative;
-}
-
-.logo-wrap::before{
-content:'';
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:120%;
-height:120%;
-background:radial-gradient(ellipse,rgba(231,195,107,.25) 0%,transparent 70%);
-pointer-events:none;
-z-index:-1;
-filter:blur(20px);
-}
-
-.logo-img{
-height:90px;
-width:auto;
-filter:
-  brightness(1.35)
-  contrast(1.15)
-  saturate(1.4)
-  drop-shadow(0 0 15px rgba(231,195,107,.8))
-  drop-shadow(0 0 35px rgba(231,195,107,.5))
-  drop-shadow(0 0 60px rgba(231,195,107,.25));
-transition:filter .4s, transform .4s;
-}
-
-.logo-img:hover{
-filter:
-  brightness(1.5)
-  contrast(1.2)
-  saturate(1.5)
-  drop-shadow(0 0 20px rgba(231,195,107,1))
-  drop-shadow(0 0 45px rgba(231,195,107,.8))
-  drop-shadow(0 0 80px rgba(231,195,107,.5));
-transform:scale(1.04);
-}
-
-/* ============ BOTONES NAV ============ */
-nav ul{
-display:flex;
-gap:10px;
-list-style:none;
-align-items:center;
-flex-wrap:wrap;
-justify-content:flex-end;
-}
-
-nav ul li a{
-color:var(--gold-bright);
-text-decoration:none;
-font-size:.78rem;
-font-weight:600;
-letter-spacing:.5px;
-padding:8px 15px;
-border-radius:50px;
-border:1px solid rgba(231,195,107,.4);
-background:rgba(231,195,107,.05);
-transition:all .4s ease;
-display:inline-block;
-position:relative;
-line-height:1;
-white-space:nowrap;
-filter:
-  brightness(1.2)
-  drop-shadow(0 0 6px rgba(231,195,107,.6))
-  drop-shadow(0 0 12px rgba(231,195,107,.35));
-text-shadow:
-  0 0 6px rgba(231,195,107,.5),
-  0 0 12px rgba(231,195,107,.3);
-}
-
-nav ul li a:hover{
-color:#fff4d8;
-border-color:var(--gold-bright);
-background:rgba(231,195,107,.18);
-transform:translateY(-2px);
-filter:
-  brightness(1.5)
-  drop-shadow(0 0 10px rgba(231,195,107,1))
-  drop-shadow(0 0 22px rgba(231,195,107,.8))
-  drop-shadow(0 0 40px rgba(231,195,107,.5));
-text-shadow:
-  0 0 10px rgba(255,217,140,1),
-  0 0 22px rgba(231,195,107,.8),
-  0 0 40px rgba(231,195,107,.5);
-box-shadow:
-  0 0 20px rgba(231,195,107,.5),
-  inset 0 0 15px rgba(231,195,107,.15);
-}
-
-/* ============ HERO ============ */
-.hero{
-min-height:85vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:150px 20px 30px;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:700px;
-height:700px;
-background:radial-gradient(circle,var(--blue),transparent 70%);
-opacity:.12;
-top:-150px;
-right:-150px;
-pointer-events:none;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-background:radial-gradient(circle,var(--gold),transparent 70%);
-opacity:.08;
-bottom:-200px;
-left:-200px;
-pointer-events:none;
-}
-
-.hero-content{
-max-width:1200px;
-width:100%;
-display:grid;
-grid-template-columns:1.3fr 1fr;
-gap:50px;
-align-items:center;
-position:relative;
-z-index:2;
-}
-
-.hero h1{
-font-family:"Cormorant Garamond",serif;
-font-size:3.4rem;
-line-height:1;
-margin-bottom:12px;
-}
-
-.hero h1 em{
-font-style:italic;
-color:var(--gold);
-font-weight:400;
-text-shadow:
-  0 0 20px rgba(231,195,107,.6),
-  0 0 40px rgba(231,195,107,.3);
-}
-
-.hero p{
-color:var(--muted);
-font-size:1rem;
-margin-bottom:20px;
-line-height:1.05;
-}
-
-.buttons{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:12px 24px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-display:inline-block;
-font-size:.88rem;
-border:none;
-cursor:pointer;
-font-family:'Inter',sans-serif;
-line-height:1;
-text-align:center;
-}
-
-.primary{
-background:var(--gold);
-color:#111;
-box-shadow:
-  0 0 20px rgba(231,195,107,.5),
-  0 0 40px rgba(231,195,107,.25);
-}
-
-.secondary{
-border:1px solid rgba(255,255,255,.18);
-color:white;
-background:transparent;
-}
-
-.primary:hover{
-transform:translateY(-3px);
-box-shadow:
-  0 10px 30px rgba(231,195,107,.7),
-  0 0 60px rgba(231,195,107,.5),
-  0 0 100px rgba(231,195,107,.3);
-}
-
-.secondary:hover{
-background:white;
-color:#111;
-}
-
-.hero-image{
-height:320px;
-border-radius:var(--radius);
-overflow:hidden;
-box-shadow:
-  0 25px 60px rgba(0,0,0,.5),
-  0 0 40px rgba(231,195,107,.15);
-border:1px solid rgba(231,195,107,.2);
-}
-
-.hero-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* ============ SECCIONES ============ */
-section{
-max-width:1200px;
-width:100%;
-margin:auto;
-padding:30px 20px;
-line-height:1.05;
-}
-
-.title{
-text-align:center;
-margin-bottom:20px;
-line-height:1;
-}
-
-.title h2{
-font-family:"Cormorant Garamond",serif;
-font-size:2.4rem;
-margin-bottom:6px;
-color:var(--gold);
-line-height:1;
-text-shadow:
-  0 0 20px rgba(231,195,107,.5),
-  0 0 40px rgba(231,195,107,.25);
-}
-
-.title p{
-color:var(--muted);
-max-width:700px;
-margin:auto;
-font-size:.95rem;
-line-height:1.05;
-}
-
-/* ============ IMAGEN ÚNICA ============ */
-.servicios-imagen{
-width:100%;
-max-width:1200px;
-margin:0 auto;
-border-radius:var(--radius);
-overflow:hidden;
-border:1.5px solid rgba(231,195,107,.25);
-box-shadow:
-  0 20px 60px rgba(0,0,0,.5),
-  0 0 60px rgba(231,195,107,.15),
-  inset 0 0 40px rgba(231,195,107,.05);
-transition:all .5s ease;
-position:relative;
-}
-
-.servicios-imagen::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.7;
-z-index:2;
-box-shadow:0 0 20px rgba(231,195,107,.6);
-}
-
-.servicios-imagen:hover{
-border-color:rgba(231,195,107,.6);
-box-shadow:
-  0 25px 80px rgba(0,0,0,.6),
-  0 0 100px rgba(231,195,107,.3),
-  inset 0 0 50px rgba(231,195,107,.08);
-transform:translateY(-3px);
-}
-
-.servicios-imagen img{
-width:100%;
-height:auto;
-display:block;
-}
-
-/* ============ CONVOCATORIA ============ */
-.convocatoria-hero{
-background:linear-gradient(160deg,rgba(231,195,107,.08),rgba(255,255,255,.03));
-border:1.5px solid rgba(231,195,107,.35);
-border-radius:var(--radius);
-padding:30px 26px;
-text-align:center;
-margin-bottom:18px;
-position:relative;
-overflow:hidden;
-}
-
-.convocatoria-hero::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.7;
-box-shadow:0 0 20px rgba(231,195,107,.6);
-}
-
-.convocatoria-hero .conv-badge{
-display:inline-block;
-font-size:.68rem;
-font-weight:600;
-letter-spacing:3px;
-text-transform:uppercase;
-color:var(--gold);
-border:1px solid rgba(231,195,107,.45);
-padding:.35rem 1rem;
-border-radius:50px;
-margin-bottom:.9rem;
-line-height:1;
-background:rgba(231,195,107,.05);
-text-shadow:0 0 10px rgba(231,195,107,.5);
-}
-
-.convocatoria-hero h3{
-font-family:"Cormorant Garamond",serif;
-font-size:2.2rem;
-color:var(--gold);
-line-height:1;
-margin-bottom:8px;
-text-shadow:0 0 20px rgba(231,195,107,.5);
-}
-
-.convocatoria-hero .conv-lema{
-font-family:"Cormorant Garamond",serif;
-font-style:italic;
-font-size:1.15rem;
-color:var(--gold-bright);
-letter-spacing:.5px;
-margin-bottom:12px;
-line-height:1.05;
-text-shadow:0 0 12px rgba(231,195,107,.4);
-}
-
-.convocatoria-hero p{
-color:var(--muted);
-font-size:.95rem;
-max-width:780px;
-margin:0 auto 8px;
-line-height:1.05;
-}
-
-.convocatoria-hero p:last-child{margin-bottom:0;}
-
-.convocatoria-hero p strong{color:var(--gold-bright);font-weight:600;}
-
-/* ============ GRID CONVOCATORIA 2 COLUMNAS ============ */
-.conv-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
-margin-bottom:16px;
-align-items:start;
-}
-
-.conv-col{
-display:flex;
-flex-direction:column;
-gap:16px;
-}
-
-.conv-block{
-background:var(--card);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:var(--radius);
-padding:20px 18px;
-position:relative;
-overflow:hidden;
-line-height:1.05;
-}
-
-.conv-block::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.55;
-}
-
-.conv-block h3{
-font-family:"Cormorant Garamond",serif;
-font-size:1.4rem;
-color:var(--gold);
-margin-bottom:10px;
-line-height:1;
-text-shadow:0 0 15px rgba(231,195,107,.35);
-padding-bottom:.4rem;
-border-bottom:1px solid rgba(231,195,107,.2);
-}
-
-.conv-block h3::before{
-content:'✦ ';
-color:var(--gold-bright);
-font-size:.9rem;
-text-shadow:0 0 12px rgba(231,195,107,.8);
-}
-
-.conv-block h4{
-font-family:"Cormorant Garamond",serif;
-font-size:1.05rem;
-color:var(--gold-bright);
-margin:.7rem 0 .4rem;
-line-height:1;
-text-shadow:0 0 10px rgba(231,195,107,.4);
-}
-
-.conv-block p{
-color:var(--muted);
-font-size:.86rem;
-line-height:1.05;
-margin-bottom:.5rem;
-}
-
-.conv-block p:last-child{margin-bottom:0;}
-
-.conv-block p strong{color:var(--gold-bright);font-weight:600;}
-
-.conv-list{
-list-style:none;
-padding:0;
-margin:0 0 .4rem;
-}
-
-.conv-list li{
-padding:.25rem 0;
-font-size:.84rem;
-color:var(--text);
-display:flex;
-gap:.5rem;
-align-items:flex-start;
-border-bottom:1px solid rgba(255,255,255,.05);
-line-height:1.05;
-}
-
-.conv-list li:last-child{border-bottom:none;}
-
-.conv-list li::before{
-content:'—';
-color:var(--gold);
-flex-shrink:0;
-font-weight:700;
-}
-
-.conv-list.check li::before{
-content:'✓';
-color:var(--gold-bright);
-font-weight:700;
-text-shadow:0 0 8px rgba(231,195,107,.6);
-}
-
-.conv-list.cross li::before{
-content:'✕';
-color:#c98b8b;
-font-weight:700;
-}
-
-.conv-premio-item{
-background:rgba(231,195,107,.05);
-border-left:2px solid var(--gold);
-border-radius:10px;
-padding:.65rem .8rem;
-margin-bottom:.5rem;
-line-height:1.05;
-}
-
-.conv-premio-item:last-child{margin-bottom:0;}
-
-.conv-premio-item h4{
-margin-top:0;
-font-size:.98rem;
-color:var(--gold);
-}
-
-.conv-premio-item p{
-font-size:.83rem;
-margin-bottom:.3rem;
-}
-
-.conv-premio-item .conv-list li{
-font-size:.82rem;
-}
-
-.conv-cronograma{
-list-style:none;
-padding:0;
-margin:0;
-}
-
-.conv-cronograma li{
-display:grid;
-grid-template-columns:1fr auto;
-gap:10px;
-align-items:baseline;
-padding:.45rem .65rem;
-border-bottom:1px solid rgba(255,255,255,.05);
-line-height:1.05;
-font-size:.85rem;
-}
-
-.conv-cronograma li:last-child{border-bottom:none;}
-
-.conv-cronograma li:nth-child(odd){
-background:rgba(231,195,107,.03);
-border-radius:8px;
-}
-
-.conv-cronograma .etapa{
-color:var(--text);
-}
-
-.conv-cronograma .fecha{
-color:var(--gold-bright);
-font-weight:600;
-text-align:right;
-white-space:nowrap;
-text-shadow:0 0 8px rgba(231,195,107,.4);
-}
-
-.conv-paso{
-display:flex;
-gap:12px;
-background:rgba(231,195,107,.04);
-border:1px solid rgba(231,195,107,.18);
-border-radius:14px;
-padding:12px 13px;
-margin-bottom:10px;
-align-items:flex-start;
-line-height:1.05;
-transition:.3s;
-}
-
-.conv-paso:last-child{margin-bottom:0;}
-
-.conv-paso:hover{
-border-color:rgba(231,195,107,.4);
-transform:translateY(-2px);
-box-shadow:0 8px 24px rgba(0,0,0,.35);
-}
-
-.conv-paso .paso-num{
-min-width:34px;
-height:34px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,var(--gold),#ffd98c);
-color:#111;
-font-weight:700;
-font-size:.88rem;
-flex-shrink:0;
-box-shadow:0 0 18px rgba(231,195,107,.5);
-line-height:1;
-}
-
-.conv-paso .paso-content{
-flex:1;
-min-width:0;
-}
-
-.conv-paso .paso-content h4{
-font-family:"Cormorant Garamond",serif;
-font-size:1rem;
-color:var(--gold-bright);
-margin-bottom:.3rem;
-line-height:1;
-text-shadow:0 0 10px rgba(231,195,107,.4);
-}
-
-.conv-paso .paso-content p{
-font-size:.82rem;
-color:var(--muted);
-line-height:1.05;
-margin-bottom:.4rem;
-}
-
-.conv-paso .paso-content p:last-child{margin-bottom:0;}
-
-.conv-archivo{
-background:rgba(0,0,0,.4);
-border:1px dashed rgba(231,195,107,.35);
-border-radius:12px;
-padding:.65rem .85rem;
-margin-top:.4rem;
-line-height:1.05;
-}
-
-.conv-archivo .archivo-tag{
-display:inline-block;
-font-size:.62rem;
-font-weight:600;
-letter-spacing:1.5px;
-text-transform:uppercase;
-color:var(--gold);
-border:1px solid rgba(231,195,107,.4);
-padding:.15rem .55rem;
-border-radius:50px;
-margin-bottom:.35rem;
-line-height:1;
-}
-
-.conv-archivo .archivo-nombre{
-display:block;
-font-family:'Courier New',monospace;
-font-size:.76rem;
-color:var(--gold-bright);
-background:rgba(231,195,107,.08);
-padding:.3rem .6rem;
-border-radius:8px;
-margin-top:.4rem;
-word-break:break-all;
-line-height:1.05;
-}
-
-.conv-aviso{
-background:rgba(231,195,107,.06);
-border-left:3px solid var(--gold);
-border-radius:12px;
-padding:.75rem .9rem;
-font-size:.82rem;
-color:var(--muted);
-line-height:1.05;
-margin-top:10px;
-}
-
-.conv-aviso strong{
-color:var(--gold);
-text-shadow:0 0 10px rgba(231,195,107,.4);
-}
-
-.conv-cta{
-text-align:center;
-margin-top:20px;
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-/* ============ TAMAÑOS DE LIBRO ============ */
-.tamanos-tabla{
-width:100%;
-border-collapse:collapse;
-background:rgba(255,255,255,.02);
-border-radius:14px;
-overflow:hidden;
-border:1px solid rgba(231,195,107,.2);
-box-shadow:0 10px 40px rgba(0,0,0,.3);
-line-height:1.05;
-}
-
-.tamanos-tabla thead{
-background:linear-gradient(90deg,rgba(231,195,107,.15),rgba(231,195,107,.08));
-}
-
-.tamanos-tabla th{
-padding:.6rem .8rem;
-text-align:left;
-font-size:.7rem;
-font-weight:600;
-letter-spacing:1.5px;
-text-transform:uppercase;
-color:var(--gold-bright);
-border-bottom:1px solid rgba(231,195,107,.25);
-text-shadow:0 0 10px rgba(231,195,107,.4);
-line-height:1;
-}
-
-.tamanos-tabla td{
-padding:.55rem .8rem;
-font-size:.85rem;
-color:var(--text);
-border-bottom:1px solid rgba(255,255,255,.05);
-line-height:1.05;
-vertical-align:top;
-}
-
-.tamanos-tabla tbody tr{transition:background .3s ease;}
-.tamanos-tabla tbody tr:hover{background:rgba(231,195,107,.05);}
-.tamanos-tabla tbody tr:last-child td{border-bottom:none;}
-
-.tamanos-tabla .tipo{
-font-family:"Cormorant Garamond",serif;
-font-size:1rem;
-font-weight:700;
-color:var(--gold);
-text-shadow:0 0 12px rgba(231,195,107,.4);
-white-space:nowrap;
-line-height:1;
-}
-
-.tamanos-tabla .aplica-si{
-color:var(--gold-bright);
-font-weight:600;
-}
-
-.nota-tamanos{
-background:rgba(231,195,107,.06);
-border-left:3px solid var(--gold);
-border-radius:12px;
-padding:.85rem 1rem;
-font-size:.85rem;
-color:var(--muted);
-line-height:1.05;
-margin-top:12px;
-}
-
-.nota-tamanos strong{
-color:var(--gold);
-text-shadow:0 0 10px rgba(231,195,107,.4);
-}
-
-/* ============ PAQUETES ============ */
-.paquetes-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-max-width:1000px;
-margin:0 auto;
-}
-
-.paquete-card{
-background:var(--card);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:var(--radius);
-padding:24px 22px;
-transition:.35s;
-position:relative;
-overflow:hidden;
-display:flex;
-flex-direction:column;
-line-height:1.05;
-}
-
-.paquete-card::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.6;
-}
-
-.paquete-card:hover{
-transform:translateY(-8px);
-border-color:rgba(231,195,107,.4);
-box-shadow:0 20px 50px rgba(0,0,0,.4);
-}
-
-.paquete-card.destacado{
-border-color:rgba(231,195,107,.5);
-background:linear-gradient(160deg,rgba(231,195,107,.08),rgba(255,255,255,.04));
-}
-
-.paquete-tag{
-display:inline-block;
-font-size:.66rem;
-font-weight:600;
-letter-spacing:2px;
-text-transform:uppercase;
-color:var(--gold);
-border:1px solid rgba(231,195,107,.35);
-padding:.25rem .75rem;
-border-radius:50px;
-margin-bottom:.6rem;
-align-self:flex-start;
-line-height:1;
-}
-
-.paquete-card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:1.7rem;
-margin-bottom:.2rem;
-color:var(--gold);
-line-height:1;
-text-shadow:0 0 15px rgba(231,195,107,.35);
-}
-
-.paquete-ideal{
-font-size:.83rem;
-color:var(--muted);
-font-style:italic;
-margin-bottom:.8rem;
-line-height:1.05;
+/* ESTILOS GENERALES */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Times New Roman", serif;
+  line-height: 1.1;
+}
+
+/* BANDERAS ESTÁTICAS EN LA PARTE SUPERIOR */
+#flags {
+  background: #000;
+  border-bottom: 3px solid #fff;
+  padding: 15px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+#flags-container {
+  display: inline-flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
 }
 
-.paquete-card h4{
-font-size:.68rem;
-font-weight:600;
-letter-spacing:2.5px;
-text-transform:uppercase;
-color:var(--gold);
-margin-bottom:.5rem;
-line-height:1;
+#flags button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
 }
 
-.paquete-card ul{
-list-style:none;
-padding:0;
-margin:0 0 .9rem;
+#flags button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.paquete-card ul li{
-padding:.28rem 0;
-font-size:.85rem;
-color:var(--text);
-display:flex;
-gap:.5rem;
-align-items:flex-start;
-border-bottom:1px solid rgba(255,255,255,.05);
-line-height:1.05;
+#flags button.active {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-.paquete-card ul li:last-child{border-bottom:none;}
-
-.paquete-card ul li::before{
-content:'—';
-color:var(--gold);
-flex-shrink:0;
-}
-
-.paquete-beneficio{
-background:rgba(231,195,107,.06);
-border:1px dashed rgba(231,195,107,.35);
-border-radius:12px;
-padding:.7rem .85rem;
-font-size:.8rem;
-color:var(--muted);
-line-height:1.05;
-margin-bottom:1rem;
-}
-
-.paquete-beneficio strong{color:var(--gold);}
-
-.paquete-card .btn{
-margin-top:auto;
-width:100%;
-text-align:center;
-}
-
-/* ============ CALCULADORA (compacta) ============ */
-.cotizador{
-max-width:600px;
-margin:0 auto;
-background:linear-gradient(160deg,rgba(231,195,107,.08),rgba(255,255,255,.03));
-border:1.5px solid rgba(231,195,107,.35);
-border-radius:18px;
-padding:20px 18px;
-box-shadow:
-  0 20px 60px rgba(0,0,0,.5),
-  0 0 60px rgba(231,195,107,.1);
-position:relative;
-overflow:hidden;
-}
-
-.cotizador::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.7;
-box-shadow:0 0 20px rgba(231,195,107,.6);
-}
-
-.cotizador-campo{margin-bottom:12px;}
-
-.cotizador-campo label{
-display:block;
-font-size:.72rem;
-font-weight:600;
-letter-spacing:1.2px;
-text-transform:uppercase;
-color:var(--gold);
-margin-bottom:6px;
-text-shadow:0 0 10px rgba(231,195,107,.4);
-line-height:1;
-}
-
-.cotizador-campo select{
-width:100%;
-padding:10px 14px;
-background:rgba(0,0,0,.6);
-border:1px solid rgba(231,195,107,.35);
-border-radius:10px;
-color:var(--text);
-font-family:'Inter',sans-serif;
-font-size:.88rem;
-cursor:pointer;
-transition:all .3s;
-appearance:none;
-background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e7c36b' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
-background-repeat:no-repeat;
-background-position:right 12px center;
-background-size:16px;
-padding-right:38px;
-line-height:1.05;
-}
-
-.cotizador-campo select:hover,
-.cotizador-campo select:focus{
-border-color:var(--gold);
-box-shadow:0 0 20px rgba(231,195,107,.3);
-outline:none;
-}
-
-.cotizador-campo select option{
-background:#111;
-color:var(--text);
-padding:10px;
-}
-
-.cotizador-resultado{
-background:rgba(0,0,0,.7);
-border:1px solid rgba(231,195,107,.3);
-border-radius:14px;
-padding:16px 16px;
-text-align:center;
-margin-top:14px;
-transition:all .4s ease;
-}
-
-.cotizador-resultado.activo{
-border-color:var(--gold);
-box-shadow:
-  0 0 30px rgba(231,195,107,.3),
-  inset 0 0 30px rgba(231,195,107,.05);
-}
-
-.cotizador-resultado .etiqueta{
-font-size:.68rem;
-font-weight:600;
-letter-spacing:1.8px;
-text-transform:uppercase;
-color:var(--muted);
-margin-bottom:.3rem;
-line-height:1;
-}
-
-.cotizador-resultado .precio{
-font-family:"Cormorant Garamond",serif;
-font-size:2rem;
-font-weight:700;
-color:var(--gold);
-line-height:1;
-text-shadow:0 0 25px rgba(231,195,107,.5);
-margin-bottom:.3rem;
-}
-
-.cotizador-resultado .detalle{
-font-size:.8rem;
-color:var(--muted);
-line-height:1.05;
-margin-bottom:.7rem;
-}
-
-.cotizador-resultado .detalle strong{color:var(--gold-bright);}
-
-.cotizador-resultado .btn-wa{
-display:inline-flex;
-align-items:center;
-gap:.5rem;
-background:var(--wa);
-color:white;
-padding:10px 18px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-font-size:.82rem;
-transition:all .3s;
-box-shadow:0 0 20px rgba(37,211,102,.4);
-line-height:1;
-}
-
-.cotizador-resultado .btn-wa:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(37,211,102,.6),0 0 60px rgba(37,211,102,.3);
-}
-
-.cotizador-resultado .btn-wa svg{width:16px;height:16px;fill:white;}
-
-.cotizador-aviso{
-font-size:.75rem;
-color:var(--muted);
-text-align:center;
-margin-top:12px;
-line-height:1.05;
-font-style:italic;
-}
-
-/* ============ INCLUSIÓN ============ */
-.inclusion-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-max-width:1100px;
-margin:0 auto 26px;
-}
-
-.inclusion-card{
-background:var(--card);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:var(--radius);
-padding:24px 22px;
-transition:.35s;
-position:relative;
-overflow:hidden;
-line-height:1.05;
-}
-
-.inclusion-card::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.6;
-}
-
-.inclusion-card:hover{
-transform:translateY(-8px);
-border-color:rgba(231,195,107,.4);
-box-shadow:0 20px 50px rgba(0,0,0,.4);
-}
-
-.inclusion-card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:1.5rem;
-color:var(--gold);
-margin-bottom:.5rem;
-line-height:1;
-text-shadow:0 0 15px rgba(231,195,107,.35);
-}
-
-.inclusion-card p{
-font-size:.88rem;
-color:var(--muted);
-margin-bottom:.8rem;
-line-height:1.05;
-}
-
-.estratos-tabla{
-width:100%;
-border-collapse:collapse;
-background:rgba(255,255,255,.02);
-border-radius:12px;
-overflow:hidden;
-border:1px solid rgba(231,195,107,.15);
-line-height:1.05;
-}
-
-.estratos-tabla thead{background:rgba(231,195,107,.12);}
-
-.estratos-tabla th{
-padding:.5rem .75rem;
-text-align:left;
-font-size:.68rem;
-font-weight:600;
-letter-spacing:1.5px;
-text-transform:uppercase;
-color:var(--gold);
-border-bottom:1px solid rgba(231,195,107,.2);
-line-height:1;
-}
-
-.estratos-tabla td{
-padding:.45rem .75rem;
-font-size:.84rem;
-color:var(--text);
-border-bottom:1px solid rgba(255,255,255,.05);
-line-height:1.05;
-}
-
-.estratos-tabla tr:last-child td{border-bottom:none;}
-.estratos-tabla .dcto{color:var(--gold);font-weight:600;}
-
-.lista-aplicar{list-style:none;padding:0;margin:0;}
-
-.lista-aplicar li{
-padding:.35rem 0;
-font-size:.85rem;
-color:var(--text);
-display:flex;
-gap:.5rem;
-align-items:flex-start;
-border-bottom:1px solid rgba(255,255,255,.05);
-line-height:1.05;
+#flags .flag-label {
+  color: white;
+  font-size: 11px;
+  margin-top: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
 }
 
-.lista-aplicar li:last-child{border-bottom:none;}
-
-.lista-aplicar li::before{
-content:'—';
-color:var(--gold);
-flex-shrink:0;
+#flags img {
+  width: 36px;
+  height: 27px;
+  border-radius: 4px;
+  border: 1px solid #666;
+  transition: all 0.3s ease;
 }
 
-.nota-inclusion{
-background:rgba(231,195,107,.06);
-border-left:2px solid var(--gold);
-border-radius:10px;
-padding:.7rem .85rem;
-font-size:.82rem;
-color:var(--muted);
-line-height:1.05;
-margin-top:.85rem;
+#flags button:hover img {
+  transform: scale(1.1);
+  border-color: #fff;
 }
 
-.nota-inclusion strong{color:var(--gold);}
-
-/* ============ PLATAFORMAS ============ */
-.revistas-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-max-width:1000px;
-margin:0 auto;
+#flags button.active img {
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.revista-card{
-background:var(--card);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:var(--radius);
-padding:26px 24px;
-transition:.35s;
-position:relative;
-overflow:hidden;
-display:flex;
-flex-direction:column;
-line-height:1.05;
+/* HEADER CON TRES LOGOS */
+header {
+  background-color: #000;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  margin-top: 0;
 }
 
-.revista-card::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.6;
+.header-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.revista-card:hover{
-transform:translateY(-8px);
-border-color:rgba(231,195,107,.4);
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+.header-logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.revista-card .r-tag{
-display:inline-block;
-font-size:.66rem;
-font-weight:600;
-letter-spacing:2px;
-text-transform:uppercase;
-color:var(--gold);
-border:1px solid rgba(231,195,107,.35);
-padding:.25rem .75rem;
-border-radius:50px;
-margin-bottom:.6rem;
-align-self:flex-start;
-line-height:1;
+.header-logos a:hover {
+  transform: translateY(-3px);
 }
 
-.revista-card h3{
-font-family:"Cormorant Garamond",serif;
-font-size:1.6rem;
-margin-bottom:.3rem;
-color:var(--gold);
-line-height:1;
-text-shadow:0 0 15px rgba(231,195,107,.35);
+.header-logos img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
-.revista-card p{
-font-size:.9rem;
-color:var(--muted);
-line-height:1.05;
-margin-bottom:1rem;
+.header-logos img.logo-fundacion {
+  max-width: 150px;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,.5));
 }
 
-.revista-card ul{
-list-style:none;
-padding:0;
-margin:0 0 1.1rem;
+.header-logos img.logo-fundacion:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px #fff);
 }
 
-.revista-card ul li{
-padding:.25rem 0;
-font-size:.84rem;
-color:var(--text);
-display:flex;
-gap:.5rem;
-align-items:flex-start;
-line-height:1.05;
+.header-logos img.logo-central {
+  max-width: 320px;
+  box-shadow: 0 0 20px #fff;
+  border: 2px solid #fff;
 }
 
-.revista-card ul li::before{
-content:'—';
-color:var(--gold);
-flex-shrink:0;
+.header-logos img.logo-central:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px #fff, 0 0 50px rgba(255,255,255,.5);
 }
 
-.revista-card .btn{
-margin-top:auto;
-width:100%;
-text-align:center;
+.header-logos img.logo-editorial {
+  max-width: 160px;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,.5));
 }
 
-/* ============ CTA ============ */
-.cta{
-background:linear-gradient(135deg,#0a0a0a,#000000);
-border-radius:26px;
-padding:40px 26px;
-text-align:center;
-border:1px solid rgba(231,195,107,.25);
-line-height:1.05;
-position:relative;
-overflow:hidden;
+.header-logos img.logo-editorial:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px #fff);
 }
 
-.cta::before{
-content:'';
-position:absolute;
-top:0;left:0;right:0;
-height:2px;
-background:linear-gradient(90deg,transparent,var(--gold),transparent);
-opacity:.6;
+/* SEPARADOR */
+.separador {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  margin: 0 auto 1px auto;
+  max-width: 800px;
 }
 
-.cta h2{
-font-family:"Cormorant Garamond",serif;
-font-size:2.3rem;
-margin-bottom:4px;
-line-height:1;
-color:var(--gold);
-text-shadow:0 0 20px rgba(231,195,107,.4);
+/* CONTENIDO PRINCIPAL */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-.cta .cta-sub{
-font-family:"Cormorant Garamond",serif;
-font-style:italic;
-font-size:1.15rem;
-color:var(--gold-bright);
-letter-spacing:.5px;
-margin-bottom:20px;
-text-shadow:0 0 12px rgba(231,195,107,.4);
-line-height:1.05;
+h1 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  line-height: 1.1;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.2);
 }
 
-.cta .cta-info{
-display:flex;
-flex-direction:column;
-gap:5px;
-align-items:center;
-margin-bottom:6px;
-font-size:.95rem;
-color:var(--muted);
-line-height:1.05;
+p.intro {
+  font-size: 17px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  line-height: 1.1;
+  text-align: left;
 }
-
-.cta .cta-info p{margin:0;}
 
-.cta .cta-info a{
-color:var(--gold-bright);
-text-decoration:none;
-transition:.3s;
+p.intro .intro-block {
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.1;
 }
 
-.cta .cta-info a:hover{
-color:#fff4d8;
-text-shadow:0 0 12px rgba(231,195,107,.8);
-}
+p.intro .intro-block:last-child { margin-bottom: 0; }
 
-/* ============ FOOTER ============ */
-footer{
-padding:10px 20px 30px;
-text-align:center;
-color:var(--muted);
-font-size:.85rem;
-line-height:1.05;
-position:relative;
-overflow:hidden;
-background:#000000;
-}
+p.intro strong { color: #fff; }
 
-footer::before{
-content:'';
-position:absolute;
-top:50%;left:50%;
-transform:translate(-50%,-50%);
-width:80%;height:80%;
-background:radial-gradient(ellipse,rgba(231,195,107,.12) 0%,transparent 70%);
-pointer-events:none;
-filter:blur(40px);
+.accordion {
+  border: 1px solid #555;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.05);
+  transition: box-shadow 0.3s ease;
 }
 
-.footer-logos{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:50px;
-margin-bottom:1.4rem;
-position:relative;
-z-index:2;
-flex-wrap:wrap;
+.accordion:hover {
+  box-shadow: 0 6px 12px rgba(255,255,255,0.15);
 }
 
-.footer-logo{
-height:110px;
-width:auto;
-object-fit:contain;
-filter:
-  brightness(1.35)
-  contrast(1.15)
-  saturate(1.4)
-  drop-shadow(0 0 20px rgba(231,195,107,.8))
-  drop-shadow(0 0 45px rgba(231,195,107,.5))
-  drop-shadow(0 0 80px rgba(231,195,107,.25));
-transition:filter .4s, transform .4s;
+.accordion-header {
+  display: flex;
+  align-items: center;
+  background-color: #111;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #333;
+  color: #ffffff;
 }
 
-.footer-logo:hover{
-filter:
-  brightness(1.5)
-  contrast(1.2)
-  saturate(1.5)
-  drop-shadow(0 0 25px rgba(231,195,107,1))
-  drop-shadow(0 0 60px rgba(231,195,107,.8))
-  drop-shadow(0 0 100px rgba(231,195,107,.5));
-transform:scale(1.03);
+.accordion-header:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.footer-divider{
-width:60%;
-max-width:400px;
-height:1px;
-margin:0 auto 16px;
-background:linear-gradient(90deg,transparent,rgba(231,195,107,.5),transparent);
-position:relative;
-z-index:2;
-box-shadow:0 0 15px rgba(231,195,107,.4);
+.accordion-logo {
+  margin-right: 20px;
+  flex-shrink: 0;
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-footer .footer-tagline{
-position:relative;
-z-index:2;
-font-family:"Cormorant Garamond",serif;
-font-style:italic;
-font-size:1rem;
-color:var(--gold-bright);
-letter-spacing:.5px;
-margin-bottom:6px;
-text-shadow:0 0 12px rgba(231,195,107,.4);
-text-align:center;
-line-height:1.05;
+.accordion-logo img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
 }
 
-footer .footer-copy{
-position:relative;
-z-index:2;
-font-size:.8rem;
-color:rgba(185,193,217,.8);
-text-align:center;
-line-height:1.05;
+.accordion-logo img:hover {
+  transform: scale(1.05);
 }
 
-/* ============ FOOTER SOCIAL ============ */
-.footer-social{
-display:flex;
-justify-content:center;
-gap:20px;
-margin:0 0 20px;
-position:relative;
-z-index:2;
+.accordion-logo img.logo-accordion-editorial {
+  max-width: 200px;
+  max-height: 105px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,.4));
 }
 
-.footer-social a{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-width:44px;
-height:44px;
-border-radius:50%;
-border:1px solid rgba(231,195,107,.3);
-background:rgba(231,195,107,.05);
-transition:all .4s ease;
+.accordion-header div.texto-titulo {
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-social a svg{
-width:20px;
-height:20px;
-fill:var(--gold);
-transition:all .4s ease;
-filter:drop-shadow(0 0 4px rgba(231,195,107,.4));
+.accordion-header h2,
+.accordion-header span {
+  margin: 0;
+  transition: color 0.3s ease;
+  line-height: 1.1;
 }
 
-.footer-social a:hover{
-background:rgba(231,195,107,.2);
-border-color:var(--gold-bright);
-transform:translateY(-3px);
-box-shadow:0 0 25px rgba(231,195,107,.5);
+.accordion-header h2 {
+  font-size: 22px;
+  font-weight: bold;
 }
 
-.footer-social a:hover svg{
-fill:var(--gold-bright);
-filter:drop-shadow(0 0 8px rgba(231,195,107,.9));
+.accordion-header span {
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+  color: #ccc;
 }
-
-/* ============ ANIMACIONES ============ */
-.fade{opacity:0;transform:translateY(40px);transition:1s;}
-.fade.show{opacity:1;transform:translateY(0);}
 
-/* ============ WHATSAPP ============ */
-.wa-float{
-position:fixed;
-bottom:22px;right:22px;
-z-index:999;
-width:56px;height:56px;
-border-radius:50%;
-background:var(--wa);
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 0 20px rgba(37,211,102,.5),0 0 40px rgba(37,211,102,.25);
-transition:transform .3s;
-animation:waPulse 2.5s infinite;
+.accordion-header:hover span {
+  color: #333;
 }
 
-.wa-float:hover{
-transform:scale(1.1);
-box-shadow:0 0 30px rgba(37,211,102,.8),0 0 60px rgba(37,211,102,.4);
+.accordion-content {
+  display: none;
+  padding: 30px;
+  background-color: #111;
+  text-align: left;
+  line-height: 1.1;
 }
 
-.wa-float svg{width:28px;height:28px;fill:white;}
-
-@keyframes waPulse{
-0%,100%{box-shadow:0 0 20px rgba(37,211,102,.5),0 0 40px rgba(37,211,102,.25);}
-50%{box-shadow:0 0 30px rgba(37,211,102,.8),0 0 60px rgba(37,211,102,.4);}
+.accordion-content h3 {
+  margin-top: 14px;
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
-/* ============ RESPONSIVE ============ */
-@media(min-width:1400px){
-section{max-width:1280px;}
-.hero-content{max-width:1280px;}
-nav{max-width:1350px;}
-.hero h1{font-size:3.8rem;}
-.hero-image{height:360px;}
+.accordion-content p,
+.accordion-content ul {
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-top: 2px;
+  margin-bottom: 6px;
 }
 
-@media(max-width:1200px){
-.hero h1{font-size:3rem;}
-.hero-image{height:300px;}
-section{padding:26px 20px;}
-.title h2{font-size:2.2rem;}
+.accordion-content ul {
+  padding-left: 20px;
 }
-
-@media(max-width:900px){
-nav{padding:8px 15px;gap:8px;}
-.logo-img{height:70px;}
-nav ul{gap:6px;}
-nav ul li a{padding:6px 11px;font-size:.7rem;}
-
-.hero{padding:130px 20px 25px;min-height:auto;}
-.hero-content{grid-template-columns:1fr;gap:35px;}
-.hero h1{font-size:2.5rem;}
-.hero-image{height:260px;}
-
-.paquetes-grid{grid-template-columns:1fr;}
-.revistas-grid{grid-template-columns:1fr;}
-.inclusion-grid{grid-template-columns:1fr;}
-
-.conv-grid{grid-template-columns:1fr;gap:14px;}
-.conv-col{gap:14px;}
-
-section{padding:24px 20px;}
-.title h2{font-size:2rem;}
 
-.convocatoria-hero h3{font-size:1.9rem;}
-
-.footer-logos{gap:35px;}
-.footer-logo{height:95px;}
+.accordion-content li {
+  line-height: 1.1;
+  margin-bottom: 2px;
 }
 
-@media(max-width:767px){
-body{font-size:14.5px;line-height:1;}
-
-.tamanos-tabla th,
-.tamanos-tabla td{
-padding:.55rem .55rem;
-font-size:.8rem;
+/* Logo licencia dentro de acordeones */
+.license-block {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #333;
 }
-.tamanos-tabla .tipo{font-size:.95rem;}
-
-.title h2{font-size:1.9rem;}
-.title p{font-size:.9rem;}
-
-.paquete-card{padding:20px 18px;}
-.revista-card{padding:22px 18px;}
-.inclusion-card{padding:20px 18px;}
-
-.cotizador{padding:18px 16px;}
-.cotizador-resultado .precio{font-size:1.8rem;}
-
-.cta{padding:30px 22px;}
-.cta h2{font-size:1.9rem;}
-.cta .cta-sub{font-size:1.05rem;}
-.cta .cta-info{font-size:.9rem;}
 
-.convocatoria-hero{padding:24px 20px;}
-.convocatoria-hero h3{font-size:1.7rem;}
-.convocatoria-hero .conv-lema{font-size:1.05rem;}
-.conv-block{padding:18px 16px;}
-.conv-block h3{font-size:1.3rem;}
-
-.conv-cronograma li{
-grid-template-columns:1fr;
-gap:2px;
-padding:.45rem .6rem;
+.license-block img {
+  max-width: 140px;
+  height: auto;
 }
-.conv-cronograma .fecha{text-align:left;}
 
-footer{padding:8px 18px 25px;}
-.footer-logo{height:80px;}
-.footer-logos{gap:25px;}
+.license-block.cc img {
+  max-width: 130px;
 }
 
-@media(max-width:600px){
-body{line-height:1;}
-
-nav{padding:8px 12px;flex-wrap:wrap;justify-content:center;}
-.logo-img{height:60px;}
-nav ul{
-display:flex;
-flex-wrap:wrap;
-gap:5px;
-justify-content:center;
-width:100%;
-margin-top:6px;
-}
-nav ul li a{
-padding:5px 10px;
-font-size:.65rem;
-letter-spacing:.3px;
+.license-block.copyright img {
+  max-width: 110px;
+  border-radius: 8px;
 }
-
-.hero{padding:130px 15px 20px;}
-.hero h1{font-size:1.95rem;}
-.hero p{font-size:.92rem;margin-bottom:16px;}
-.hero-image{height:220px;}
-
-.btn{padding:10px 20px;font-size:.82rem;}
-
-section{padding:20px 15px;}
-.title{margin-bottom:16px;}
-.title h2{font-size:1.7rem;}
-.title p{font-size:.87rem;}
 
-.convocatoria-hero{padding:20px 16px;border-radius:18px;}
-.convocatoria-hero h3{font-size:1.5rem;}
-.convocatoria-hero .conv-lema{font-size:.95rem;}
-.convocatoria-hero p{font-size:.86rem;}
-.convocatoria-hero .conv-badge{font-size:.6rem;letter-spacing:2px;padding:.3rem .8rem;}
-
-.conv-block{padding:16px 14px;border-radius:16px;}
-.conv-block h3{font-size:1.2rem;}
-.conv-block h4{font-size:1rem;}
-.conv-block p{font-size:.83rem;}
-.conv-list li{font-size:.82rem;}
-
-.conv-premio-item{padding:.6rem .75rem;}
-.conv-premio-item h4{font-size:.95rem;}
-.conv-premio-item p{font-size:.8rem;}
-.conv-premio-item .conv-list li{font-size:.79rem;}
-
-.conv-paso{padding:10px 12px;gap:10px;}
-.conv-paso .paso-num{min-width:30px;height:30px;font-size:.82rem;}
-.conv-paso .paso-content h4{font-size:.98rem;}
-.conv-paso .paso-content p{font-size:.78rem;}
-
-.conv-cronograma li{font-size:.82rem;padding:.4rem .55rem;}
-
-.tamanos-tabla{
-display:block;
-overflow-x:auto;
--webkit-overflow-scrolling:touch;
+.license-block p {
+  font-size: 12px;
+  line-height: 1.1;
+  margin-top: 8px;
 }
-.tamanos-tabla th{padding:.45rem .45rem;font-size:.62rem;}
-.tamanos-tabla td{padding:.45rem .45rem;font-size:.76rem;}
-.tamanos-tabla .tipo{font-size:.85rem;}
-
-.nota-tamanos{font-size:.82rem;padding:.8rem .9rem;}
-
-.paquete-card{padding:18px 16px;}
-.paquete-card h3{font-size:1.5rem;}
-
-.inclusion-card{padding:18px 16px;}
-.inclusion-card h3{font-size:1.3rem;}
-
-.estratos-tabla th{padding:.45rem .55rem;font-size:.62rem;}
-.estratos-tabla td{padding:.4rem .55rem;font-size:.78rem;}
-
-.revista-card{padding:20px 16px;}
-.revista-card h3{font-size:1.4rem;}
-
-.cotizador{padding:16px 14px;}
-.cotizador-resultado .precio{font-size:1.6rem;}
-
-.cta{padding:26px 18px;border-radius:20px;}
-.cta h2{font-size:1.6rem;}
-.cta .cta-sub{font-size:.95rem;}
 
-footer{padding:6px 15px 22px;font-size:.8rem;}
-.footer-logo{height:65px;}
-.footer-logos{gap:20px;}
-footer .footer-tagline{font-size:.9rem;}
-
-.wa-float{width:50px;height:50px;bottom:16px;right:16px;}
-.wa-float svg{width:26px;height:26px;}
-
-.footer-social a{width:38px;height:38px;}
-.footer-social a svg{width:18px;height:18px;}
+/* FOOTER COMPLETO */
+footer {
+  background-color: #000000;
+  padding: 40px 20px;
+  color: #f1f1f1;
+  text-align: center;
+  border-top: 3px solid #ffffff;
+  font-size: 11px;
+  line-height: 1.1;
+  margin-top: 50px;
 }
-
-@media(max-width:400px){
-body{font-size:14px;line-height:1;}
-
-nav{padding:6px 10px;}
-.logo-img{height:52px;}
-nav ul li a{padding:4px 8px;font-size:.6rem;}
-
-.hero{padding:120px 12px 18px;}
-.hero h1{font-size:1.7rem;}
-.hero p{font-size:.88rem;}
-.hero-image{height:190px;}
-
-section{padding:16px 12px;}
-.title h2{font-size:1.5rem;}
-.title p{font-size:.84rem;}
-
-.btn{padding:9px 18px;font-size:.78rem;}
-.buttons{flex-direction:column;width:100%;}
-.buttons .btn{width:100%;}
-
-.convocatoria-hero h3{font-size:1.3rem;}
-.convocatoria-hero .conv-lema{font-size:.88rem;}
-
-.conv-block h3{font-size:1.15rem;}
-.conv-block h4{font-size:.98rem;}
-
-.conv-paso{padding:10px 11px;gap:9px;}
-.conv-paso .paso-num{min-width:28px;height:28px;font-size:.78rem;}
-.conv-paso .paso-content h4{font-size:.95rem;}
-
-.tamanos-tabla th{font-size:.58rem;padding:.4rem .4rem;}
-.tamanos-tabla td{font-size:.72rem;padding:.4rem .4rem;}
-.tamanos-tabla .tipo{font-size:.8rem;}
-
-.paquete-card h3{font-size:1.35rem;}
-.paquete-card h4{font-size:.62rem;}
 
-.inclusion-card h3{font-size:1.2rem;}
-.estratos-tabla th{font-size:.58rem;padding:.4rem .45rem;}
-.estratos-tabla td{font-size:.72rem;padding:.4rem .45rem;}
-
-.revista-card h3{font-size:1.25rem;}
-
-.cotizador-resultado .precio{font-size:1.5rem;}
-
-.cta h2{font-size:1.4rem;}
-
-.footer-logo{height:55px;}
-footer .footer-tagline{font-size:.85rem;}
-footer .footer-copy{font-size:.75rem;}
-
-.wa-float{width:46px;height:46px;bottom:14px;right:14px;}
-.wa-float svg{width:24px;height:24px;}
-
-.footer-social a{width:34px;height:34px;}
-.footer-social a svg{width:16px;height:16px;}
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-@media(max-width:340px){
-body{font-size:13.5px;line-height:1;}
-.logo-img{height:46px;}
-.hero h1{font-size:1.55rem;}
-.hero-image{height:170px;}
-.title h2{font-size:1.4rem;}
-.convocatoria-hero h3{font-size:1.2rem;}
-.conv-block h3{font-size:1.05rem;}
+.footer-logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-@media(max-width:900px) and (orientation:landscape){
-.hero{min-height:auto;padding:120px 20px 25px;}
-.hero-content{grid-template-columns:1fr 1fr;gap:30px;}
-.hero-image{height:220px;}
+.footer-logos a:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 12px rgba(255,255,255,.6));
 }
 
-@media print{
-header,footer,.wa-float,.btn{display:none;}
-body{background:white;color:black;}
-section{padding:20px 0;}
+.footer-logos img {
+  max-height: 60px;
+  width: auto;
+  max-width: 110px;
+  object-fit: contain;
+  border-radius: 6px;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.25));
 }
-
-</style>
-</head>
-<body>
-
-<header>
-<nav>
-<a href="#" class="logo-wrap">
-<img src="https://i.postimg.cc/KjNyqCH5/Chat-GPT-Image-16-sept-2026-12-21-49-p-m-removebg-preview.png" alt="Artes Multicap Editorial" class="logo-img">
-</a>
-<ul>
-<li><a href="#servicios">Servicios</a></li>
-<li><a href="#tamanos">Tamaños</a></li>
-<li><a href="#paquetes">Paquetes</a></li>
-<li><a href="#proceso">Proceso</a></li>
-<li><a href="#inclusion">Inclusión</a></li>
-<li><a href="#cotizador">Cotiza</a></li>
-<li><a href="#revistas">Plataformas</a></li>
-<li><a href="#convocatoria">Convocatorias</a></li>
-<li><a href="#contacto">Contacto</a></li>
-</ul>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
-<div>
-<h1>Tu historia merece llegar al mundo.</h1>
-<p>Transformamos tu manuscrito en un libro profesional y te acompañamos desde la edición hasta la publicación internacional en español e inglés.</p>
-<div class="buttons">
-<a href="#cotizador" class="btn primary">Cotizar mi libro</a>
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20publicar%20mi%20libro" class="btn secondary" target="_blank">Hablar por WhatsApp</a>
-</div>
-</div>
-<div class="hero-image">
-<img src="https://i.postimg.cc/tJVXBrHh/OIG1-(22)-(2).jpg" alt="Libro abierto">
-</div>
-</div>
-</section>
-
-<!-- SERVICIOS -->
-<section id="servicios" class="fade">
-<div class="title">
-<h2>Nuestros servicios</h2>
-<p>Puedes contratar servicios individuales o un acompañamiento editorial completo.</p>
-</div>
-
-<div class="servicios-imagen">
-<img src="https://i.postimg.cc/0Q8gMPnM/Gemini-Generated-Image-5yvolr5yvolr5yvo.jpg" alt="Servicios editoriales de Artes Multicap Editorial">
-</div>
-
-</section>
-
-<!-- TAMAÑOS DE LIBRO -->
-<section id="tamanos" class="fade">
-<div class="title">
-<h2>Tamaños de libro que manejamos</h2>
-<p>Antes de cotizar, definimos el tamaño de tu libro. Esto afecta el número de páginas, la maquetación y el costo de impresión.</p>
-</div>
-
-<table class="tamanos-tabla">
-<thead>
-<tr>
-<th>Tipo</th>
-<th>¿Para qué sirve?</th>
-<th>¿Aplica paquete?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tipo">Bolsillo</td>
-<td>Novelas, poemarios, libros de viaje.</td>
-<td>No aplica paquete estándar. Se cotiza aparte.</td>
-</tr>
-<tr>
-<td class="tipo">Comercial o Estándar</td>
-<td>Novelas, ensayos, tesis, textos profesionales, memorias, biografías.</td>
-<td class="aplica-si">Sí aplica. Es el formato base de nuestros paquetes.</td>
-</tr>
-<tr>
-<td class="tipo">Grande</td>
-<td>Recetarios, libros infantiles, libros de arte, journals.</td>
-<td>No aplica paquete estándar. Se cotiza aparte.</td>
-</tr>
-<tr>
-<td class="tipo">Técnico o Ilustrado</td>
-<td>Libros con gráficas, tablas, imágenes a color, planos, ilustraciones.</td>
-<td>No aplica paquete estándar. Se cotiza aparte.</td>
-</tr>
-</tbody>
-</table>
-
-<div class="nota-tamanos">
-<strong>Importante:</strong> Nuestros paquetes Plan Profesional y Plan Premium Global están diseñados para libros comerciales o estándar. Si tu libro es de bolsillo, grande, técnico o ilustrado, te enviamos una cotización personalizada porque el trabajo de maquetación, impresión y diseño cambia.
-</div>
-</section>
-
-<!-- PAQUETES -->
-<section id="paquetes" class="fade">
-<div class="title">
-<h2>Paquetes integrales</h2>
-<p>Ahorra tiempo y dinero contratando todo el proceso junto. Cada obra es única y merece una cotización personalizada.</p>
-</div>
-<div class="paquetes-grid">
-
-<div class="paquete-card">
-<span class="paquete-tag">Edición en español · 2 formatos</span>
-<h3>Plan Profesional</h3>
-<p class="paquete-ideal">Ideal para: novelas, tesis, ensayos, textos profesionales y journals.</p>
-<h4>Incluye</h4>
-<ul>
-<li>Corrección ortotipográfica y de estilo</li>
-<li>Maquetación interior profesional</li>
-<li>Diseño profesional de portada</li>
-<li>Gestión del ISBN correspondiente</li>
-<li>Publicación internacional bajo el sello Artes Multicap Editorial</li>
-<li>eBook en español</li>
-<li>Tapa blanda en español</li>
-<li>Promoción y posicionamiento editorial inicial mediante la configuración y optimización de la presencia de la obra en Amazon y otros canales de distribución disponibles para el sello editorial, <strong>sin garantía de un número determinado de ventas o resultados económicos</strong></li>
-</ul>
-<div class="paquete-beneficio">
-<strong>🎁 Beneficio exclusivo para nuestros autores.</strong> En Artes Multicap Editorial queremos que el primer encuentro con tu obra sea inolvidable. Por eso, te obsequiamos el primer ejemplar impreso de tu libro, para que puedas verlo, sostenerlo en tus manos y conocer cómo quedó la edición final antes de solicitar más copias. Después podrás pedir las cantidades que desees, desde un (1) ejemplar en adelante. Porque la primera persona que debe disfrutar tu libro eres tú.
-</div>
-<a href="#cotizador" class="btn primary" onclick="seleccionarPlan('profesional')">Cotizar este plan</a>
-</div>
-
-<div class="paquete-card destacado">
-<span class="paquete-tag">Edición bilingüe · 6 formatos</span>
-<h3>Plan Premium Global</h3>
-<p class="paquete-ideal">Ideal para: autores que buscan alcance internacional.</p>
-<h4>Incluye</h4>
-<ul>
-<li>Todo lo del Plan Profesional</li>
-<li>Traducción completa al inglés</li>
-<li>eBook en español</li>
-<li>eBook en inglés</li>
-<li>Tapa blanda en español</li>
-<li>Tapa blanda en inglés</li>
-<li>Tapa dura en español</li>
-<li>Tapa dura en inglés</li>
-<li>Kit de comunicación y lanzamiento: EL AUTOR podrá escoger la plataforma y formato de destino para el material promocional entre Facebook, Instagram, TikTok, LinkedIn y YouTube</li>
-<li>Promoción y posicionamiento editorial ampliado mediante acciones de difusión y optimización de la presencia editorial de la obra en Amazon y otros canales de comercialización disponibles para Artes Multicap Editorial, incluyendo los metadatos y materiales promocionales contemplados en el plan, <strong>sin garantía de ventas ni de resultados económicos específicos</strong></li>
-</ul>
-<div class="paquete-beneficio">
-<strong>🎁 Beneficio Premium.</strong> El Plan Premium Global incluye <strong>3 ejemplares impresos de cortesía en tapa blanda</strong>, para que conserves una copia personal y dispongas de ejemplares para presentación, regalo o promoción de tu obra.
-</div>
-<a href="#cotizador" class="btn primary" onclick="seleccionarPlan('premium')">Cotizar este plan</a>
-</div>
-
-</div>
-</section>
-
-<!-- PROCESO -->
-<section id="proceso" class="fade">
-<div class="title">
-<h2>Cómo iniciamos tu proyecto</h2>
-<p>Un proceso claro, transparente y acompañado en cada etapa.</p>
-</div>
-
-<div class="servicios-imagen">
-<img src="https://i.postimg.cc/6q3PdLm2/Gemini-Generated-Image-76vhw876vhw876vh-%281%29.jpg" alt="Proceso editorial de Artes Multicap Editorial: cotización, formalización, producción editorial y publicación internacional">
-</div>
-
-<div style="text-align:center;margin-top:22px;">
-<a href="#cotizador" class="btn primary">Cotizar mi libro</a>
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20iniciar%20mi%20proyecto%20editorial%20con%20Artes%20Multicap%20Editorial" class="btn secondary" target="_blank" style="margin-left:10px;">Hablar por WhatsApp</a>
-</div>
-</section>
-
-<!-- INCLUSIÓN -->
-<section id="inclusion" class="fade">
-<div class="title">
-<h2>Programa de Inclusión Editorial</h2>
-<p>En la Fundación Artes Multicap creemos que el dinero no debe ser una barrera para publicar. Por eso ofrecemos descuentos según tu estrato socioeconómico.</p>
-</div>
-<div class="inclusion-grid">
-
-<div class="inclusion-card">
-<h3>Descuentos por estrato</h3>
-<p>Tu estrato socioeconómico determina el porcentaje del valor que pagas por los servicios técnicos editoriales.</p>
-<table class="estratos-tabla">
-<thead><tr><th>Estrato</th><th>Descuento</th><th>Tú pagas</th></tr></thead>
-<tbody>
-<tr><td>Estrato 1</td><td class="dcto">70%</td><td>30% del valor</td></tr>
-<tr><td>Estrato 2</td><td class="dcto">70%</td><td>30% del valor</td></tr>
-<tr><td>Estrato 3</td><td class="dcto">40%</td><td>60% del valor</td></tr>
-<tr><td>Estrato 4</td><td class="dcto">40%</td><td>60% del valor</td></tr>
-<tr><td>Estrato 5</td><td>Sin descuento</td><td>100%</td></tr>
-<tr><td>Estrato 6</td><td>Sin descuento</td><td>100%</td></tr>
-</tbody>
-</table>
-</div>
-
-<div class="inclusion-card">
-<h3>¿Cómo aplicar al descuento?</h3>
-<p>Al firmar el contrato, adjunta los siguientes documentos:</p>
-<ul class="lista-aplicar">
-<li>Formulario de Registro del Autor obligatorio.</li>
-<li>Copia digital de tu último recibo de servicios públicos (agua, luz o gas). El recibo debe mostrar claramente tu estrato y la dirección debe coincidir con la registrada en el formulario.</li>
-<li>Copia de tu cédula de ciudadanía.</li>
-</ul>
-<div class="nota-inclusion">
-<strong>Importante:</strong> El descuento aplica únicamente sobre los servicios técnicos editoriales.
-</div>
-</div>
-
-</div>
-<div style="text-align:center;">
-<a href="#cotizador" class="btn primary">Cotizar mi libro</a>
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20aplicar%20al%20Programa%20de%20Inclusi%C3%B3n%20Editorial%20de%20Artes%20Multicap%20Editorial" class="btn secondary" target="_blank" style="margin-left:10px;">Hablar por WhatsApp</a>
-</div>
-</section>
-
-<!-- CALCULADORA DE COTIZACIÓN -->
-<section id="cotizador" class="fade">
-<div class="title">
-<h2>Cotiza tu libro en segundos</h2>
-<p>Selecciona el plan que te interesa y tu estrato socioeconómico. Te mostraremos el valor de tu cotización al instante.</p>
-</div>
-
-<div class="cotizador">
-<div class="cotizador-campo">
-<label for="selectPlan">1. Elige tu plan</label>
-<select id="selectPlan">
-<option value="">— Selecciona un plan —</option>
-<option value="profesional">Plan Profesional · Edición en español</option>
-<option value="premium">Plan Premium Global · Edición bilingüe</option>
-</select>
-</div>
-
-<div class="cotizador-campo">
-<label for="selectEstrato">2. Selecciona tu estrato socioeconómico</label>
-<select id="selectEstrato">
-<option value="">— Selecciona tu estrato —</option>
-<option value="1">Estrato 1</option>
-<option value="2">Estrato 2</option>
-<option value="3">Estrato 3</option>
-<option value="4">Estrato 4</option>
-<option value="5">Estrato 5</option>
-<option value="6">Estrato 6</option>
-</select>
-</div>
-
-<div class="cotizador-resultado" id="resultado">
-<div class="etiqueta">Tu cotización estimada</div>
-<div class="precio" id="precioResultado">—</div>
-<div class="detalle" id="detalleResultado">
-Selecciona un plan y tu estrato para ver el valor.
-</div>
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20mi%20cotizaci%C3%B3n%20de%20Artes%20Multicap%20Editorial" class="btn-wa" target="_blank" id="btnWhatsApp">
-<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-Escribir por WhatsApp
-</a>
-</div>
-
-<p class="cotizador-aviso">
-El valor mostrado es una estimación para un libro de 100 páginas en formato comercial (15 × 23 cm). El valor final puede ajustarse según el número real de páginas, la complejidad del manuscrito y el tamaño editorial. El descuento por estrato aplica únicamente sobre servicios técnicos editoriales.
-</p>
-</div>
-</section>
-
-<!-- PLATAFORMAS (antes Revistas) -->
-<section id="revistas" class="fade">
-<div class="title">
-<h2>Nuestras plataformas</h2>
-<p>La Fundación Artes Multicap también publica revistas digitales de arte, cultura y creación juvenil con alcance internacional.</p>
-</div>
-<div class="revistas-grid">
-
-<div class="revista-card">
-<span class="r-tag">Plataforma Cultural</span>
-<h3>Explorando Museos y Arte Latinoamericano</h3>
-<p>Una plataforma digital gratuita que integra tres revistas digitales enfocadas en el arte nacional colombiano, latinoamericano y la creación juvenil. Un puente digital entre cultura, educación y emoción.</p>
-<ul>
-<li>Revista Explorando Arte y Cultura de Latinoamérica</li>
-<li>Revista Jóvenes Creadores de Latinoamérica</li>
-<li>Acceso abierto y gratuito</li>
-<li>Convocatorias internacionales para artistas</li>
-</ul>
-<a href="https://explorandomuseosyartelatinoamericano.netlify.app/" class="btn primary" target="_blank">Visitar la plataforma</a>
-</div>
-
-<div class="revista-card">
-<span class="r-tag">Fundación</span>
-<h3>Fundación Artes Multicap</h3>
-<p>Conoce nuestra misión, visión y proyectos de transformación social a través del arte, la cultura, la literatura y la educación emocional. Talleres gratuitos y formaciones para todas las edades.</p>
-<ul>
-<li>Talleres básicos gratuitos</li>
-<li>Talleres intermedios y avanzados</li>
-<li>Proyectos editoriales y culturales</li>
-<li>Impacto social en Latinoamérica</li>
-</ul>
-<a href="https://fundacion-artes-multicap.netlify.app/" class="btn primary" target="_blank">Visitar la Fundación</a>
-</div>
-
-</div>
-</section>
-
-<!-- CONVOCATORIA OFICIAL (penúltima sección) -->
-<section id="convocatoria" class="fade">
 
-<div class="title">
-<h2>Convocatoria Oficial</h2>
-<p>Concurso Internacional de Creación Literaria y Publicación "Latinoamérica Escribe"</p>
-</div>
-
-<div class="convocatoria-hero">
-<span class="conv-badge">Convocatoria abierta 2026</span>
-<h3>LATINOAMÉRICA ESCRIBE</h3>
-<p class="conv-lema">Una obra. Un ganador. Un libro para el mundo.</p>
-<p><em>Una historia. Dos idiomas. Una oportunidad para publicar y llevar tu voz más allá de las fronteras.</em></p>
-</div>
-
-<!-- GRID CONVOCATORIA EN DOS COLUMNAS -->
-<div class="conv-grid">
-
-<!-- COLUMNA 1 -->
-<div class="conv-col">
-
-<div class="conv-block">
-<h3>¿Qué es "Latinoamérica Escribe"?</h3>
-<p>Es un concurso internacional de creación literaria y publicación organizado por la <strong>Fundación Artes Multicap (Colombia)</strong>, dirigido a autores de toda Latinoamérica que tengan una obra original, inédita y de su autoría y quieran llevarla a un proceso editorial bilingüe con proyección internacional.</p>
-<p>Se seleccionará <strong>una única obra ganadora</strong>, de <strong>tema y género libres</strong>. El autor ganador recibirá gratuitamente el <strong>Plan Premium Global</strong> de Artes Multicap Editorial, valorado referencialmente en <strong>$4.100.000 COP</strong>, además de las condiciones de publicación, promoción y regalías establecidas en las bases.</p>
-<p><strong>Participar es completamente GRATIS.</strong></p>
-</div>
-
-<div class="conv-block">
-<h3>¿Quién puede participar?</h3>
-<ul class="conv-list check">
-<li>Personas naturales mayores de 18 años.</li>
-<li>Autores de cualquier país de Latinoamérica.</li>
-<li>Personas de cualquier nacionalidad que residan en un país latinoamericano.</li>
-<li>Autores que presenten una obra original, inédita y de su autoría.</li>
-<li>Participantes que presenten su obra en idioma español.</li>
-</ul>
-<p><strong>Países convocados:</strong> Colombia, México, Argentina, Chile, Perú, Ecuador, Bolivia, Paraguay, Uruguay, Brasil, Venezuela, Costa Rica, Panamá, Nicaragua, Honduras, Guatemala, El Salvador, República Dominicana, Cuba y Puerto Rico.</p>
-
-<h4>No podrán participar</h4>
-<ul class="conv-list cross">
-<li>Obras publicadas comercialmente con anterioridad.</li>
-<li>Obras que hayan resultado ganadoras de otro concurso, cuando las condiciones de ese concurso comprometan los derechos necesarios para participar.</li>
-<li>Personas vinculadas directamente con la organización del concurso cuando puedan afectar la imparcialidad del proceso.</li>
-<li>Integrantes del jurado.</li>
-<li>Personas que intervengan directamente en la evaluación de las obras.</li>
-</ul>
-</div>
-
-<div class="conv-block">
-<h3>Tema y género: libres</h3>
-<p>La convocatoria no establece un tema específico. La obra puede pertenecer a cualquier género literario, narrativo, artístico, cultural, académico o de no ficción, siempre que pueda constituirse editorialmente como un proyecto de libro.</p>
-<p>Entre otros, podrán presentarse:</p>
-<ul class="conv-list">
-<li>Novela, novela corta, cuento y relatos</li>
-<li>Poesía</li>
-<li>Ensayo, investigación y crónica</li>
-<li>Memorias, biografía y testimonio</li>
-<li>Literatura infantil, juvenil o para adultos</li>
-<li>Obras de carácter cultural, artístico, académico o científico</li>
-<li>Otros géneros narrativos, literarios o expositivos</li>
-</ul>
-<p><strong>La única condición temática</strong> es que la obra cumpla con los requisitos establecidos en las bases.</p>
-<p>La obra deberá ser <strong>original, inédita y de autoría del participante</strong>.</p>
-</div>
-
-<div class="conv-block">
-<h3>Requisitos de formato</h3>
-<ul class="conv-list check">
-<li>Tamaño carta, con márgenes de 2,5 cm por los cuatro lados</li>
-<li>Times New Roman 12, interlineado 1,5</li>
-<li>Título en Times New Roman 14</li>
-<li><strong>Tabla de contenido obligatoria</strong></li>
-<li><strong>Extensión: 20.000 a 30.000 palabras</strong></li>
-<li>Idioma: español</li>
-<li>Formato de envío: Word (.docx) únicamente</li>
-<li>Seudónimo obligatorio para preservar la imparcialidad del jurado</li>
-</ul>
-</div>
-
-<div class="conv-block">
-<h3>Valor referencial del premio</h3>
-<p>El Plan Premium Global otorgado a la obra ganadora representa una inversión editorial estimada de <strong>$4.100.000 COP</strong> (aproximadamente €950 EUR, según la tasa de cambio vigente).</p>
-<p>Este valor es referencial y corresponde al conjunto de servicios editoriales que recibe gratuitamente la persona ganadora. No constituye un valor que deba ser pagado por el participante ni una obligación de compra de servicios editoriales.</p>
-<p>El ganador <strong>no recibe este valor en dinero</strong>. Recibe gratuitamente los servicios editoriales descritos en las bases, más el 50% de las regalías netas por ventas.</p>
-<p>El alcance concreto del premio será el establecido en las bases y posteriormente formalizado mediante el correspondiente <strong>Acuerdo Editorial</strong> con el ganador.</p>
-</div>
-
-<div class="conv-block">
-<h3>Lo que conservas como autor</h3>
-<p><strong>TÚ SIGUES SIENDO EL DUEÑO DE TU OBRA.</strong></p>
-<p>El contrato de edición no transfiere en ningún momento el derecho de autor, conforme al <strong>artículo 119 de la Ley 23 de 1982</strong>: «Por el solo contrato de edición no se transfiere en ningún momento el derecho de autor». Esto significa que conservas todos tus derechos morales y patrimoniales. La Fundación solo recibe una autorización temporal para publicar tu obra, no la propiedad de ella.</p>
-<p>Además, en caso de cualquier duda o conflicto sobre la interpretación de las cláusulas, se aplicará el principio <strong>«in dubio pro auctore»</strong>, que ordena interpretar siempre a favor del autor.</p>
-</div>
-
-<div class="conv-block">
-<h3>Cronograma</h3>
-<ul class="conv-cronograma">
-<li><span class="etapa">Lanzamiento de la convocatoria</span><span class="fecha">25 de septiembre de 2026</span></li>
-<li><span class="etapa">Recepción de obras</span><span class="fecha">25 sep — 26 oct 2026</span></li>
-<li><span class="etapa">Verificación de requisitos formales</span><span class="fecha">27 oct — 5 nov 2026</span></li>
-<li><span class="etapa">Evaluación del jurado</span><span class="fecha">6 — 20 nov 2026</span></li>
-<li><span class="etapa">Anuncio del ganador</span><span class="fecha">27 de noviembre de 2026</span></li>
-<li><span class="etapa">Firma del acuerdo editorial</span><span class="fecha">30 nov — 10 dic 2026</span></li>
-<li><span class="etapa">Proceso editorial y traducción</span><span class="fecha">Dic 2026 — Ene 2027</span></li>
-<li><span class="etapa">Publicación oficial del libro</span><span class="fecha">Enero de 2027</span></li>
-</ul>
-<div class="conv-aviso">
-<strong>Nota de transparencia:</strong> El proceso editorial bilingüe completo (corrección, diseño, traducción, ISBN y publicación en múltiples formatos) requiere entre 3 y 4 meses por obra para garantizar la calidad que un libro publicado merece. Preferimos tomarnos el tiempo necesario para entregar un producto editorial impecable antes que apresurar una publicación por cumplir una fecha.
-</div>
-</div>
-
-<div class="conv-block">
-<h3>Compromiso del ganador</h3>
-<p>Una vez seleccionado el ganador, la organización le solicitará los documentos necesarios para el proceso editorial. El ganador tendrá un plazo de <strong>3 días calendario</strong> para entregar la documentación solicitada. Si no cumple con el plazo, será descalificado y se seleccionará al siguiente participante en orden de mérito.</p>
-</div>
-
-</div>
-<!-- FIN COLUMNA 1 -->
-
-<!-- COLUMNA 2 -->
-<div class="conv-col">
-
-<div class="conv-block">
-<h3>El gran premio: Plan Premium Global</h3>
-<p>El ganador recibirá el <strong>Plan Premium Global</strong>, el paquete editorial integral bilingüe de mayor alcance de Artes Multicap Editorial, <strong>sin pagar absolutamente nada por estos servicios</strong>.</p>
-
-<div class="conv-premio-item">
-<h4>Proceso editorial completo</h4>
-<ul class="conv-list">
-<li>Lectura y valoración editorial del manuscrito</li>
-<li>Corrección ortotipográfica y de estilo</li>
-<li>Preparación y adecuación del manuscrito</li>
-<li>Diagramación y maquetación interior profesional</li>
-<li>Diseño profesional de portada (eBook, tapa blanda y tapa dura)</li>
-<li>Diseño de contraportada y mockups promocionales</li>
-</ul>
-</div>
-
-<div class="conv-premio-item">
-<h4>Ilustraciones</h4>
-<p>Si la obra lo requiere (por ejemplo, literatura infantil o álbum ilustrado), la organización diseña las ilustraciones como parte del premio.</p>
-</div>
-
-<div class="conv-premio-item">
-<h4>Traducción al inglés</h4>
-<p>Traducción profesional de la obra completa al inglés.</p>
-</div>
-
-<div class="conv-premio-item">
-<h4>Publicación en seis formatos bilingües</h4>
-<ul class="conv-list">
-<li>eBook en español</li>
-<li>eBook en inglés</li>
-<li>Tapa blanda en español</li>
-<li>Tapa blanda en inglés</li>
-<li>Tapa dura en español (sujeto a disponibilidad técnica)</li>
-<li>Tapa dura en inglés (sujeto a disponibilidad técnica)</li>
-</ul>
-</div>
-
-<div class="conv-premio-item">
-<h4>Gestión de ISBN</h4>
-<p>Solicitud y gestión de los ISBN correspondientes a cada formato impreso.</p>
-</div>
-
-<div class="conv-premio-item">
-<h4>Distribución internacional</h4>
-<p>Disponible a nivel mundial.</p>
-</div>
-
-<div class="conv-premio-item">
-<h4>Ejemplares del autor</h4>
-<p><strong>3 ejemplares impresos de cortesía en tapa blanda.</strong></p>
-</div>
-
-<div class="conv-premio-item">
-<h4>Promoción y difusión ampliada</h4>
-<ul class="conv-list">
-<li>Publicaciones en redes sociales, piezas gráficas, reels y videos</li>
-<li>Presentación del autor</li>
-<li>Entrevista publicada en nuestras redes sociales</li>
-<li>Difusión nacional e internacional</li>
-<li>Enlaces de venta y promoción de la obra</li>
-<li>Kit de comunicación y lanzamiento: el autor podrá escoger la plataforma y formato de destino para el material promocional entre Facebook, Instagram, TikTok, LinkedIn y YouTube</li>
-<li>Posicionamiento editorial ampliado mediante acciones de difusión y optimización de la presencia de la obra en Amazon y otros canales de comercialización</li>
-</ul>
-</div>
-
-<div class="conv-premio-item">
-<h4>Regalías por ventas</h4>
-<ul class="conv-list">
-<li><strong>50% de las regalías netas</strong> generadas por las ventas de la obra</li>
-<li>Reporte semestral detallado de ventas por formato y territorio</li>
-</ul>
-</div>
-
-<div class="conv-premio-item">
-<h4>Diploma digital</h4>
-<p>Diploma digital oficial de ganador con el nombre del autor y la obra premiada.</p>
-</div>
-</div>
-
-<div class="conv-block">
-<h3>Cómo participar</h3>
-
-<div class="conv-paso">
-<div class="paso-num">1</div>
-<div class="paso-content">
-<h4>Prepara tu obra</h4>
-<p>Debe ser original, inédita y de tu autoría. Debes presentarla <strong>bajo seudónimo</strong> (obligatorio para garantizar la imparcialidad del jurado).</p>
-</div>
-</div>
-
-<div class="conv-paso">
-<div class="paso-num">2</div>
-<div class="paso-content">
-<h4>Prepara tus dos archivos Word</h4>
-
-<div class="conv-archivo">
-<span class="archivo-tag">Archivo 1</span>
-<strong style="color:var(--gold-bright);font-size:.85rem;">Manuscrito</strong>
-<ul class="conv-list" style="margin-top:.4rem;">
-<li>Formato: Word (.docx) únicamente</li>
-<li>Bajo seudónimo, sin datos personales</li>
-<li>Tamaño carta, márgenes de 2,5 cm por los cuatro lados</li>
-<li>Tabla de contenido obligatoria</li>
-</ul>
-<span class="archivo-nombre">MANUSCRITO_SEUDONIMO_TITULO.docx</span>
-</div>
-
-<div class="conv-archivo" style="margin-top:.5rem;">
-<span class="archivo-tag">Archivo 2</span>
-<strong style="color:var(--gold-bright);font-size:.85rem;">Presentación</strong>
-<ul class="conv-list" style="margin-top:.4rem;">
-<li>Formato: Word (.docx) únicamente</li>
-<li>Con tus datos personales completos</li>
-</ul>
-<span class="archivo-nombre">PRESENTACION_SEUDONIMO.docx</span>
-</div>
-</div>
-</div>
-
-<div class="conv-paso">
-<div class="paso-num">3</div>
-<div class="paso-content">
-<h4>Envía tus archivos</h4>
-<p><strong>Correo:</strong> artesmulticap2024@gmail.com</p>
-<p><strong>Asunto del correo:</strong></p>
-<span class="archivo-nombre">CONCURSO LATINOAMÉRICA ESCRIBE - SEUDONIMO</span>
-</div>
-</div>
-
-<div class="conv-aviso">
-<strong>Importante:</strong> No se aceptan archivos PDF. Solo Word (.docx). El manuscrito y la presentación deben ir en dos archivos separados.
-</div>
-</div>
-
-</div>
-<!-- FIN COLUMNA 2 -->
-
-</div>
-<!-- FIN GRID CONVOCATORIA -->
-
-<div class="conv-cta">
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20participar%20en%20el%20concurso%20Latinoam%C3%A9rica%20Escribe" class="btn primary" target="_blank">Participar por WhatsApp</a>
-<a href="mailto:artesmulticap2024@gmail.com?subject=CONCURSO LATINOAMÉRICA ESCRIBE - SEUDONIMO" class="btn secondary">Enviar mi obra por correo</a>
-</div>
-
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto" class="fade">
-<div class="title">
-<h2>¿Listo para publicar tu libro?</h2>
-<p>Estamos listos para acompañarte en cada página de tu proyecto.</p>
-</div>
-<div class="cta">
-<div class="footer-logos">
-<img src="https://i.postimg.cc/ydC4VVq3/Chat-GPT-Image-16-sept-2026-12-17-38-p-m-removebg-preview.png" alt="Artes Multicap Editorial" class="footer-logo">
-<img src="https://i.postimg.cc/7LJc5bSG/480702220-618041787505911-8280549859336367380-n-removebg-preview-removebg-preview.png" alt="Fundación Artes Multicap" class="footer-logo">
-</div>
-
-<div class="footer-social">
-<a href="https://www.facebook.com/ArtesMulticap/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook">
-<svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-</a>
-<a href="https://www.instagram.com/artesmulticap/" target="_blank" rel="noopener" aria-label="Instagram">
-<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-</a>
-<a href="https://www.tiktok.com/@fundacionartesmulticap?_r=1&_t=ZS-92sY8bo4onA" target="_blank" rel="noopener" aria-label="TikTok">
-<svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-</a>
-</div>
-  <div class="cta-info">
-<p><a href="mailto:artesmulticap2024@gmail.com">artesmulticap2024@gmail.com</a></p>
-<p>WhatsApp: <a href="https://wa.me/573113555949" target="_blank">311 355 5949</a></p>
-<p>Colombia</p>
-</div>
-
-<div class="buttons" style="justify-content:center;margin-top:20px;">
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20personalizada%20para%20publicar%20mi%20libro" class="btn primary" target="_blank">Escríbenos por WhatsApp</a>
-<a href="mailto:artesmulticap2024@gmail.com?subject=Solicitud de cotización editorial" class="btn secondary">Enviar correo</a>
-</div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<div class="footer-divider"></div>
-
-<p class="footer-tagline">Publicación editorial • Coedición • Distribución Internacional</p>
-<p class="footer-copy">© 2026 Fundación Artes Multicap. Todos los derechos reservados.</p>
-</footer>
-
-<a href="https://wa.me/573113555949?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20personalizada%20para%20publicar%20mi%20libro" class="wa-float" target="_blank" aria-label="WhatsApp">
-<svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script>
-// Animación fade — CON FIX para secciones altas (convocatoria)
-const observer=new IntersectionObserver((entries)=>{
-entries.forEach((entry)=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-observer.unobserve(entry.target);
+footer p {
+  line-height: 1.1;
 }
-});
-},{threshold:0, rootMargin:"0px 0px -40px 0px"});
-document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
 
-window.addEventListener("load",function(){
-if(location.hash){
-const target=document.querySelector(location.hash);
-if(target && target.classList.contains("fade")){
-target.classList.add("show");
+footer h3 {
+  line-height: 1.1;
 }
-}
-});
-
-// Precios por plan y estrato
-const precios = {
-  profesional: { 1: 540000, 2: 540000, 3: 1080000, 4: 1080000, 5: 1800000, 6: 1800000 },
-  premium:     { 1: 1230000, 2: 1230000, 3: 2460000, 4: 2460000, 5: 4100000, 6: 4100000 }
-};
 
-const nombresPlanes = {
-  profesional: "Plan Profesional",
-  premium: "Plan Premium Global"
-};
-
-const descuentos = {
-  1: "70%", 2: "70%", 3: "40%", 4: "40%", 5: "0%", 6: "0%"
-};
-
-function formatearPrecio(valor){
-  return "$" + valor.toLocaleString("es-CO") + " COP";
-}
+@media (max-width: 768px) {
+  #flags-container { gap: 15px; }
+  #flags button { min-width: 60px; padding: 6px; }
+  #flags img { width: 30px; height: 22px; }
+  #flags .flag-label { font-size: 10px; }
 
-function actualizarResultado(){
-  const plan = document.getElementById("selectPlan").value;
-  const estrato = document.getElementById("selectEstrato").value;
-  const precioEl = document.getElementById("precioResultado");
-  const detalleEl = document.getElementById("detalleResultado");
-  const resultado = document.getElementById("resultado");
-  const btnWa = document.getElementById("btnWhatsApp");
+  .header-logos { gap: 15px; }
+  .header-logos img.logo-fundacion { max-width: 110px; }
+  .header-logos img.logo-central { max-width: 230px; }
+  .header-logos img.logo-editorial { max-width: 120px; }
 
-  if (!plan || !estrato){
-    precioEl.textContent = "—";
-    detalleEl.textContent = "Selecciona un plan y tu estrato para ver el valor.";
-    resultado.classList.remove("activo");
-    btnWa.style.display = "none";
-    return;
+  .accordion-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .accordion-logo {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 180px;
+  }
+  .accordion-logo img.logo-accordion-editorial {
+    max-width: 160px;
+    max-height: 90px;
   }
 
-  const valor = precios[plan][estrato];
-  const nombrePlan = nombresPlanes[plan];
-  const dcto = descuentos[estrato];
+  .footer-logos { gap: 18px; }
+  .footer-logos img { max-height: 45px; max-width: 80px; }
+}
+</style>
+</head>
 
-  precioEl.textContent = formatearPrecio(valor);
-  detalleEl.innerHTML = "<strong>" + nombrePlan + "</strong> · Estrato " + estrato + " · Descuento aplicado: <strong>" + dcto + "</strong>";
-  resultado.classList.add("activo");
-  btnWa.style.display = "inline-flex";
+<body>
 
-  const mensaje = encodeURIComponent(
-    "Hola, quiero más información sobre mi cotización:\n" +
-    "Plan: " + nombrePlan + "\n" +
-    "Estrato: " + estrato + "\n" +
-    "Valor estimado: " + formatearPrecio(valor) + "\n" +
-    "Mi nombre es: "
-  );
-  btnWa.href = "https://wa.me/573113555949?text=" + mensaje;
+<!-- BANDERAS -->
+<div id="flags">
+  <div id="flags-container">
+    <button id="flag-es" class="active" onclick="translateToSpanish()">
+      <img src="https://flagcdn.com/w40/es.png" alt="Español">
+      <div class="flag-label">Español</div>
+    </button>
+    <button id="flag-en" onclick="translateToEnglish()">
+      <img src="https://flagcdn.com/w40/gb.png" alt="Inglés">
+      <div class="flag-label">English</div>
+    </button>
+    <button id="flag-fr" onclick="translateToFrench()">
+      <img src="https://flagcdn.com/w40/fr.png" alt="Francés">
+      <div class="flag-label">Français</div>
+    </button>
+    <button id="flag-pt" onclick="translateToPortuguese()">
+      <img src="https://flagcdn.com/w40/br.png" alt="Portugués">
+      <div class="flag-label">Português</div>
+    </button>
+  </div>
+</div>
+
+<!-- HEADER CON TRES LOGOS (ENLAZADOS) -->
+<header>
+  <div class="header-logos">
+    <a href="https://fundacion-artes-multicap.netlify.app/" target="_blank" rel="noopener" aria-label="Fundación Artes Multicap">
+      <img src="https://i.postimg.cc/fTKhs3vn/480702220-618041787505911-8280549859336367380-n-removebg-preview.png" alt="Fundación Artes Multicap" class="logo-fundacion">
+    </a>
+    <a href="https://explorandomuseosyartelatinoamericano.netlify.app/" target="_blank" rel="noopener" aria-label="Explorando Museos y Arte Latinoamericano">
+      <img src="https://i.postimg.cc/4NjxHQ4y/Whats-App-Image-2025-06-27-at-9.jpg" alt="Explorando Museos y Arte Latinoamericano" class="logo-central">
+    </a>
+    <a href="https://editorialartesmulticap.netlify.app/#revistas" target="_blank" rel="noopener" aria-label="Artes Multicap Editorial">
+      <img src="https://i.postimg.cc/KjNyqCH5/Chat-GPT-Image-16-sept-2026-12-21-49-p-m-removebg-preview.png" alt="Artes Multicap Editorial" class="logo-editorial">
+    </a>
+  </div>
+</header>
+
+<div class="separador"></div>
+
+<div class="container">
+
+  <h1 id="titulo-politicas">Políticas Editoriales</h1>
+
+  <p class="intro" id="intro-politicas">
+    <span class="intro-block">En esta sección encontrarás <strong>dos tipos de políticas editoriales</strong> gestionadas por la Fundación Artes Multicap:</span>
+    <span class="intro-block"><strong>Revistas digitales de acceso abierto y gratuito</strong>, publicadas bajo licencias Creative Commons, con respeto por la autoría y ética editorial.</span>
+    <span class="intro-block"><strong>Artes Multicap Editorial</strong>, sello editorial comercial para la publicación de libros en español e inglés, con distribución internacional.</span>
+  </p>
+
+  <!-- SECCIÓN: ARTES MULTICAP EDITORIAL -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-editorial')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/KjNyqCH5/Chat-GPT-Image-16-sept-2026-12-21-49-p-m-removebg-preview.png" alt="Artes Multicap Editorial" class="logo-accordion-editorial">
+      </div>
+      <div class="texto-titulo">
+        <h2 id="titulo-editorial">Artes Multicap Editorial</h2>
+        <span id="subtitulo-editorial">Sello editorial de la Fundación Artes Multicap · Publicación de libros · Distribución internacional</span>
+      </div>
+    </div>
+    <div class="accordion-content" id="politica-editorial">
+      <h3 id="edit-identidad">1. Identidad y naturaleza editorial</h3>
+      <p id="desc-edit-identidad">Artes Multicap Editorial es el sello editorial de la Fundación Artes Multicap. Publica obras literarias, culturales, artísticas, educativas y de investigación, con especial énfasis en autores latinoamericanos. Opera bajo principios de respeto por la autoría, ética editorial, transparencia e inclusión.</p>
+
+      <h3 id="edit-obras">2. Obras que publicamos</h3>
+      <ul id="lista-edit-obras">
+        <li>Novela, cuento, poesía y literatura infantil y juvenil.</li>
+        <li>Ensayo, crónica e investigación académica.</li>
+        <li>Memorias, biografías y testimonios.</li>
+        <li>Obras artísticas, culturales, educativas y profesionales.</li>
+        <li>Álbumes ilustrados, libros de arte y proyectos editoriales institucionales.</li>
+      </ul>
+
+      <h3 id="edit-servicios">3. Servicios editoriales</h3>
+      <p id="desc-edit-servicios">Ofrecemos servicios individuales o paquetes integrales: corrección ortotipográfica y de estilo, diseño de portada, maquetación interior, gestión del ISBN, publicación internacional, traducción profesional al inglés y kit de comunicación y lanzamiento.</p>
+
+      <h3 id="edit-derechos">4. Derechos de autor</h3>
+      <p id="desc-edit-derechos">El autor conserva siempre la titularidad de sus derechos morales y patrimoniales. La Fundación recibe únicamente una autorización temporal y limitada para editar, publicar, distribuir, comercializar y promocionar la obra. No existe cesión definitiva del derecho de autor, conforme al artículo 119 de la Ley 23 de 1982.</p>
+
+      <h3 id="edit-originalidad">5. Originalidad y ética editorial</h3>
+      <p id="desc-edit-originalidad">Las obras deben ser originales e inéditas y de autoría del participante. El autor es responsable de contar con las autorizaciones necesarias para el uso de material de terceros (imágenes, fotografías, gráficos, citas extensas). No se admite el plagio en ninguna forma.</p>
+
+      <h3 id="edit-ia">6. Uso de inteligencia artificial</h3>
+      <p id="desc-edit-ia">Es obligatorio declarar cualquier uso de IA en el texto, imágenes, traducción, portada o material promocional. Se permite el uso de IA como herramienta de apoyo (corrección, revisión, organización de ideas) con revisión humana posterior. No se aceptan obras generadas íntegramente por IA sin intervención creativa significativa del autor.</p>
+
+      <h3 id="edit-licenciamiento">7. Licenciamiento y condiciones de uso</h3>
+      <p id="desc-edit-licenciamiento">Las obras publicadas por Artes Multicap Editorial son publicaciones comerciales protegidas por derechos de autor. Su uso, reproducción, distribución o adaptación requiere autorización previa y por escrito. Se permiten únicamente citas breves con fines académicos, periodísticos o de reseña, siempre que se reconozca la autoría y la fuente.</p>
+
+      <h3 id="edit-isbn">8. ISBN y publicación internacional</h3>
+      <p id="desc-edit-isbn">La Fundación gestiona el ISBN correspondiente a cada formato publicado, tramitado ante la Cámara Colombiana del Libro. Cada formato e idioma que requiera identificación independiente tendrá su propio ISBN. La distribución se realiza mediante Amazon KDP y otros canales internacionales disponibles.</p>
+
+      <h3 id="edit-regalias">9. Regalías y modelo económico</h3>
+      <p id="desc-edit-regalias">Las regalías netas efectivamente recibidas por la Fundación se distribuyen en un 70% para el autor y un 30% para la Fundación Artes Multicap. Se entiende por regalía neta el monto acreditado a la cuenta de publicación después de descontar comisiones de plataforma, costos de impresión y retenciones de impuestos aplicadas por la plataforma. Las liquidaciones se realizan semestralmente (enero–junio y julio–diciembre).</p>
+
+      <h3 id="edit-inclusion">10. Programa de Inclusión Editorial</h3>
+      <p id="desc-edit-inclusion">La Fundación desarrolla un programa que facilita el acceso a la publicación mediante descuentos sobre los servicios técnicos editoriales según el estrato socioeconómico: Estrato 1 y 2 (70% de descuento), Estrato 3 y 4 (40% de descuento), Estrato 5 y 6 (sin descuento). El descuento aplica únicamente sobre los servicios técnicos editoriales y no sobre regalías, impresión, envío o trámites externos.</p>
+
+      <h3 id="edit-copias">11. Copias de autor y despublicación</h3>
+      <p id="desc-edit-copias">El autor podrá adquirir copias adicionales a precio de costo de impresión más envío, impuestos y un 10% por gestión logística. Estas copias no generan regalías y el autor puede comercializarlas conservando el 100%. El autor podrá solicitar la despublicación de su obra conforme a las condiciones contractuales vigentes.</p>
+
+      <h3 id="edit-datos">12. Protección de datos personales</h3>
+      <p id="desc-edit-datos">Los datos personales suministrados por los autores serán tratados conforme a la Ley 1581 de 2012 y se utilizarán exclusivamente para gestión editorial, verificación de estrato socioeconómico, pagos de regalías, envío de ejemplares y comunicaciones relacionadas con la publicación. La Fundación no cederá datos personales a terceros sin autorización del titular.</p>
+
+      <h3 id="edit-compromiso">13. Compromiso ético</h3>
+      <p id="desc-edit-compromiso">Artes Multicap Editorial rechaza la publicación de obras que vulneren derechos de autor, suplanten identidades, contengan material obtenido ilícitamente o incumplan la legislación aplicable. Cuando se detecte una infracción, la Fundación podrá suspender o retirar la obra conforme a las condiciones contractuales.</p>
+
+      <h3 id="edit-comite">14. Comité Editorial</h3>
+      <p id="desc-edit-comite">El Comité Editorial de Artes Multicap Editorial está conformado por profesionales con experiencia en literatura, edición, corrección de estilo, diseño editorial, investigación académica y gestión cultural. Coordinación editorial: <strong id="editora-editorial">Yobana Orozco Benavides</strong>.</p>
+
+      <div class="license-block copyright">
+        <img src="https://png.pngtree.com/thumb_back/fh260/background/20220306/pngtree-copyright-icon-business-alphabet-copyright-icon-photo-image_12509422.jpg" alt="Copyright">
+        <p>Obras comerciales protegidas por derechos de autor. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVISTA ARTE Y CULTURA -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-arte')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/gJhXtczy/Whats-App-Image-2025-06-27-at-9-(1).jpg" alt="Logo Arte y Cultura">
+      </div>
+      <div class="texto-titulo">
+        <h2 id="titulo-revista-arte">Revista Explorando Arte y Cultura de Latinoamérica</h2>
+        <span id="subtitulo-revista-arte">ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad</span>
+      </div>
+    </div>
+
+    <div class="accordion-content" id="politica-arte">
+      <h3 id="identidad-arte">1. Identidad de la revista</h3>
+      <p id="desc-identidad-arte">Publicación digital de acceso abierto enfocada en la difusión de arte y cultura latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas, ediciones especiales y contenidos curatoriales.</p>
+
+      <h3 id="acceso-arte">2. Política de Acceso Abierto</h3>
+      <p id="desc-acceso-arte">Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.</p>
+
+      <h3 id="participacion-arte">3. Participación de Autores</h3>
+      <ul id="lista-participacion-arte">
+        <li>Certificado digital de participación para todos los autores.</li>
+        <li>Entrega de la revista en formato PDF.</li>
+        <li>Formulario de autoría obligatorio.</li>
+        <li>Los derechos de autor son conservados por los autores.</li>
+        <li>Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.</li>
+      </ul>
+
+      <h3 id="licenciamiento-arte">4. Licenciamiento</h3>
+      <p id="desc-licenciamiento-arte">Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+
+      <h3 id="convocatorias-arte">5. Convocatorias y Eventos Especiales</h3>
+      <ul id="lista-convocatorias-arte">
+        <li>Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.</li>
+        <li>Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.</li>
+      </ul>
+
+      <h3 id="contenidos-arte">6. Tipos de Contenidos</h3>
+      <ul id="lista-contenidos-arte">
+        <li>Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.</li>
+        <li>Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.</li>
+        <li>Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.</li>
+      </ul>
+
+      <h3 id="evaluacion-arte">7. Proceso de Evaluación y Selección</h3>
+      <p id="desc-evaluacion-arte">Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática, calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.</p>
+
+      <h3 id="originalidad-arte">8. Originalidad y Ética Editorial</h3>
+      <p id="desc-originalidad-arte">Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría, la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.</p>
+
+      <h3 id="aceptacion-arte">9. Política de Aceptación Automática</h3>
+      <p id="desc-aceptacion-arte">El diligenciamiento y envío de los formularios de participación implica la aceptación plena de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación de la revista.</p>
+
+      <h3 id="datos-arte">10. Uso de Datos y Comunicaciones Editoriales</h3>
+      <p id="desc-datos-arte">Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos y culturales. La revista podrá enviar comunicaciones institucionales y editoriales, sin cesión de información a terceros ni uso comercial.</p>
+
+      <h3 id="comite-arte">11. Comité Editorial</h3>
+      <p id="desc-comite-arte">Editora y coordinadora editorial: <strong id="editora-arte">Yobana Orozco Benavides</strong></p>
+
+      <div class="license-block cc">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" rel="noopener">
+          <img src="https://co.creativecommons.net/wp-content/uploads/sites/27/2008/02/by-nc.png" alt="Licencia Creative Commons BY-NC 4.0">
+        </a>
+        <p>Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0). Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVISTA MUSEOS -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-museos')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/KvGnsFtB/Whats-App-Image-2025-06-27-at-9-00-51-AM.jpg" alt="Logo Museos Nacionales">
+      </div>
+      <div class="texto-titulo">
+        <h2 id="titulo-revista-museos">Revista Explorando Museos Nacionales de Colombia</h2>
+        <span id="subtitulo-revista-museos">ISSN 3114-9243 · Periodicidad Cuatrimestral</span>
+      </div>
+    </div>
+    <div class="accordion-content" id="politica-museos">
+      <h3 id="identidad-museos">1. Identidad de la revista</h3>
+      <p id="desc-identidad-museos">Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.</p>
+
+      <h3 id="acceso-museos">2. Política de Acceso Abierto</h3>
+      <p id="desc-acceso-museos">Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.</p>
+
+      <h3 id="participacion-museos">3. Participación de Autores e Instituciones</h3>
+      <ul id="lista-participacion-museos">
+        <li>Autores y museos conservan derechos de autor.</li>
+        <li>Certificados de participación para colaboradores y autores.</li>
+        <li>Autorización institucional para museos requerida.</li>
+        <li>Difusión con fines educativos y culturales, no comerciales.</li>
+      </ul>
+
+      <h3 id="licenciamiento-museos">4. Licenciamiento</h3>
+      <p id="desc-licenciamiento-museos">Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+
+      <h3 id="convocatorias-museos">5. Convocatorias y Eventos Especiales</h3>
+      <ul id="lista-convocatorias-museos">
+        <li>Visitas y entrevistas a museos y colecciones institucionales.</li>
+        <li>Ediciones especiales para museos invitados y artistas destacados.</li>
+      </ul>
+
+      <h3 id="contenidos-museos">6. Tipos de Contenidos</h3>
+      <ul id="lista-contenidos-museos">
+        <li>Artículos sobre museos, patrimonio y colecciones.</li>
+        <li>Ensayos educativos y reflexiones curatoriales.</li>
+        <li>Proyectos culturales y pedagógicos.</li>
+      </ul>
+
+      <h3 id="comite-museos">7. Comité Editorial</h3>
+      <p id="desc-comite-museos">Editora y coordinadora editorial: <strong id="editora-museos">Yobana Orozco Benavides</strong></p>
+
+      <div class="license-block cc">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" rel="noopener">
+          <img src="https://co.creativecommons.net/wp-content/uploads/sites/27/2008/02/by-nc.png" alt="Licencia Creative Commons BY-NC 4.0">
+        </a>
+        <p>Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0). Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVISTA JÓVENES CREADORES -->
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAccordion('politica-jovenes')">
+      <div class="accordion-logo">
+        <img src="https://i.postimg.cc/6qnBHMPr/Whats-App-Image-2025-06-27-at-9-(1)-(1).png" alt="Logo Jóvenes Creadores">
+      </div>
+      <div class="texto-titulo">
+        <h2 id="titulo-revista-jovenes">Revistas Jóvenes Creadores de Latinoamérica (Internacional)</h2>
+        <span id="subtitulo-revista-jovenes">ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años</span>
+      </div>
+    </div>
+    <div class="accordion-content" id="politica-jovenes">
+      <h3 id="identidad-jovenes">1. Identidad de la revista</h3>
+      <p id="desc-identidad-jovenes">Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.</p>
+
+      <h3 id="acceso-jovenes">2. Política de Acceso Abierto</h3>
+      <p id="desc-acceso-jovenes">Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.</p>
+
+      <h3 id="participacion-jovenes">3. Participación de Autores y Menores</h3>
+      <ul id="lista-participacion-jovenes">
+        <li>Certificado digital de participación emitido por la Fundación Artes Multicap.</li>
+        <li>Autorización de padres o tutores obligatoria para menores de edad.</li>
+        <li>Formulario de autoría obligatorio.</li>
+        <li>Derechos de autor conservados por los menores y respetados.</li>
+        <li>Reconocimiento de acompañantes: docentes, familias y organizaciones.</li>
+      </ul>
+
+      <h3 id="licenciamiento-jovenes">4. Licenciamiento</h3>
+      <p id="desc-licenciamiento-jovenes">Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).</p>
+
+      <h3 id="convocatorias-jovenes">5. Convocatorias y Eventos Especiales</h3>
+      <ul id="lista-convocatorias-jovenes">
+        <li>Convocatorias con instrucciones, cronogramas y formularios.</li>
+        <li>Publicación de obras seleccionadas en la revista y en plataformas digitales.</li>
+        <li>Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.</li>
+        <li>Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.</li>
+        <li>Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.</li>
+      </ul>
+
+      <h3 id="contenidos-jovenes">6. Tipos de Contenidos</h3>
+      <ul id="lista-contenidos-jovenes">
+        <li>Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.</li>
+        <li>Literatura: poesía, cuento, relato breve, artículo, ensayo.</li>
+        <li>Proyectos culturales, creativos y reflexiones pedagógicas.</li>
+      </ul>
+
+      <h3 id="etica-jovenes">7. Ética Editorial</h3>
+      <p id="desc-etica-jovenes">Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.</p>
+
+      <h3 id="comite-jovenes">8. Comité Editorial</h3>
+      <p id="desc-comite-jovenes">Editora y coordinadora editorial: <strong id="editora-jovenes">Yobana Orozco Benavides</strong></p>
+
+      <div class="license-block cc">
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" target="_blank" rel="noopener">
+          <img src="https://co.creativecommons.net/wp-content/uploads/sites/27/2008/02/by-nc.png" alt="Licencia Creative Commons BY-NC 4.0">
+        </a>
+        <p>Licencia Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0). Se permite la consulta, descarga y difusión con reconocimiento de autoría, sin fines comerciales.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="footer-content">
+
+  <!-- TRES LOGOS ENLAZADOS (PEQUEÑOS) -->
+  <div class="footer-logos">
+    <a href="https://fundacion-artes-multicap.netlify.app/" target="_blank" rel="noopener" aria-label="Fundación Artes Multicap">
+      <img src="https://i.postimg.cc/fTKhs3vn/480702220-618041787505911-8280549859336367380-n-removebg-preview.png" alt="Fundación Artes Multicap">
+    </a>
+    <a href="https://explorandomuseosyartelatinoamericano.netlify.app/" target="_blank" rel="noopener" aria-label="Explorando Museos y Arte Latinoamericano">
+      <img src="https://i.postimg.cc/4NjxHQ4y/Whats-App-Image-2025-06-27-at-9.jpg" alt="Explorando Museos y Arte Latinoamericano">
+    </a>
+    <a href="https://editorialartesmulticap.netlify.app/#revistas" target="_blank" rel="noopener" aria-label="Artes Multicap Editorial">
+      <img src="https://i.postimg.cc/KjNyqCH5/Chat-GPT-Image-16-sept-2026-12-21-49-p-m-removebg-preview.png" alt="Artes Multicap Editorial">
+    </a>
+  </div>
+
+  <h3 style="font-size:15px; margin-top: 30px;" id="footer-title">© 2023 – 2026 | Fundación Artes Multicap</h3>
+
+  <p style="max-width:750px;margin:auto; margin-top: 20px;" id="footer-description">
+    Proyecto educativo, cultural y editorial <strong id="footer-strong1">creado por Yobana Orozco Benavides</strong>.
+    Iniciado en 2023 como un trabajo universitario bajo el nombre
+    <em id="footer-em1">Explorando Museos Nacionales de Colombia</em>.
+    Desde 2025, el proyecto se consolida a través de la
+    <strong id="footer-strong2">Fundación Artes Multicap</strong>, que reúne las
+    revistas digitales <strong id="footer-strong3">Explorando Museos y Arte Latinoamericano</strong>
+    y el sello <strong id="footer-strong4">Artes Multicap Editorial</strong>.
+  </p>
+
+  <p style="margin-top:15px;" id="author-bio">
+    Bio autora:
+    <a href="https://yobanaorozcoartista.bio.link/" target="_blank" style="color:#00e6b8;">yobanaorozcoartista.bio.link</a>
+  </p>
+
+  <div style="margin-top:20px;font-size:13px;">
+    <strong>Depósito Digital Legal:</strong> DD-034370 — Biblioteca Nacional de Colombia
+  </div>
+</footer>
+
+<script>
+const translations = {
+  'es': {
+    'title': 'Políticas Editoriales | Fundación Artes Multicap',
+    'titulo-politicas': 'Políticas Editoriales',
+    'intro-politicas': '<span class="intro-block">En esta sección encontrarás <strong>dos tipos de políticas editoriales</strong> gestionadas por la Fundación Artes Multicap:</span><span class="intro-block"><strong>Revistas digitales de acceso abierto y gratuito</strong>, publicadas bajo licencias Creative Commons, con respeto por la autoría y ética editorial.</span><span class="intro-block"><strong>Artes Multicap Editorial</strong>, sello editorial comercial para la publicación de libros en español e inglés, con distribución internacional.</span>',
+
+    'titulo-editorial': 'Artes Multicap Editorial',
+    'subtitulo-editorial': 'Sello editorial de la Fundación Artes Multicap · Publicación de libros · Distribución internacional',
+    'edit-identidad': '1. Identidad y naturaleza editorial',
+    'desc-edit-identidad': 'Artes Multicap Editorial es el sello editorial de la Fundación Artes Multicap. Publica obras literarias, culturales, artísticas, educativas y de investigación, con especial énfasis en autores latinoamericanos. Opera bajo principios de respeto por la autoría, ética editorial, transparencia e inclusión.',
+    'edit-obras': '2. Obras que publicamos',
+    'edit-servicios': '3. Servicios editoriales',
+    'desc-edit-servicios': 'Ofrecemos servicios individuales o paquetes integrales: corrección ortotipográfica y de estilo, diseño de portada, maquetación interior, gestión del ISBN, publicación internacional, traducción profesional al inglés y kit de comunicación y lanzamiento.',
+    'edit-derechos': '4. Derechos de autor',
+    'desc-edit-derechos': 'El autor conserva siempre la titularidad de sus derechos morales y patrimoniales. La Fundación recibe únicamente una autorización temporal y limitada para editar, publicar, distribuir, comercializar y promocionar la obra. No existe cesión definitiva del derecho de autor, conforme al artículo 119 de la Ley 23 de 1982.',
+    'edit-originalidad': '5. Originalidad y ética editorial',
+    'desc-edit-originalidad': 'Las obras deben ser originales e inéditas y de autoría del participante. El autor es responsable de contar con las autorizaciones necesarias para el uso de material de terceros (imágenes, fotografías, gráficos, citas extensas). No se admite el plagio en ninguna forma.',
+    'edit-ia': '6. Uso de inteligencia artificial',
+    'desc-edit-ia': 'Es obligatorio declarar cualquier uso de IA en el texto, imágenes, traducción, portada o material promocional. Se permite el uso de IA como herramienta de apoyo (corrección, revisión, organización de ideas) con revisión humana posterior. No se aceptan obras generadas íntegramente por IA sin intervención creativa significativa del autor.',
+    'edit-licenciamiento': '7. Licenciamiento y condiciones de uso',
+    'desc-edit-licenciamiento': 'Las obras publicadas por Artes Multicap Editorial son publicaciones comerciales protegidas por derechos de autor. Su uso, reproducción, distribución o adaptación requiere autorización previa y por escrito. Se permiten únicamente citas breves con fines académicos, periodísticos o de reseña, siempre que se reconozca la autoría y la fuente.',
+    'edit-isbn': '8. ISBN y publicación internacional',
+    'desc-edit-isbn': 'La Fundación gestiona el ISBN correspondiente a cada formato publicado, tramitado ante la Cámara Colombiana del Libro. Cada formato e idioma que requiera identificación independiente tendrá su propio ISBN. La distribución se realiza mediante Amazon KDP y otros canales internacionales disponibles.',
+    'edit-regalias': '9. Regalías y modelo económico',
+    'desc-edit-regalias': 'Las regalías netas efectivamente recibidas por la Fundación se distribuyen en un 70% para el autor y un 30% para la Fundación Artes Multicap. Se entiende por regalía neta el monto acreditado a la cuenta de publicación después de descontar comisiones de plataforma, costos de impresión y retenciones de impuestos aplicadas por la plataforma. Las liquidaciones se realizan semestralmente (enero–junio y julio–diciembre).',
+    'edit-inclusion': '10. Programa de Inclusión Editorial',
+    'desc-edit-inclusion': 'La Fundación desarrolla un programa que facilita el acceso a la publicación mediante descuentos sobre los servicios técnicos editoriales según el estrato socioeconómico: Estrato 1 y 2 (70% de descuento), Estrato 3 y 4 (40% de descuento), Estrato 5 y 6 (sin descuento). El descuento aplica únicamente sobre los servicios técnicos editoriales y no sobre regalías, impresión, envío o trámites externos.',
+    'edit-copias': '11. Copias de autor y despublicación',
+    'desc-edit-copias': 'El autor podrá adquirir copias adicionales a precio de costo de impresión más envío, impuestos y un 10% por gestión logística. Estas copias no generan regalías y el autor puede comercializarlas conservando el 100%. El autor podrá solicitar la despublicación de su obra conforme a las condiciones contractuales vigentes.',
+    'edit-datos': '12. Protección de datos personales',
+    'desc-edit-datos': 'Los datos personales suministrados por los autores serán tratados conforme a la Ley 1581 de 2012 y se utilizarán exclusivamente para gestión editorial, verificación de estrato socioeconómico, pagos de regalías, envío de ejemplares y comunicaciones relacionadas con la publicación. La Fundación no cederá datos personales a terceros sin autorización del titular.',
+    'edit-compromiso': '13. Compromiso ético',
+    'desc-edit-compromiso': 'Artes Multicap Editorial rechaza la publicación de obras que vulneren derechos de autor, suplanten identidades, contengan material obtenido ilícitamente o incumplan la legislación aplicable. Cuando se detecte una infracción, la Fundación podrá suspender o retirar la obra conforme a las condiciones contractuales.',
+    'edit-comite': '14. Comité Editorial',
+    'desc-edit-comite': 'El Comité Editorial de Artes Multicap Editorial está conformado por profesionales con experiencia en literatura, edición, corrección de estilo, diseño editorial, investigación académica y gestión cultural. Coordinación editorial:',
+    'editora-editorial': 'Yobana Orozco Benavides',
+
+    'titulo-revista-arte': 'Revista Explorando Arte y Cultura de Latinoamérica',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Periodicidad Semestral · Artistas mayores de edad',
+    'identidad-arte': '1. Identidad de la revista',
+    'desc-identidad-arte': 'Publicación digital de acceso abierto enfocada en la difusión de arte y cultura latinoamericana. Reconoce artistas, escritores y museos invitados mediante entrevistas, ediciones especiales y contenidos curatoriales.',
+    'acceso-arte': '2. Política de Acceso Abierto',
+    'desc-acceso-arte': 'Acceso gratuito y abierto para lectura, descarga y consulta. Los contenidos se publican en el sitio web oficial y en plataformas académicas y culturales aliadas para mayor visibilidad.',
+    'participacion-arte': '3. Participación de Autores',
+    'licenciamiento-arte': '4. Licenciamiento',
+    'desc-licenciamiento-arte': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Convocatorias y Eventos Especiales',
+    'contenidos-arte': '6. Tipos de Contenidos',
+    'evaluacion-arte': '7. Proceso de Evaluación y Selección',
+    'desc-evaluacion-arte': 'Las propuestas son evaluadas por el equipo editorial según criterios de pertinencia temática, calidad, coherencia editorial y cumplimiento de los requisitos establecidos en cada convocatoria.',
+    'originalidad-arte': '8. Originalidad y Ética Editorial',
+    'desc-originalidad-arte': 'Las obras deben ser originales e inéditas. El/la autor/a es responsable de la autoría, la veracidad de la información y el respeto a los derechos de terceros. No se admite plagio.',
+    'aceptacion-arte': '9. Política de Aceptación Automática',
+    'desc-aceptacion-arte': 'El diligenciamiento y envío de los formularios de participación implica la aceptación plena de las políticas editoriales, los requisitos de la convocatoria y las condiciones de publicación de la revista.',
+    'datos-arte': '10. Uso de Datos y Comunicaciones Editoriales',
+    'desc-datos-arte': 'Los datos suministrados serán utilizados exclusivamente con fines editoriales, académicos y culturales. La revista podrá enviar comunicaciones institucionales y editoriales, sin cesión de información a terceros ni uso comercial.',
+    'comite-arte': '11. Comité Editorial',
+    'desc-comite-arte': 'Editora y coordinadora editorial:',
+    'editora-arte': 'Yobana Orozco Benavides',
+
+    'titulo-revista-museos': 'Revista Explorando Museos Nacionales de Colombia',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Periodicidad Cuatrimestral',
+    'identidad-museos': '1. Identidad de la revista',
+    'desc-identidad-museos': 'Revista digital enfocada en museos, patrimonio y cultura de Colombia. Contenidos con base en visitas, entrevistas y documentación institucional.',
+    'acceso-museos': '2. Política de Acceso Abierto',
+    'desc-acceso-museos': 'Acceso gratuito y abierto. Publicación en el sitio web oficial y repositorios digitales aliados para amplia visibilidad.',
+    'participacion-museos': '3. Participación de Autores e Instituciones',
+    'licenciamiento-museos': '4. Licenciamiento',
+    'desc-licenciamiento-museos': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Convocatorias y Eventos Especiales',
+    'contenidos-museos': '6. Tipos de Contenidos',
+    'comite-museos': '7. Comité Editorial',
+    'desc-comite-museos': 'Editora y coordinadora editorial:',
+    'editora-museos': 'Yobana Orozco Benavides',
+
+    'titulo-revista-jovenes': 'Revistas Jóvenes Creadores de Latinoamérica (Internacional)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Periodicidad Semestral · Jóvenes 8-17 años',
+    'identidad-jovenes': '1. Identidad de la revista',
+    'desc-identidad-jovenes': 'Publicación digital de acceso abierto que difunde procesos creativos de niños, niñas y jóvenes. Gestionada por la Fundación Artes Multicap.',
+    'acceso-jovenes': '2. Política de Acceso Abierto',
+    'desc-acceso-jovenes': 'Contenido gratuito y abierto. Publicación en el sitio web oficial y plataformas digitales artísticas, educativas y culturales para mayor visibilidad.',
+    'participacion-jovenes': '3. Participación de Autores y Menores',
+    'licenciamiento-jovenes': '4. Licenciamiento',
+    'desc-licenciamiento-jovenes': 'Creative Commons Atribución–No Comercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Convocatorias y Eventos Especiales',
+    'contenidos-jovenes': '6. Tipos de Contenidos',
+    'etica-jovenes': '7. Ética Editorial',
+    'desc-etica-jovenes': 'Protección de menores, respeto por autoría, prohibición de plagio y difusión ética de los contenidos.',
+    'comite-jovenes': '8. Comité Editorial',
+    'desc-comite-jovenes': 'Editora y coordinadora editorial:',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+
+    'footer-title': '© 2023 – 2026 | Fundación Artes Multicap',
+    'footer-description': 'Proyecto educativo, cultural y editorial <strong>creado por Yobana Orozco Benavides</strong>. Iniciado en 2023 como un trabajo universitario bajo el nombre <em>Explorando Museos Nacionales de Colombia</em>. Desde 2025, el proyecto se consolida a través de la <strong>Fundación Artes Multicap</strong>, que reúne las revistas digitales <strong>Explorando Museos y Arte Latinoamericano</strong> y el sello <strong>Artes Multicap Editorial</strong>.',
+    'author-bio': 'Bio autora:',
+    'footer-strong1': 'creado por Yobana Orozco Benavides',
+    'footer-em1': 'Explorando Museos Nacionales de Colombia',
+    'footer-strong2': 'Fundación Artes Multicap',
+    'footer-strong3': 'Explorando Museos y Arte Latinoamericano',
+    'footer-strong4': 'Artes Multicap Editorial'
+  },
+  'en': {
+    'title': 'Editorial Policies | Artes Multicap Foundation',
+    'titulo-politicas': 'Editorial Policies',
+    'intro-politicas': '<span class="intro-block">In this section you will find <strong>two types of editorial policies</strong> managed by the Artes Multicap Foundation:</span><span class="intro-block"><strong>Open access digital journals</strong>, published under Creative Commons licenses, with respect for authorship and editorial ethics.</span><span class="intro-block"><strong>Artes Multicap Editorial</strong>, commercial publishing imprint for books in Spanish and English, with international distribution.</span>',
+
+    'titulo-editorial': 'Artes Multicap Editorial',
+    'subtitulo-editorial': 'Publishing imprint of the Artes Multicap Foundation · Book publishing · International distribution',
+    'edit-identidad': '1. Identity and editorial nature',
+    'desc-edit-identidad': 'Artes Multicap Editorial is the publishing imprint of the Artes Multicap Foundation. It publishes literary, cultural, artistic, educational, and research works, with special emphasis on Latin American authors. It operates under principles of respect for authorship, editorial ethics, transparency, and inclusion.',
+    'edit-obras': '2. Works we publish',
+    'edit-servicios': '3. Editorial services',
+    'desc-edit-servicios': 'We offer individual services or comprehensive packages: orthotypographic and style correction, cover design, interior layout, ISBN management, international publication, professional English translation, and communication and launch kit.',
+    'edit-derechos': '4. Copyright',
+    'desc-edit-derechos': 'The author always retains ownership of their moral and economic rights. The Foundation receives only a temporary and limited authorization to edit, publish, distribute, market, and promote the work. There is no definitive transfer of copyright, in accordance with article 119 of Law 23 of 1982.',
+    'edit-originalidad': '5. Originality and editorial ethics',
+    'desc-edit-originalidad': 'Works must be original, unpublished, and authored by the participant. The author is responsible for obtaining the necessary authorizations for the use of third-party material (images, photographs, graphics, extensive quotes). Plagiarism is not allowed in any form.',
+    'edit-ia': '6. Use of artificial intelligence',
+    'desc-edit-ia': 'It is mandatory to declare any use of AI in text, images, translation, cover, or promotional material. AI may be used as a support tool (correction, review, idea organization) with subsequent human review. Works generated entirely by AI without significant creative intervention by the author are not accepted.',
+    'edit-licenciamiento': '7. Licensing and conditions of use',
+    'desc-edit-licenciamiento': 'Works published by Artes Multicap Editorial are commercial publications protected by copyright. Their use, reproduction, distribution, or adaptation requires prior written authorization. Only brief quotations for academic, journalistic, or review purposes are permitted, provided authorship and source are acknowledged.',
+    'edit-isbn': '8. ISBN and international publication',
+    'desc-edit-isbn': 'The Foundation manages the ISBN corresponding to each published format, processed before the Colombian Book Chamber. Each format and language requiring independent identification will have its own ISBN. Distribution is carried out through Amazon KDP and other available international channels.',
+    'edit-regalias': '9. Royalties and economic model',
+    'desc-edit-regalias': 'Net royalties actually received by the Foundation are distributed 70% to the author and 30% to the Artes Multicap Foundation. Net royalty is understood as the amount credited to the publication account after deducting platform commissions, printing costs, and taxes applied by the platform. Payments are made semi-annually (January–June and July–December).',
+    'edit-inclusion': '10. Editorial Inclusion Program',
+    'desc-edit-inclusion': 'The Foundation runs a program that facilitates access to publication through discounts on technical editorial services based on socioeconomic stratum: Stratum 1 and 2 (70% discount), Stratum 3 and 4 (40% discount), Stratum 5 and 6 (no discount). The discount applies only to technical editorial services and not to royalties, printing, shipping, or external procedures.',
+    'edit-copias': '11. Author copies and unpublishing',
+    'desc-edit-copias': 'The author may purchase additional copies at print cost plus shipping, taxes, and a 10% logistics management fee. These copies do not generate royalties, and the author may sell them keeping 100%. The author may request the unpublishing of their work in accordance with current contractual conditions.',
+    'edit-datos': '12. Personal data protection',
+    'desc-edit-datos': 'Personal data provided by authors will be processed in accordance with Law 1581 of 2012 and used exclusively for editorial management, verification of socioeconomic stratum, royalty payments, shipment of copies, and communications related to the publication. The Foundation will not transfer personal data to third parties without the holder\'s authorization.',
+    'edit-compromiso': '13. Ethical commitment',
+    'desc-edit-compromiso': 'Artes Multicap Editorial rejects the publication of works that violate copyright, impersonate identities, contain illegally obtained material, or breach applicable legislation. If an infringement is detected, the Foundation may suspend or remove the work in accordance with contractual conditions.',
+    'edit-comite': '14. Editorial Committee',
+    'desc-edit-comite': 'The Editorial Committee of Artes Multicap Editorial is made up of professionals with experience in literature, editing, style correction, editorial design, academic research, and cultural management. Editorial coordination:',
+    'editora-editorial': 'Yobana Orozco Benavides',
+
+    'titulo-revista-arte': 'Journal Exploring Art and Culture of Latin America',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Semiannual · Adult artists',
+    'identidad-arte': '1. Journal Identity',
+    'desc-identidad-arte': 'Open access digital publication focused on disseminating Latin American art and culture. Recognizes artists, writers, and invited museums through interviews, special editions, and curatorial content.',
+    'acceso-arte': '2. Open Access Policy',
+    'desc-acceso-arte': 'Free and open access for reading, downloading, and consultation. Content is published on the official website and allied academic and cultural platforms for greater visibility.',
+    'participacion-arte': '3. Author Participation',
+    'licenciamiento-arte': '4. Licensing',
+    'desc-licenciamiento-arte': 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Calls and Special Events',
+    'contenidos-arte': '6. Content Types',
+    'evaluacion-arte': '7. Evaluation and Selection Process',
+    'desc-evaluacion-arte': 'Proposals are evaluated by the editorial team according to criteria of thematic relevance, quality, editorial coherence, and compliance with the requirements established in each call.',
+    'originalidad-arte': '8. Originality and Editorial Ethics',
+    'desc-originalidad-arte': 'Works must be original and unpublished. The author is responsible for authorship, truthfulness of information, and respect for third-party rights. Plagiarism is not allowed.',
+    'aceptacion-arte': '9. Automatic Acceptance Policy',
+    'desc-aceptacion-arte': 'Completing and submitting participation forms implies full acceptance of editorial policies, call requirements, and journal publication conditions.',
+    'datos-arte': '10. Data Use and Editorial Communications',
+    'desc-datos-arte': 'Provided data will be used exclusively for editorial, academic, and cultural purposes. The journal may send institutional and editorial communications, without transfer of information to third parties or commercial use.',
+    'comite-arte': '11. Editorial Committee',
+    'desc-comite-arte': 'Editor and editorial coordinator:',
+    'editora-arte': 'Yobana Orozco Benavides',
+
+    'titulo-revista-museos': 'Journal Exploring National Museums of Colombia',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Quarterly',
+    'identidad-museos': '1. Journal Identity',
+    'desc-identidad-museos': 'Digital journal focused on museums, heritage, and culture of Colombia. Content based on visits, interviews, and institutional documentation.',
+    'acceso-museos': '2. Open Access Policy',
+    'desc-acceso-museos': 'Free and open access. Publication on the official website and allied digital repositories for wide visibility.',
+    'participacion-museos': '3. Author and Institution Participation',
+    'licenciamiento-museos': '4. Licensing',
+    'desc-licenciamiento-museos': 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Calls and Special Events',
+    'contenidos-museos': '6. Content Types',
+    'comite-museos': '7. Editorial Committee',
+    'desc-comite-museos': 'Editor and editorial coordinator:',
+    'editora-museos': 'Yobana Orozco Benavides',
+
+    'titulo-revista-jovenes': 'Young Creators of Latin America Journals (International)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Semiannual · Youth 8-17 years',
+    'identidad-jovenes': '1. Journal Identity',
+    'desc-identidad-jovenes': 'Open access digital publication that disseminates creative processes of children and youth. Managed by the Artes Multicap Foundation.',
+    'acceso-jovenes': '2. Open Access Policy',
+    'desc-acceso-jovenes': 'Free and open content. Publication on the official website and artistic, educational, and cultural digital platforms for greater visibility.',
+    'participacion-jovenes': '3. Author and Minor Participation',
+    'licenciamiento-jovenes': '4. Licensing',
+    'desc-licenciamiento-jovenes': 'Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Calls and Special Events',
+    'contenidos-jovenes': '6. Content Types',
+    'etica-jovenes': '7. Editorial Ethics',
+    'desc-etica-jovenes': 'Protection of minors, respect for authorship, prohibition of plagiarism, and ethical dissemination of content.',
+    'comite-jovenes': '8. Editorial Committee',
+    'desc-comite-jovenes': 'Editor and editorial coordinator:',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+
+    'footer-title': '© 2023 – 2026 | Artes Multicap Foundation',
+    'footer-description': 'Educational, cultural and editorial project <strong>created by Yobana Orozco Benavides</strong>. Started in 2023 as a university work under the name <em>Exploring National Museums of Colombia</em>. Since 2025, the project has been consolidated through the <strong>Artes Multicap Foundation</strong>, which brings together the digital journals <strong>Exploring Museums and Latin American Art</strong> and the imprint <strong>Artes Multicap Editorial</strong>.',
+    'author-bio': 'Author bio:',
+    'footer-strong1': 'created by Yobana Orozco Benavides',
+    'footer-em1': 'Exploring National Museums of Colombia',
+    'footer-strong2': 'Artes Multicap Foundation',
+    'footer-strong3': 'Exploring Museums and Latin American Art',
+    'footer-strong4': 'Artes Multicap Editorial'
+  },
+  'fr': {
+    'title': 'Politiques Éditoriales | Fondation Artes Multicap',
+    'titulo-politicas': 'Politiques Éditoriales',
+    'intro-politicas': '<span class="intro-block">Dans cette section, vous trouverez <strong>deux types de politiques éditoriales</strong> gérées par la Fondation Artes Multicap :</span><span class="intro-block"><strong>Revues numériques en accès libre et gratuit</strong>, publiées sous licences Creative Commons, dans le respect de la paternité et de l\'éthique éditoriale.</span><span class="intro-block"><strong>Artes Multicap Editorial</strong>, maison d\'édition commerciale pour la publication de livres en espagnol et en anglais, avec distribution internationale.</span>',
+
+    'titulo-editorial': 'Artes Multicap Editorial',
+    'subtitulo-editorial': 'Maison d\'édition de la Fondation Artes Multicap · Publication de livres · Distribution internationale',
+    'edit-identidad': '1. Identité et nature éditoriale',
+    'desc-edit-identidad': 'Artes Multicap Editorial est la maison d\'édition de la Fondation Artes Multicap. Elle publie des œuvres littéraires, culturelles, artistiques, éducatives et de recherche, avec un accent particulier sur les auteurs latino-américains. Elle opère selon les principes de respect de la paternité, d\'éthique éditoriale, de transparence et d\'inclusion.',
+    'edit-obras': '2. Œuvres que nous publions',
+    'edit-servicios': '3. Services éditoriaux',
+    'desc-edit-servicios': 'Nous offrons des services individuels ou des forfaits complets : correction orthotypographique et stylistique, conception de couverture, mise en page intérieure, gestion de l\'ISBN, publication internationale, traduction professionnelle en anglais et kit de communication et de lancement.',
+    'edit-derechos': '4. Droits d\'auteur',
+    'desc-edit-derechos': 'L\'auteur conserve toujours la titularité de ses droits moraux et patrimoniaux. La Fondation reçoit uniquement une autorisation temporaire et limitée pour éditer, publier, distribuer, commercialiser et promouvoir l\'œuvre. Il n\'y a pas de cession définitive du droit d\'auteur, conformément à l\'article 119 de la loi 23 de 1982.',
+    'edit-originalidad': '5. Originalité et éthique éditoriale',
+    'desc-edit-originalidad': 'Les œuvres doivent être originales, inédites et de la paternité du participant. L\'auteur est responsable de l\'obtention des autorisations nécessaires pour l\'utilisation de matériel de tiers (images, photographies, graphiques, citations étendues). Le plagiat n\'est admis sous aucune forme.',
+    'edit-ia': '6. Utilisation de l\'intelligence artificielle',
+    'desc-edit-ia': 'Il est obligatoire de déclarer toute utilisation de l\'IA dans le texte, les images, la traduction, la couverture ou le matériel promotionnel. L\'IA peut être utilisée comme outil d\'appui (correction, révision, organisation des idées) avec révision humaine ultérieure. Les œuvres générées entièrement par l\'IA sans intervention créative significative de l\'auteur ne sont pas acceptées.',
+    'edit-licenciamiento': '7. Licence et conditions d\'utilisation',
+    'desc-edit-licenciamiento': 'Les œuvres publiées par Artes Multicap Editorial sont des publications commerciales protégées par le droit d\'auteur. Leur utilisation, reproduction, distribution ou adaptation nécessite une autorisation écrite préalable. Seules de brèves citations à des fins académiques, journalistiques ou de critique sont autorisées, à condition que la paternité et la source soient reconnues.',
+    'edit-isbn': '8. ISBN et publication internationale',
+    'desc-edit-isbn': 'La Fondation gère l\'ISBN correspondant à chaque format publié, traité auprès de la Chambre Colombienne du Livre. Chaque format et langue nécessitant une identification indépendante aura son propre ISBN. La distribution se fait via Amazon KDP et d\'autres canaux internationaux disponibles.',
+    'edit-regalias': '9. Redevances et modèle économique',
+    'desc-edit-regalias': 'Les redevances nettes effectivement reçues par la Fondation sont réparties à 70 % pour l\'auteur et à 30 % pour la Fondation Artes Multicap. On entend par redevance nette le montant crédité sur le compte de publication après déduction des commissions de la plateforme, des frais d\'impression et des retenues fiscales appliquées par la plateforme. Les liquidations sont effectuées semestriellement (janvier–juin et juillet–décembre).',
+    'edit-inclusion': '10. Programme d\'inclusion éditoriale',
+    'desc-edit-inclusion': 'La Fondation mène un programme qui facilite l\'accès à la publication par des réductions sur les services éditoriaux techniques selon la strate socio-économique : strate 1 et 2 (70 % de réduction), strate 3 et 4 (40 % de réduction), strate 5 et 6 (aucune réduction). La réduction s\'applique uniquement aux services éditoriaux techniques et non aux redevances, à l\'impression, à l\'expédition ou aux procédures externes.',
+    'edit-copias': '11. Exemplaires d\'auteur et dépublication',
+    'desc-edit-copias': 'L\'auteur pourra acheter des exemplaires supplémentaires au prix coûtant d\'impression plus expédition, taxes et 10 % pour la gestion logistique. Ces exemplaires ne génèrent pas de redevances et l\'auteur peut les commercialiser en conservant 100 %. L\'auteur pourra demander la dépublication de son œuvre conformément aux conditions contractuelles en vigueur.',
+    'edit-datos': '12. Protection des données personnelles',
+    'desc-edit-datos': 'Les données personnelles fournies par les auteurs seront traitées conformément à la loi 1581 de 2012 et utilisées exclusivement pour la gestion éditoriale, la vérification de la strate socio-économique, les paiements de redevances, l\'envoi d\'exemplaires et les communications liées à la publication. La Fondation ne cédera pas les données personnelles à des tiers sans l\'autorisation du titulaire.',
+    'edit-compromiso': '13. Engagement éthique',
+    'desc-edit-compromiso': 'Artes Multicap Editorial rejette la publication d\'œuvres portant atteinte aux droits d\'auteur, usurpant des identités, contenant du matériel obtenu illicitement ou enfreignant la législation applicable. Si une infraction est détectée, la Fondation pourra suspendre ou retirer l\'œuvre conformément aux conditions contractuelles.',
+    'edit-comite': '14. Comité éditorial',
+    'desc-edit-comite': 'Le Comité éditorial d\'Artes Multicap Editorial est composé de professionnels ayant de l\'expérience en littérature, édition, correction stylistique, design éditorial, recherche académique et gestion culturelle. Coordination éditoriale :',
+    'editora-editorial': 'Yobana Orozco Benavides',
+
+    'titulo-revista-arte': 'Revue Explorant l\'Art et la Culture d\'Amérique Latine',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Semestriel · Artistes adultes',
+    'identidad-arte': '1. Identité de la revue',
+    'desc-identidad-arte': 'Publication numérique en accès libre axée sur la diffusion de l\'art et de la culture latino-américaine. Reconnaît les artistes, écrivains et musées invités par des interviews, éditions spéciales et contenus curatoriaux.',
+    'acceso-arte': '2. Politique d\'Accès Libre',
+    'desc-acceso-arte': 'Accès gratuit et libre pour la lecture, le téléchargement et la consultation. Les contenus sont publiés sur le site officiel et sur des plateformes académiques et culturelles alliées pour une plus grande visibilité.',
+    'participacion-arte': '3. Participation des Auteurs',
+    'licenciamiento-arte': '4. Licence',
+    'desc-licenciamiento-arte': 'Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Appels et Événements Spéciaux',
+    'contenidos-arte': '6. Types de Contenus',
+    'evaluacion-arte': '7. Processus d\'Évaluation et de Sélection',
+    'desc-evaluacion-arte': 'Les propositions sont évaluées par l\'équipe éditoriale selon des critères de pertinence thématique, qualité, cohérence éditoriale et respect des exigences établies dans chaque appel.',
+    'originalidad-arte': '8. Originalité et Éthique Éditoriale',
+    'desc-originalidad-arte': 'Les œuvres doivent être originales et inédites. L\'auteur est responsable de la paternité, de la véracité des informations et du respect des droits des tiers. Le plagiat n\'est pas autorisé.',
+    'aceptacion-arte': '9. Politique d\'Acceptation Automatique',
+    'desc-aceptacion-arte': 'Le remplissage et l\'envoi des formulaires de participation impliquent l\'acceptation pleine et entière des politiques éditoriales, des exigences de l\'appel et des conditions de publication de la revue.',
+    'datos-arte': '10. Utilisation des Données et Communications Éditoriales',
+    'desc-datos-arte': 'Les données fournies seront utilisées exclusivement à des fins éditoriales, académiques et culturelles. La revue pourra envoyer des communications institutionnelles et éditoriales, sans cession d\'informations à des tiers ni utilisation commerciale.',
+    'comite-arte': '11. Comité Éditorial',
+    'desc-comite-arte': 'Éditrice et coordinatrice éditoriale :',
+    'editora-arte': 'Yobana Orozco Benavides',
+
+    'titulo-revista-museos': 'Revue Explorant les Musées Nationaux de Colombie',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Trimestriel',
+    'identidad-museos': '1. Identité de la revue',
+    'desc-identidad-museos': 'Revue numérique axée sur les musées, le patrimoine et la culture de la Colombie. Contenu basé sur des visites, interviews et documentation institutionnelle.',
+    'acceso-museos': '2. Politique d\'Accès Libre',
+    'desc-acceso-museos': 'Accès gratuit et libre. Publication sur le site officiel et dépôts numériques alliés pour une large visibilité.',
+    'participacion-museos': '3. Participation des Auteurs et des Institutions',
+    'licenciamiento-museos': '4. Licence',
+    'desc-licenciamiento-museos': 'Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Appels et Événements Spéciaux',
+    'contenidos-museos': '6. Types de Contenus',
+    'comite-museos': '7. Comité Éditorial',
+    'desc-comite-museos': 'Éditrice et coordinatrice éditoriale :',
+    'editora-museos': 'Yobana Orozco Benavides',
+
+    'titulo-revista-jovenes': 'Revues Jeunes Créateurs d\'Amérique Latine (International)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Semestriel · Jeunes 8-17 ans',
+    'identidad-jovenes': '1. Identité de la revue',
+    'desc-identidad-jovenes': 'Publication numérique en accès libre qui diffuse les processus créatifs des enfants et des jeunes. Gérée par la Fondation Artes Multicap.',
+    'acceso-jovenes': '2. Politique d\'Accès Libre',
+    'desc-acceso-jovenes': 'Contenu gratuit et libre. Publication sur le site officiel et plateformes numériques artistiques, éducatives et culturelles pour une plus grande visibilité.',
+    'participacion-jovenes': '3. Participation des Auteurs et des Mineurs',
+    'licenciamiento-jovenes': '4. Licence',
+    'desc-licenciamiento-jovenes': 'Creative Commons Attribution - Pas d\'Utilisation Commerciale 4.0 International (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Appels et Événements Spéciaux',
+    'contenidos-jovenes': '6. Types de Contenus',
+    'etica-jovenes': '7. Éthique Éditoriale',
+    'desc-etica-jovenes': 'Protection des mineurs, respect de la paternité, interdiction du plagiat et diffusion éthique des contenus.',
+    'comite-jovenes': '8. Comité Éditorial',
+    'desc-comite-jovenes': 'Éditrice et coordinatrice éditoriale :',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+
+    'footer-title': '© 2023 – 2026 | Fondation Artes Multicap',
+    'footer-description': 'Projet éducatif, culturel et éditorial <strong>créé par Yobana Orozco Benavides</strong>. Commencé en 2023 comme un travail universitaire sous le nom <em>Explorant les Musées Nationaux de Colombie</em>. Depuis 2025, le projet se consolide à travers la <strong>Fondation Artes Multicap</strong>, qui réunit les revues numériques <strong>Explorant les Musées et l\'Art Latino-américain</strong> et la maison d\'édition <strong>Artes Multicap Editorial</strong>.',
+    'author-bio': 'Bio de l\'auteure :',
+    'footer-strong1': 'créé par Yobana Orozco Benavides',
+    'footer-em1': 'Explorant les Musées Nationaux de Colombie',
+    'footer-strong2': 'Fondation Artes Multicap',
+    'footer-strong3': 'Explorant les Musées et l\'Art Latino-américain',
+    'footer-strong4': 'Artes Multicap Editorial'
+  },
+  'pt': {
+    'title': 'Políticas Editoriais | Fundação Artes Multicap',
+    'titulo-politicas': 'Políticas Editoriais',
+    'intro-politicas': '<span class="intro-block">Nesta seção você encontrará <strong>dois tipos de políticas editoriais</strong> geridas pela Fundação Artes Multicap:</span><span class="intro-block"><strong>Revistas digitais de acesso aberto e gratuito</strong>, publicadas sob licenças Creative Commons, com respeito pela autoria e ética editorial.</span><span class="intro-block"><strong>Artes Multicap Editorial</strong>, selo editorial comercial para publicação de livros em espanhol e inglês, com distribuição internacional.</span>',
+
+    'titulo-editorial': 'Artes Multicap Editorial',
+    'subtitulo-editorial': 'Selo editorial da Fundação Artes Multicap · Publicação de livros · Distribuição internacional',
+    'edit-identidad': '1. Identidade e natureza editorial',
+    'desc-edit-identidad': 'Artes Multicap Editorial é o selo editorial da Fundação Artes Multicap. Publica obras literárias, culturais, artísticas, educativas e de pesquisa, com ênfase especial em autores latino-americanos. Opera sob princípios de respeito pela autoria, ética editorial, transparência e inclusão.',
+    'edit-obras': '2. Obras que publicamos',
+    'edit-servicios': '3. Serviços editoriais',
+    'desc-edit-servicios': 'Oferecemos serviços individuais ou pacotes integrais: correção ortotipográfica e de estilo, design de capa, diagramação interior, gestão do ISBN, publicação internacional, tradução profissional para o inglês e kit de comunicação e lançamento.',
+    'edit-derechos': '4. Direitos autorais',
+    'desc-edit-derechos': 'O autor conserva sempre a titularidade de seus direitos morais e patrimoniais. A Fundação recebe apenas uma autorização temporária e limitada para editar, publicar, distribuir, comercializar e promover a obra. Não há cessão definitiva do direito autoral, conforme o artigo 119 da Lei 23 de 1982.',
+    'edit-originalidad': '5. Originalidade e ética editorial',
+    'desc-edit-originalidad': 'As obras devem ser originais, inéditas e de autoria do participante. O autor é responsável por obter as autorizações necessárias para o uso de material de terceiros (imagens, fotografias, gráficos, citações extensas). Não se admite plágio em nenhuma forma.',
+    'edit-ia': '6. Uso de inteligência artificial',
+    'desc-edit-ia': 'É obrigatório declarar qualquer uso de IA no texto, imagens, tradução, capa ou material promocional. Permite-se o uso de IA como ferramenta de apoio (correção, revisão, organização de ideias) com revisão humana posterior. Não são aceitas obras geradas integralmente por IA sem intervenção criativa significativa do autor.',
+    'edit-licenciamiento': '7. Licenciamento e condições de uso',
+    'desc-edit-licenciamiento': 'As obras publicadas pela Artes Multicap Editorial são publicações comerciais protegidas por direitos autorais. Seu uso, reprodução, distribuição ou adaptação requer autorização prévia e por escrito. Permitem-se apenas citações breves com fins acadêmicos, jornalísticos ou de resenha, desde que se reconheça a autoria e a fonte.',
+    'edit-isbn': '8. ISBN e publicação internacional',
+    'desc-edit-isbn': 'A Fundação gestiona o ISBN correspondente a cada formato publicado, tramitado junto à Câmara Colombiana do Livro. Cada formato e idioma que requeira identificação independente terá seu próprio ISBN. A distribuição é realizada através da Amazon KDP e outros canais internacionais disponíveis.',
+    'edit-regalias': '9. Royalties e modelo econômico',
+    'desc-edit-regalias': 'Os royalties líquidos efetivamente recebidos pela Fundação são distribuídos em 70% para o autor e 30% para a Fundação Artes Multicap. Entende-se por royalty líquido o valor creditado à conta de publicação após descontar comissões da plataforma, custos de impressão e retenções de impostos aplicadas pela plataforma. As liquidações são realizadas semestralmente (janeiro–junho e julho–dezembro).',
+    'edit-inclusion': '10. Programa de Inclusão Editorial',
+    'desc-edit-inclusion': 'A Fundação desenvolve um programa que facilita o acesso à publicação mediante descontos sobre os serviços técnicos editoriais de acordo com o estrato socioeconômico: Estrato 1 e 2 (70% de desconto), Estrato 3 e 4 (40% de desconto), Estrato 5 e 6 (sem desconto). O desconto aplica-se apenas aos serviços técnicos editoriais e não sobre royalties, impressão, envio ou trâmites externos.',
+    'edit-copias': '11. Cópias de autor e despublicação',
+    'desc-edit-copias': 'O autor poderá adquirir cópias adicionais ao preço de custo de impressão mais envio, impostos e 10% pela gestão logística. Essas cópias não geram royalties, e o autor pode comercializá-las conservando 100%. O autor poderá solicitar a despublicação de sua obra conforme as condições contratuais vigentes.',
+    'edit-datos': '12. Proteção de dados pessoais',
+    'desc-edit-datos': 'Os dados pessoais fornecidos pelos autores serão tratados conforme a Lei 1581 de 2012 e utilizados exclusivamente para gestão editorial, verificação de estrato socioeconômico, pagamentos de royalties, envio de exemplares e comunicações relacionadas à publicação. A Fundação não cederá dados pessoais a terceiros sem autorização do titular.',
+    'edit-compromiso': '13. Compromisso ético',
+    'desc-edit-compromiso': 'Artes Multicap Editorial rejeita a publicação de obras que violem direitos autorais, usurpem identidades, contenham material obtido ilicitamente ou descumpram a legislação aplicável. Quando for detectada uma infração, a Fundação poderá suspender ou retirar a obra conforme as condições contratuais.',
+    'edit-comite': '14. Comitê Editorial',
+    'desc-edit-comite': 'O Comitê Editorial da Artes Multicap Editorial é formado por profissionais com experiência em literatura, edição, correção de estilo, design editorial, pesquisa acadêmica e gestão cultural. Coordenação editorial:',
+    'editora-editorial': 'Yobana Orozco Benavides',
+
+    'titulo-revista-arte': 'Revista Explorando Arte e Cultura da América Latina',
+    'subtitulo-revista-arte': 'ISSN 3114-9871 · Semestral · Artistas adultos',
+    'identidad-arte': '1. Identidade da revista',
+    'desc-identidad-arte': 'Publicação digital de acesso aberto focada na difusão da arte e cultura latino-americana. Reconhece artistas, escritores e museus convidados através de entrevistas, edições especiais e conteúdos curatoriais.',
+    'acceso-arte': '2. Política de Acesso Aberto',
+    'desc-acceso-arte': 'Acesso gratuito e aberto para leitura, download e consulta. Os conteúdos são publicados no site oficial e em plataformas acadêmicas e culturais aliadas para maior visibilidade.',
+    'participacion-arte': '3. Participação dos Autores',
+    'licenciamiento-arte': '4. Licenciamento',
+    'desc-licenciamiento-arte': 'Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-arte': '5. Chamadas e Eventos Especiais',
+    'contenidos-arte': '6. Tipos de Conteúdo',
+    'evaluacion-arte': '7. Processo de Avaliação e Seleção',
+    'desc-evaluacion-arte': 'As propostas são avaliadas pela equipe editorial de acordo com critérios de pertinência temática, qualidade, coerência editorial e cumprimento dos requisitos estabelecidos em cada chamada.',
+    'originalidad-arte': '8. Originalidade e Ética Editorial',
+    'desc-originalidad-arte': 'As obras devem ser originais e inéditas. O/a autor/a é responsável pela autoria, veracidade da informação e respeito aos direitos de terceiros. Plágio não é admitido.',
+    'aceptacion-arte': '9. Política de Aceitação Automática',
+    'desc-aceptacion-arte': 'O preenchimento e envio dos formulários de participação implica na aceitação plena das políticas editoriais, requisitos da chamada e condições de publicação da revista.',
+    'datos-arte': '10. Uso de Dados e Comunicações Editoriais',
+    'desc-datos-arte': 'Os dados fornecidos serão utilizados exclusivamente para fins editoriais, acadêmicos e culturais. A revista poderá enviar comunicações institucionais e editoriais, sem cessão de informações a terceiros ou uso comercial.',
+    'comite-arte': '11. Comitê Editorial',
+    'desc-comite-arte': 'Editora e coordenadora editorial:',
+    'editora-arte': 'Yobana Orozco Benavides',
+
+    'titulo-revista-museos': 'Revista Explorando Museus Nacionais da Colômbia',
+    'subtitulo-revista-museos': 'ISSN 3114-9243 · Trimestral',
+    'identidad-museos': '1. Identidade da revista',
+    'desc-identidad-museos': 'Revista digital focada em museus, patrimônio e cultura da Colômbia. Conteúdos com base em visitas, entrevistas e documentação institucional.',
+    'acceso-museos': '2. Política de Acesso Aberto',
+    'desc-acceso-museos': 'Acesso gratuito e aberto. Publicação no site oficial e repositórios digitais aliados para ampla visibilidade.',
+    'participacion-museos': '3. Participação de Autores e Instituições',
+    'licenciamiento-museos': '4. Licenciamento',
+    'desc-licenciamiento-museos': 'Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-museos': '5. Chamadas e Eventos Especiais',
+    'contenidos-museos': '6. Tipos de Conteúdo',
+    'comite-museos': '7. Comitê Editorial',
+    'desc-comite-museos': 'Editora e coordenadora editorial:',
+    'editora-museos': 'Yobana Orozco Benavides',
+
+    'titulo-revista-jovenes': 'Revistas Jovens Criadores da América Latina (Internacional)',
+    'subtitulo-revista-jovenes': 'ISSN 3115-0357 · Semestral · Jovens 8-17 anos',
+    'identidad-jovenes': '1. Identidade da revista',
+    'desc-identidad-jovenes': 'Publicação digital de acesso aberto que difunde processos criativos de crianças e jovens. Gerida pela Fundação Artes Multicap.',
+    'acceso-jovenes': '2. Política de Acesso Aberto',
+    'desc-acceso-jovenes': 'Conteúdo gratuito e aberto. Publicação no site oficial e plataformas digitais artísticas, educativas e culturais para maior visibilidade.',
+    'participacion-jovenes': '3. Participação de Autores e Menores',
+    'licenciamiento-jovenes': '4. Licenciamento',
+    'desc-licenciamiento-jovenes': 'Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).',
+    'convocatorias-jovenes': '5. Chamadas e Eventos Especiais',
+    'contenidos-jovenes': '6. Tipos de Conteúdo',
+    'etica-jovenes': '7. Ética Editorial',
+    'desc-etica-jovenes': 'Proteção de menores, respeito pela autoria, proibição de plágio e difusão ética dos conteúdos.',
+    'comite-jovenes': '8. Comitê Editorial',
+    'desc-comite-jovenes': 'Editora e coordenadora editorial:',
+    'editora-jovenes': 'Yobana Orozco Benavides',
+
+    'footer-title': '© 2023 – 2026 | Fundação Artes Multicap',
+    'footer-description': 'Projeto educativo, cultural e editorial <strong>criado por Yobana Orozco Benavides</strong>. Iniciado em 2023 como um trabalho universitário sob o nome <em>Explorando Museus Nacionais da Colômbia</em>. Desde 2025, o projeto se consolida através da <strong>Fundação Artes Multicap</strong>, que reúne as revistas digitais <strong>Explorando Museus e Arte Latino-americana</strong> e o selo <strong>Artes Multicap Editorial</strong>.',
+    'author-bio': 'Bio da autora:',
+    'footer-strong1': 'criado por Yobana Orozco Benavides',
+    'footer-em1': 'Explorando Museus Nacionais da Colômbia',
+    'footer-strong2': 'Fundação Artes Multicap',
+    'footer-strong3': 'Explorando Museus e Arte Latino-americana',
+    'footer-strong4': 'Artes Multicap Editorial'
+  }
+};
+
+const lists = {
+  'es': {
+    'lista-edit-obras': [
+      'Novela, cuento, poesía y literatura infantil y juvenil.',
+      'Ensayo, crónica e investigación académica.',
+      'Memorias, biografías y testimonios.',
+      'Obras artísticas, culturales, educativas y profesionales.',
+      'Álbumes ilustrados, libros de arte y proyectos editoriales institucionales.'
+    ],
+    'lista-participacion-arte': [
+      'Certificado digital de participación para todos los autores.',
+      'Entrega de la revista en formato PDF.',
+      'Formulario de autoría obligatorio.',
+      'Los derechos de autor son conservados por los autores.',
+      'Se aceptan únicamente obras originales e inéditas con fines educativos y culturales.'
+    ],
+    'lista-convocatorias-arte': [
+      'Convocatorias abiertas con instrucciones claras, formularios y cronogramas definidos.',
+      'Participación de artistas invitados especiales y museos con entrevistas y ediciones curatoriales.'
+    ],
+    'lista-contenidos-arte': [
+      'Artes visuales: pintura, dibujo, escultura, muralismo, fotografía, collage, arte digital y técnicas mixtas.',
+      'Literatura: poesía, cuentos, relatos breves, ensayos, artículos, textos críticos y reflexivos.',
+      'Proyectos artísticos, culturales y educativos, experiencias pedagógicas y curatoriales.'
+    ],
+    'lista-participacion-museos': [
+      'Autores y museos conservan derechos de autor.',
+      'Certificados de participación para colaboradores y autores.',
+      'Autorización institucional para museos requerida.',
+      'Difusión con fines educativos y culturales, no comerciales.'
+    ],
+    'lista-convocatorias-museos': [
+      'Visitas y entrevistas a museos y colecciones institucionales.',
+      'Ediciones especiales para museos invitados y artistas destacados.'
+    ],
+    'lista-contenidos-museos': [
+      'Artículos sobre museos, patrimonio y colecciones.',
+      'Ensayos educativos y reflexiones curatoriales.',
+      'Proyectos culturales y pedagógicos.'
+    ],
+    'lista-participacion-jovenes': [
+      'Certificado digital de participación emitido por la Fundación Artes Multicap.',
+      'Autorización de padres o tutores obligatoria para menores de edad.',
+      'Formulario de autoría obligatorio.',
+      'Derechos de autor conservados por los menores y respetados.',
+      'Reconocimiento de acompañantes: docentes, familias y organizaciones.'
+    ],
+    'lista-convocatorias-jovenes': [
+      'Convocatorias con instrucciones, cronogramas y formularios.',
+      'Publicación de obras seleccionadas en la revista y en plataformas digitales.',
+      'Posibilidad de talleres, encuentros y exposiciones internacionales para los participantes.',
+      'Constancias digitales y menciones especiales para quienes orienten y acompañen los procesos creativos.',
+      'Se invita a las instituciones educativas a participar con estudiantes interesados y motivados por el arte y la cultura. La participación es completamente voluntaria y respetuosa de los tiempos y decisiones de cada colegio, docente y estudiante. Los docentes y acompañantes que guíen el proceso recibirán reconocimiento por su labor educativa y cultural.'
+    ],
+    'lista-contenidos-jovenes': [
+      'Artes visuales: dibujo, pintura, escultura, murales, fotografía, collage, arte digital y mixto.',
+      'Literatura: poesía, cuento, relato breve, artículo, ensayo.',
+      'Proyectos culturales, creativos y reflexiones pedagógicas.'
+    ]
+  },
+  'en': {
+    'lista-edit-obras': [
+      'Novel, short story, poetry, and children\'s and young adult literature.',
+      'Essay, chronicle, and academic research.',
+      'Memoirs, biographies, and testimonies.',
+      'Artistic, cultural, educational, and professional works.',
+      'Illustrated albums, art books, and institutional editorial projects.'
+    ],
+    'lista-participacion-arte': [
+      'Digital certificate of participation for all authors.',
+      'Delivery of the journal in PDF format.',
+      'Mandatory authorship form.',
+      'Copyright is retained by the authors.',
+      'Only original and unpublished works for educational and cultural purposes are accepted.'
+    ],
+    'lista-convocatorias-arte': [
+      'Open calls with clear instructions, forms, and defined schedules.',
+      'Participation of special guest artists and museums with interviews and curatorial editions.'
+    ],
+    'lista-contenidos-arte': [
+      'Visual arts: painting, drawing, sculpture, muralism, photography, collage, digital art, and mixed techniques.',
+      'Literature: poetry, short stories, brief narratives, essays, articles, critical and reflective texts.',
+      'Artistic, cultural, and educational projects, pedagogical and curatorial experiences.'
+    ],
+    'lista-participacion-museos': [
+      'Authors and museums retain copyright.',
+      'Certificates of participation for collaborators and authors.',
+      'Institutional authorization for museums required.',
+      'Dissemination for educational and cultural purposes, non-commercial.'
+    ],
+    'lista-convocatorias-museos': [
+      'Visits and interviews to museums and institutional collections.',
+      'Special editions for invited museums and featured artists.'
+    ],
+    'lista-contenidos-museos': [
+      'Articles on museums, heritage, and collections.',
+      'Educational essays and curatorial reflections.',
+      'Cultural and pedagogical projects.'
+    ],
+    'lista-participacion-jovenes': [
+      'Digital certificate of participation issued by the Artes Multicap Foundation.',
+      'Mandatory authorization of parents or guardians for minors.',
+      'Mandatory authorship form.',
+      'Copyright retained by minors and respected.',
+      'Recognition of accompanying persons: teachers, families, and organizations.'
+    ],
+    'lista-convocatorias-jovenes': [
+      'Calls with instructions, schedules, and forms.',
+      'Publication of selected works in the journal and on digital platforms.',
+      'Possibility of workshops, meetings, and international exhibitions for participants.',
+      'Digital certificates and special mentions for those who guide and accompany creative processes.',
+      'Educational institutions are invited to participate with interested and motivated students in art and culture. Participation is completely voluntary and respectful of the times and decisions of each school, teacher, and student. Teachers and accompanying persons who guide the process will receive recognition for their educational and cultural work.'
+    ],
+    'lista-contenidos-jovenes': [
+      'Visual arts: drawing, painting, sculpture, murals, photography, collage, digital and mixed art.',
+      'Literature: poetry, short story, brief narrative, article, essay.',
+      'Cultural, creative projects, and pedagogical reflections.'
+    ]
+  },
+  'fr': {
+    'lista-edit-obras': [
+      'Roman, nouvelle, poésie et littérature jeunesse.',
+      'Essai, chronique et recherche académique.',
+      'Mémoires, biographies et témoignages.',
+      'Œuvres artistiques, culturelles, éducatives et professionnelles.',
+      'Albums illustrés, livres d\'art et projets éditoriaux institutionnels.'
+    ],
+    'lista-participacion-arte': [
+      'Certificat numérique de participation pour tous les auteurs.',
+      'Livraison de la revue au format PDF.',
+      'Formulaire de paternité obligatoire.',
+      'Les droits d\'auteur sont conservés par les auteurs.',
+      'Seules les œuvres originales et inédites à des fins éducatives et culturelles sont acceptées.'
+    ],
+    'lista-convocatorias-arte': [
+      'Appels ouverts avec instructions claires, formulaires et calendriers définis.',
+      'Participation d\'artistes invités spéciaux et de musées avec interviews et éditions curatoriales.'
+    ],
+    'lista-contenidos-arte': [
+      'Arts visuels : peinture, dessin, sculpture, muralisme, photographie, collage, art numérique et techniques mixtes.',
+      'Littérature : poésie, contes, récits brefs, essais, articles, textes critiques et réflexifs.',
+      'Projets artistiques, culturels et éducatifs, expériences pédagogiques et curatoriales.'
+    ],
+    'lista-participacion-museos': [
+      'Les auteurs et les musées conservent les droits d\'auteur.',
+      'Certificats de participation pour les collaborateurs et les auteurs.',
+      'Autorisation institutionnelle pour les musées requise.',
+      'Diffusion à des fins éducatives et culturelles, non commerciales.'
+    ],
+    'lista-convocatorias-museos': [
+      'Visites et interviews de musées et collections institutionnelles.',
+      'Éditions spéciales pour les musées invités et les artistes en vedette.'
+    ],
+    'lista-contenidos-museos': [
+      'Articles sur les musées, le patrimoine et les collections.',
+      'Essais éducatifs et réflexions curatoriales.',
+      'Projets culturels et pédagogiques.'
+    ],
+    'lista-participacion-jovenes': [
+      'Certificat numérique de participation délivré par la Fondation Artes Multicap.',
+      'Autorisation obligatoire des parents ou tuteurs pour les mineurs.',
+      'Formulaire de paternité obligatoire.',
+      'Droits d\'auteur conservés par les mineurs et respectés.',
+      'Reconnaissance des accompagnateurs : enseignants, familles et organisations.'
+    ],
+    'lista-convocatorias-jovenes': [
+      'Appels avec instructions, calendriers et formulaires.',
+      'Publication des œuvres sélectionnées dans la revue et sur les plateformes numériques.',
+      'Possibilité d\'ateliers, de rencontres et d\'expositions internationales pour les participants.',
+      'Attestations numériques et mentions spéciales pour ceux qui orientent et accompagnent les processus créatifs.',
+      'Les institutions éducatives sont invitées à participer avec des étudiants intéressés et motivés par l\'art et la culture. La participation est entièrement volontaire et respectueuse des temps et des décisions de chaque école, enseignant et étudiant. Les enseignants et accompagnateurs qui guident le processus recevront une reconnaissance pour leur travail éducatif et culturel.'
+    ],
+    'lista-contenidos-jovenes': [
+      'Arts visuels : dessin, peinture, sculpture, murales, photographie, collage, art numérique et mixte.',
+      'Littérature : poésie, conte, récit bref, article, essai.',
+      'Projets culturels, créatifs et réflexions pédagogiques.'
+    ]
+  },
+  'pt': {
+    'lista-edit-obras': [
+      'Romance, conto, poesia e literatura infantil e juvenil.',
+      'Ensaio, crônica e pesquisa acadêmica.',
+      'Memórias, biografias e testemunhos.',
+      'Obras artísticas, culturais, educativas e profissionais.',
+      'Álbuns ilustrados, livros de arte e projetos editoriais institucionais.'
+    ],
+    'lista-participacion-arte': [
+      'Certificado digital de participação para todos os autores.',
+      'Entrega da revista em formato PDF.',
+      'Formulário de autoria obrigatório.',
+      'Os direitos autorais são conservados pelos autores.',
+      'Aceitam-se apenas obras originais e inéditas com fins educativos e culturais.'
+    ],
+    'lista-convocatorias-arte': [
+      'Chamadas abertas com instruções claras, formulários e cronogramas definidos.',
+      'Participação de artistas convidados especiais e museus com entrevistas e edições curatoriais.'
+    ],
+    'lista-contenidos-arte': [
+      'Artes visuais: pintura, desenho, escultura, muralismo, fotografia, colagem, arte digital e técnicas mistas.',
+      'Literatura: poesia, contos, relatos breves, ensaios, artigos, textos críticos e reflexivos.',
+      'Projetos artísticos, culturais e educativos, experiências pedagógicas e curatoriais.'
+    ],
+    'lista-participacion-museos': [
+      'Autores e museus conservam os direitos autorais.',
+      'Certificados de participação para colaboradores e autores.',
+      'Autorização institucional para museus exigida.',
+      'Difusão com fins educativos e culturais, não comerciais.'
+    ],
+    'lista-convocatorias-museos': [
+      'Visitas e entrevistas a museus e coleções institucionais.',
+      'Edições especiais para museus convidados e artistas destacados.'
+    ],
+    'lista-contenidos-museos': [
+      'Artigos sobre museus, patrimônio e coleções.',
+      'Ensaios educativos e reflexões curatoriais.',
+      'Projetos culturais e pedagógicos.'
+    ],
+    'lista-participacion-jovenes': [
+      'Certificado digital de participação emitido pela Fundação Artes Multicap.',
+      'Autorização obrigatória dos pais ou responsáveis para menores de idade.',
+      'Formulário de autoria obrigatório.',
+      'Direitos autorais conservados pelos menores e respeitados.',
+      'Reconhecimento de acompanhantes: professores, famílias e organizações.'
+    ],
+    'lista-convocatorias-jovenes': [
+      'Chamadas com instruções, cronogramas e formulários.',
+      'Publicação de obras selecionadas na revista e em plataformas digitais.',
+      'Possibilidade de oficinas, encontros e exposições internacionais para os participantes.',
+      'Declarações digitais e menções especiais para quem orienta e acompanha os processos criativos.',
+      'As instituições educativas são convidadas a participar com estudantes interessados e motivados pela arte e cultura. A participação é completamente voluntária e respeitosa dos tempos e decisões de cada escola, professor e estudante. Os professores e acompanhantes que guiarem o processo receberão reconhecimento por seu trabalho educativo e cultural.'
+    ],
+    'lista-contenidos-jovenes': [
+      'Artes visuais: desenho, pintura, escultura, murais, fotografia, colagem, arte digital e mista.',
+      'Literatura: poesia, conto, relato breve, artigo, ensaio.',
+      'Projetos culturais, criativos e reflexões pedagógicas.'
+    ]
+  }
+};
+
+function setActiveFlag(language) {
+  document.querySelectorAll('#flags button').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const flagButton = document.getElementById('flag-' + language);
+  if (flagButton) flagButton.classList.add('active');
 }
 
-document.getElementById("selectPlan").addEventListener("change", actualizarResultado);
-document.getElementById("selectEstrato").addEventListener("change", actualizarResultado);
+function updateList(listId, items) {
+  const listElement = document.getElementById(listId);
+  if (listElement && Array.isArray(items)) {
+    listElement.innerHTML = '';
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      listElement.appendChild(li);
+    });
+  }
+}
 
-function seleccionarPlan(plan){
-  document.getElementById("selectPlan").value = plan;
-  actualizarResultado();
-  setTimeout(() => {
-    const cotizador = document.getElementById("cotizador");
-    if (cotizador) {
-      window.scrollTo({ top: cotizador.offsetTop - 80, behavior: "smooth" });
+function translatePage(language) {
+  setActiveFlag(language);
+  document.title = translations[language]['title'];
+
+  for (const key in translations[language]) {
+    const element = document.getElementById(key);
+    if (!element) continue;
+
+    if (key === 'title') {
+      element.textContent = translations[language][key];
+    } else if (key === 'footer-description' || key === 'intro-politicas') {
+      element.innerHTML = translations[language][key];
+    } else {
+      element.textContent = translations[language][key];
     }
-  }, 100);
+  }
+
+  if (lists[language]) {
+    for (const listId in lists[language]) {
+      updateList(listId, lists[language][listId]);
+    }
+  }
+
+  localStorage.setItem('preferred-language', language);
 }
+
+function translateToSpanish()    { translatePage('es'); }
+function translateToEnglish()    { translatePage('en'); }
+function translateToFrench()     { translatePage('fr'); }
+function translateToPortuguese() { translatePage('pt'); }
+
+function toggleAccordion(id) {
+  const contents = document.querySelectorAll('.accordion-content');
+  contents.forEach(content => {
+    if (content.id !== id) content.style.display = 'none';
+  });
+  const element = document.getElementById(id);
+  if (element) {
+    element.style.display = element.style.display === 'block' ? 'none' : 'block';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const savedLanguage = localStorage.getItem('preferred-language') || 'es';
+  translatePage(savedLanguage);
+});
 </script>
 
 </body>
